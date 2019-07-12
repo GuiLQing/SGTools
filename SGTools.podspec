@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '0.1.0'
+  s.version          = '0.0.1'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -22,21 +22,26 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/GuiLQing/SGTools'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'GuiLQing' => 'gui950823@126.com' }
   s.source           = { :git => 'https://github.com/GuiLQing/SGTools.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.source_files = 'SGTools/Classes/**/*'
+  s.subspec 'SGAudioPlayer' do |audioPlayer|
+      audioPlayer.source_files = 'SGTools/Classes/SGAudioPlayer/**/*.{h,m}'
+  end
   
-  # s.resource_bundles = {
-  #   'SGTools' => ['SGTools/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'SGShadowView' do |shadowView|
+      shadowView.source_files = 'SGTools/Classes/SGShadowView/**/*.{h,m}'
+  end
+      
+  s.subspec 'SGSingleAudioPlayer' do |singleAudioPlayer|
+      singleAudioPlayer.source_files = 'SGTools/Classes/SGSingleAudioPlayer/**/*.{h,m}'
+  end
+      
+  s.subspec 'SGVoiceAnimationView' do |voiceAnimationView|
+      voiceAnimationView.source_files = 'SGTools/Classes/SGVoiceAnimationView/**/*.{h,m}'
+  end
+  
 end
