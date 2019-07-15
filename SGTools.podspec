@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -42,6 +42,10 @@ TODO: Add long description of the pod here.
       
   s.subspec 'SGVoiceAnimationView' do |voiceAnimationView|
       voiceAnimationView.source_files = 'SGTools/Classes/SGVoiceAnimationView/**/*.{h,m}'
+  end
+  
+  s.subspec 'SGSpeechSynthesizer' do |speechSynthesizer|
+      speechSynthesizer.source_files = 'SGTools/Classes/SGSpeechSynthesizer/**/*.{h,m}'
   end
   
 end
