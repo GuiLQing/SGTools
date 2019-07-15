@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -54,6 +54,28 @@ TODO: Add long description of the pod here.
   
   s.subspec 'SGTriangleView' do |triangleView|
       triangleView.source_files = 'SGTools/Classes/SGTriangleView/**/*.{h,m}'
+  end
+  
+  s.subspec 'SGPickerView' do |pickerView|
+      
+      pickerView.source_files = 'SGTools/Classes/SGPickerView/*.{h,m}'
+      
+      pickerView.subspec 'SGBase' do |base|
+          base.source_files = 'SGTools/Classes/SGPickerView/SGBase/**/*.{h,m}'
+      end
+      
+      pickerView.subspec 'SGAddressPickerView' do |addressPickerView|
+          addressPickerView.source_files = 'SGTools/Classes/SGPickerView/SGAddressPickerView/**/*.{h,m}'
+          addressPickerView.resources = 'SGTools/Classes/SGPickerView/SGAddressPickerView/SGPickerView.bundle'
+      end
+      
+      pickerView.subspec 'SGDatePickerView' do |datePickerView|
+          datePickerView.source_files = 'SGTools/Classes/SGPickerView/SGDatePickerView/**/*.{h,m}'
+      end
+      
+      pickerView.subspec 'SGStringPickerView' do |stringPickerView|
+          stringPickerView.source_files = 'SGTools/Classes/SGPickerView/SGStringPickerView/**/*.{h,m}'
+      end
   end
   
 end
