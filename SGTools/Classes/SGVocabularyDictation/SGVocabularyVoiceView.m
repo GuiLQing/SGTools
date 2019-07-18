@@ -20,9 +20,9 @@
 
 @implementation SGVocabularyVoiceView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)init
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
         
         self.voiceLabel = UILabel.alloc.init;
