@@ -8,6 +8,7 @@
 
 #import "SGVocabularyVoiceView.h"
 #import <Masonry/Masonry.h>
+#import "UIImage+SGVocabularyResource.h"
 
 @interface SGVocabularyVoiceView ()
 
@@ -36,11 +37,11 @@
         }];
         
         self.voiceIV = UIImageView.alloc.init;
-        self.voiceIV.image = [UIImage imageNamed:@"sg_dictation_icon_voice_animation_3"];
+        self.voiceIV.image = [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_3"];
         self.voiceIV.animationImages = @[
-                                         [UIImage imageNamed:@"sg_dictation_icon_voice_animation_1"],
-                                         [UIImage imageNamed:@"sg_dictation_icon_voice_animation_2"],
-                                         [UIImage imageNamed:@"sg_dictation_icon_voice_animation_3"],
+                                         [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_1"],
+                                         [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_2"],
+                                         [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_3"],
                                          ];
         self.voiceIV.animationDuration = 0.5;
         [self addSubview:self.voiceIV];

@@ -8,7 +8,7 @@
 
 #import "SGVocabularySpellingView.h"
 #import <Masonry/Masonry.h>
-#import "UIImage+SGResource.h"
+#import "UIImage+SGVocabularyResource.h"
 
 #define SG_IsStrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
 
@@ -228,7 +228,7 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
 - (UIButton *)deleteButton {
     if (!_deleteButton) {
         _deleteButton = [[UIButton alloc] init];
-        [_deleteButton setImage:[UIImage imageNamed:@"sg_dictation_icon_spelling_delete"] forState:UIControlStateNormal];
+        [_deleteButton setImage:[UIImage sg_imageNamed:@"sg_dictation_icon_spelling_delete"] forState:UIControlStateNormal];
         [_deleteButton addTarget:self action:@selector(answerDeleteAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _deleteButton;

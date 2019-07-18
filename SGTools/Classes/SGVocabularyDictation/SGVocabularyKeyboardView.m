@@ -8,7 +8,7 @@
 
 #import "SGVocabularyKeyboardView.h"
 #import <Masonry/Masonry.h>
-#import "UIImage+SGResource.h"
+#import "UIImage+SGVocabularyResource.h"
 
 @interface SGVocabularyKeyboardCell : UICollectionViewCell
 
@@ -44,7 +44,7 @@
 
 - (void)setKeyboardSelected:(BOOL)keyboardSelected {
     _keyboardSelected = keyboardSelected;
-    self.backImageView.image = [UIImage imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected" : @"sg_dictation_icon_keyboard_default"];
+    self.backImageView.image = [UIImage sg_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected" : @"sg_dictation_icon_keyboard_default"];
 }
 
 @end
@@ -95,7 +95,7 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
     if (indexPath.row == self.randomVocabularys.count) {
         /** 回车按钮 */
         cell.keyboardLabel.text = @"";
-        cell.backImageView.image = [UIImage imageNamed:@"sg_dictation_icon_keyboard_ensure"];
+        cell.backImageView.image = [UIImage sg_imageNamed:@"sg_dictation_icon_keyboard_ensure"];
     } else {
         cell.keyboardLabel.text = self.randomVocabularys[indexPath.row];
         cell.keyboardSelected = [self.selectedWordsDics.allKeys containsObject:indexPath];
