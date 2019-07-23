@@ -10,8 +10,9 @@
 
 @implementation NSBundle (SGSearchResource)
 
-+ (NSString *)sg_bundlePathWithName:(NSString *)name {
-    return [[NSBundle bundleWithPath:[[NSBundle bundleForClass:NSClassFromString(@"SGSearchController")] pathForResource:@"SGSearchController" ofType:@"bundle"]].resourcePath stringByAppendingPathComponent:name];
++ (NSString *)sgSearch_bundlePathWithName:(NSString *)name {
+    NSString *path = [[NSBundle bundleWithPath:[[NSBundle bundleForClass:NSClassFromString(@"SGSearchController")] pathForResource:@"SGSearchController" ofType:@"bundle"]].resourcePath stringByAppendingPathComponent:name];
+    return path;
 }
 
 @end
@@ -62,7 +63,7 @@
 }
 - (void)setupSubviews
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSBundle sg_bundlePathWithName:@"sg_icon_search"]]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSBundle sgSearch_bundlePathWithName:@"sg_icon_search"]]];
     imageView.contentMode = UIViewContentModeCenter;
     CGRect frame = imageView.frame;
     frame.size.width = imageView.frame.size.width + 10;
@@ -349,7 +350,7 @@
 - (UIBarButtonItem *)backItem
 {
     UIBarButtonItem *item = [[UIBarButtonItem alloc]
-                             initWithImage:[UIImage imageNamed:[NSBundle sg_bundlePathWithName:@"sg_icon_back"]]
+                             initWithImage:[UIImage imageNamed:[NSBundle sgSearch_bundlePathWithName:@"sg_icon_back"]]
                              style:UIBarButtonItemStylePlain
                              target:self
                              action:@selector(onBack)];
