@@ -44,6 +44,12 @@ typedef NS_ENUM(NSUInteger, SGSpeechLanguageType) {
 }
 
 - (void)speechWithText:(NSString *)text languageType:(SGSpeechLanguageType)languageType completion:(void (^)(void))completion {
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    NSError *sessionError;
+    [session setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
+    [session setActive:YES error:nil];
+    
     /** 创建语音合成的文本 */
     _utterance = [AVSpeechUtterance speechUtteranceWithString:text];
     _utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:self.language(languageType)];
