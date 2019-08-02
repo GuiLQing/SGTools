@@ -10,6 +10,7 @@
 #import "SGVocabularyDictationView.h"
 #import <Masonry/Masonry.h>
 #import "SGSearchController.h"
+#import "SGMacorsConfig.h"
 
 @interface SGViewController ()
 
@@ -40,6 +41,8 @@
 //            handleVoiceAnimation(NO);
 //        });
 //    };
+    
+    SGGLog(@"%@---%d---%lf", @"hahha", 555, 8293.0f);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

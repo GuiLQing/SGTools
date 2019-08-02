@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.0.9'
+  s.version          = '1.1.0'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -30,6 +30,10 @@ TODO: Add long description of the pod here.
 
   s.subspec 'SGAudioPlayer' do |audioPlayer|
       audioPlayer.source_files = 'SGTools/Classes/SGAudioPlayer/**/*.{h,m}'
+  end
+  
+  s.subspec 'SGVideoPlayer' do |videoPlayer|
+      videoPlayer.source_files = 'SGTools/Classes/SGVideoPlayer/**/*.{h,m}'
   end
   
   s.subspec 'SGShadowView' do |shadowView|

@@ -63,6 +63,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E4D805B08E46A5032C600E6 /* Pods-SGTools_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGTools_Example.release.xcconfig"; path = "Target Support Files/Pods-SGTools_Example/Pods-SGTools_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9F8B89E16FBF4B2B45ABB972 /* SGTools.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SGTools.podspec; path = ../SGTools.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CB1F78FC22EAE7A600246761 /* SGMacorsConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGMacorsConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +132,7 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* SGViewController.h */,
 				6003F5A6195388D20070C39A /* SGViewController.m */,
+				CB1F78FC22EAE7A600246761 /* SGMacorsConfig.h */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
