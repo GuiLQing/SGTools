@@ -11,6 +11,7 @@
 #import <Masonry/Masonry.h>
 #import "SGSearchController.h"
 #import "SGMacorsConfig.h"
+#import "SGVideoPlayer.h"
 
 @interface SGViewController ()
 

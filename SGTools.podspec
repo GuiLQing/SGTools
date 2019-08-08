@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -55,6 +55,11 @@ TODO: Add long description of the pod here.
   s.subspec 'SGSearchController' do |searchController|
       searchController.source_files = 'SGTools/Classes/SGSearchController/**/*.{h,m}'
       searchController.resources = 'SGTools/Classes/SGSearchController/SGSearchController.bundle'
+  end
+  
+  s.subspec 'SGGradientProgress' do |gradientProgress|
+      gradientProgress.source_files = 'SGTools/Classes/SGGradientProgress/**/*.{h,m}'
+      gradientProgress.resources = 'SGTools/Classes/SGGradientProgress/SGGradientProgress.bundle'
   end
   
   s.subspec 'SGTriangleView' do |triangleView|
