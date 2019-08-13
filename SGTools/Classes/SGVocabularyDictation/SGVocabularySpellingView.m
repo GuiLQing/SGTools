@@ -37,8 +37,9 @@
         [self.contentView addSubview:self.lineView];
         
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.bottom.right.equalTo(self.contentView);
-            make.width.mas_greaterThanOrEqualTo(15.0f);
+            make.right.equalTo(self.contentView.mas_right).offset(-5.0f);
+            make.top.left.bottom.equalTo(self.contentView);
+            make.width.mas_greaterThanOrEqualTo(5.0f);
             make.height.mas_greaterThanOrEqualTo(30.0f);
         }];
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -46,7 +47,7 @@
             make.height.mas_equalTo(1.0f);
         }];
         
-        [self addObserver:self.textLabel forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:nil];
+        [self.textLabel addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
@@ -57,7 +58,7 @@
 }
 
 - (void)dealloc {
-    [self removeObserver:self.textLabel forKeyPath:@"text"];
+    [self.textLabel removeObserver:self forKeyPath:@"text"];
 }
 
 @end
@@ -120,6 +121,12 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
     collectionViewRect.size.width = collectionViewWidth;
     collectionViewRect.origin.x = collectionViewX;
     self.collectionView.frame = collectionViewRect;
+    
+    if (self.answerArrays.count > 0) {
+        NSInteger section = self.answerArrays.count - 1;
+        NSInteger row = [self.answerArrays[self.answerArrays.count - 1] count] - 1;
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    }
 }
 
 - (void)answerDeleteAction {
