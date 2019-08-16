@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)stop;
 - (void)invalidate;
 - (void)audioSeekToMilliSeconds:(NSInteger)seconds;
+- (void)audioSeekToMilliSeconds:(NSInteger)seconds completionHandler:(void (^)(BOOL finished))completionHandler;
 
 @property (nonatomic, strong) NSString *audioUrl;
 

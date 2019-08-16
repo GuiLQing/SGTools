@@ -110,6 +110,12 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
     [self.audioPlayer seekToTime:CMTimeMake(seconds, 1000) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000)];
 }
 
+- (void)audioSeekToMilliSeconds:(NSInteger)seconds completionHandler:(void (^)(BOOL finished))completionHandler {
+    [self.audioPlayer seekToTime:CMTimeMake(seconds, 1000) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
+        if (completionHandler) completionHandler(finished);
+    }];
+}
+
 - (void)setAudioUrl:(NSString *)audioUrl {
     _audioUrl = audioUrl;
     
