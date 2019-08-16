@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, SGSpeechLanguageType) {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _manager = SGSpeechSynthesizerManager.alloc.init;
+        _manager.speechRate = SGSpeechSynthesizerRateDefault;
     });
     return _manager;
 }
@@ -54,7 +55,11 @@ typedef NS_ENUM(NSUInteger, SGSpeechLanguageType) {
     _utterance = [AVSpeechUtterance speechUtteranceWithString:text];
     _utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:self.language(languageType)];
     /** 播放速率 */
-    _utterance.rate = AVSpeechUtteranceDefaultSpeechRate;
+    _utterance.rate = [@{
+                         @(SGSpeechSynthesizerRateDefault) : @(AVSpeechUtteranceDefaultSpeechRate),
+                         @(SGSpeechSynthesizerRateMinimum) : @(AVSpeechUtteranceMinimumSpeechRate),
+                         @(SGSpeechSynthesizerRateMaximum) : @(AVSpeechUtteranceMaximumSpeechRate),
+                         }[@(_speechRate)] doubleValue];
     /** 改变音调 */
     _utterance.pitchMultiplier = 1.0f;
     /** 运用合成器 */

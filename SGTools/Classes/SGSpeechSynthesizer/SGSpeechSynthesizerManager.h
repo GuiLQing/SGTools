@@ -12,9 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define SGSpeechDefaultManager SGSpeechSynthesizerManager.defaultManager
 
+typedef NS_ENUM(NSUInteger, SGSpeechSynthesizerRate) {
+    SGSpeechSynthesizerRateDefault,
+    SGSpeechSynthesizerRateMinimum,
+    SGSpeechSynthesizerRateMaximum,
+};
+
 @interface SGSpeechSynthesizerManager : NSObject
 
 + (instancetype)defaultManager;
+
+@property (nonatomic, assign) SGSpeechSynthesizerRate speechRate;
 
 - (void)speechWithEnglishText:(NSString *)EnglishText completion:(void (^)(void))completion;
 
