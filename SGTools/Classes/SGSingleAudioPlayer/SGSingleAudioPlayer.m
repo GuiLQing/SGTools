@@ -27,6 +27,8 @@ static NSString * const SGTimeControlStatus        = @"timeControlStatus";
 
 @property (nonatomic, strong) NSURL *audioUrl;
 
+@property (nonatomic, assign) CGFloat audioRate;
+
 @property (nonatomic, strong) void (^completion)(void);
 @property (nonatomic, strong) void (^failure)(NSError *error);
 @property (nonatomic, strong) void (^playProgress)(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds);
@@ -36,13 +38,18 @@ static NSString * const SGTimeControlStatus        = @"timeControlStatus";
 @implementation SGSingleAudioPlayer
 
 + (instancetype)audioPlayWithUrl:(NSURL *)url playProgress:(void (^)(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds))playProgress completionHandle:(void (^)(NSError * __nullable error))completionHandle {
+    return [self audioPlayWithUrl:url playProgress:playProgress completionHandle:completionHandle];
+}
+
++ (instancetype)audioPlayWithUrl:(NSURL *)url audioRate:(CGFloat)audioRate playProgress:(void (^)(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds))playProgress completionHandle:(void (^)(NSError * __nullable error))completionHandle {
     if (!url) {
         if (completionHandle) {
             completionHandle([NSError errorWithDomain:SGSingleAudioLocalErrorDamain code:0 userInfo:@{NSLocalizedDescriptionKey : @"URL错误"}]);
         }
         return nil;
     }
-    SGSingleAudioPlayer *player = [SGSingleAudioPlayer sharedPlayer];;
+    SGSingleAudioPlayer *player = [SGSingleAudioPlayer sharedPlayer];
+    player.audioRate = audioRate;
     player.audioUrl = url;
     player.failure = ^(NSError *error) {
         if (completionHandle) {
@@ -68,6 +75,7 @@ static NSString * const SGTimeControlStatus        = @"timeControlStatus";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _singleAudioPlayer = [[SGSingleAudioPlayer alloc] init];
+        _singleAudioPlayer.audioRate = 1.0;
     });
     return _singleAudioPlayer;
 }
@@ -96,6 +104,7 @@ static NSString * const SGTimeControlStatus        = @"timeControlStatus";
     [session setActive:YES error:nil];
     
     [self.audioPlayer play];
+    self.audioPlayer.rate = self.audioRate;
     _isPlaying = YES;
 }
 

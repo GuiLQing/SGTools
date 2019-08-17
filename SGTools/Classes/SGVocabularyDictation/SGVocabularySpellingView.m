@@ -37,9 +37,9 @@
         [self.contentView addSubview:self.lineView];
         
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self.contentView.mas_right).offset(-5.0f);
+            make.right.equalTo(self.contentView.mas_right);
             make.top.left.bottom.equalTo(self.contentView);
-            make.width.mas_greaterThanOrEqualTo(5.0f);
+            make.width.mas_greaterThanOrEqualTo(8.0f);
             make.height.mas_greaterThanOrEqualTo(30.0f);
         }];
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,9 +113,10 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
 - (void)updateCollectionView {
     [self.collectionView reloadData];
     [self.collectionView layoutIfNeeded];
-    self.collectionView.contentSize = self.collectionView.collectionViewLayout.collectionViewContentSize;
+    CGSize contentSize = self.collectionView.collectionViewLayout.collectionViewContentSize;
+    self.collectionView.contentSize = contentSize;
     
-    CGFloat collectionViewWidth = MIN(self.collectionView.contentSize.width, CGRectGetWidth(self.bounds) - 40.0f);
+    CGFloat collectionViewWidth = MIN(self.collectionView.contentSize.width + 20, CGRectGetWidth(self.bounds) - 40.0f);
     CGFloat collectionViewX = (CGRectGetWidth(self.bounds) - (collectionViewWidth + 40.0f)) / 2;
     CGRect collectionViewRect = self.collectionView.frame;
     collectionViewRect.size.width = collectionViewWidth;
@@ -227,6 +228,7 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
         _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 20);
         [_collectionView registerClass:[SGVocabularySpellingCell class] forCellWithReuseIdentifier:SGVocabularySpellingCellIdentifier];
     }
     return _collectionView;

@@ -17,6 +17,8 @@ static NSString * const SGSingleAudioLocalErrorDamain = @"SGSingleAudioLocalErro
 
 + (instancetype)audioPlayWithUrl:(NSURL *)url playProgress:(void (^ _Nullable )(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds))playProgress completionHandle:(void  (^ _Nullable )(NSError * __nullable error))completionHandle;
 
++ (instancetype)audioPlayWithUrl:(NSURL *)url audioRate:(CGFloat)audioRate playProgress:(void (^ _Nullable )(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds))playProgress completionHandle:(void  (^ _Nullable )(NSError * __nullable error))completionHandle;
+
 - (void)invalidate;
 
 @end
