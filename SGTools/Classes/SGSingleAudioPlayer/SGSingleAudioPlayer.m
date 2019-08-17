@@ -38,7 +38,7 @@ static NSString * const SGTimeControlStatus        = @"timeControlStatus";
 @implementation SGSingleAudioPlayer
 
 + (instancetype)audioPlayWithUrl:(NSURL *)url playProgress:(void (^)(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds))playProgress completionHandle:(void (^)(NSError * __nullable error))completionHandle {
-    return [self audioPlayWithUrl:url playProgress:playProgress completionHandle:completionHandle];
+    return [self audioPlayWithUrl:url audioRate:1.0 playProgress:playProgress completionHandle:completionHandle];
 }
 
 + (instancetype)audioPlayWithUrl:(NSURL *)url audioRate:(CGFloat)audioRate playProgress:(void (^)(CGFloat progress, NSTimeInterval audioDuration, NSTimeInterval playSenconds))playProgress completionHandle:(void (^)(NSError * __nullable error))completionHandle {
