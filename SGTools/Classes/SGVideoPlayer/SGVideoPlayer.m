@@ -334,7 +334,7 @@ static NSString * const SG_TimeControlStatus        = @"timeControlStatus";
 
 - (NSString *)downloadAudioPath {
     if (!_vidoeUrl || [_vidoeUrl isEqualToString:@""]) return nil;
-    NSString *downloadAudioPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", [_vidoeUrl componentsSeparatedByString:@"/"].lastObject]];
+    NSString *downloadAudioPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", [_vidoeUrl stringByReplacingOccurrencesOfString:@"/" withString:@"-"]]];
     return downloadAudioPath;
 }
 

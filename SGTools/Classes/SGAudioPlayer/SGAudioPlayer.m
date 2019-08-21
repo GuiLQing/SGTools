@@ -364,7 +364,7 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
 
 - (NSString *)downloadAudioPath {
     if (SG_IsStrEmpty(_audioUrl)) return nil;
-    NSString *downloadAudioPath = [SG_PathCaches stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", [_audioUrl componentsSeparatedByString:@"/"].lastObject]];
+    NSString *downloadAudioPath = [SG_PathCaches stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", [_audioUrl stringByReplacingOccurrencesOfString:@"/" withString:@"-"]]];
     return downloadAudioPath;
 }
 
