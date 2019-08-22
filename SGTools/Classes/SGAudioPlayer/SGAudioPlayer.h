@@ -33,6 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)audioPlayerdownloadFailed:(NSError *)error;
 /** 音频当前播放时长、进度 */
 - (void)audioPlayerCurrentPlaySeconds:(NSTimeInterval)seconds progress:(CGFloat)progress;
+/** 需要缓冲 音频播放被中断 */
+- (void)audioPlayerPlaybackBufferEmpty;
+/** 缓存充足 音频播放开始播放 */
+- (void)audioPlayerPlaybackLikelyToKeepUp;
 
 @end
 

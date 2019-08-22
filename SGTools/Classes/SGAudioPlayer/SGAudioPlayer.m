@@ -188,9 +188,15 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
     } else if ([keyPath isEqualToString:kPlaybackBufferEmpty]) {
         //缓冲区空了，所需做的处理操作
         NSLog(@"缓冲区空了 playbackBufferEmpty");
+        if (self.delegate && [self.delegate respondsToSelector:@selector(audioPlayerPlaybackBufferEmpty)]) {
+            [self.delegate audioPlayerPlaybackBufferEmpty];
+        }
     } else if ([keyPath isEqualToString:kPlaybackLikelyToKeepUp]) {
         //由于 AVPlayer 缓存不足就会自动暂停,所以缓存充足了需要手动播放,才能继续播放
         if (_isPlaying) [self play];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(audioPlayerPlaybackLikelyToKeepUp)]) {
+            [self.delegate audioPlayerPlaybackLikelyToKeepUp];
+        }
     } else if ([keyPath isEqualToString:kTimeControlStatus]) {
         if (@available(iOS 10.0, *)) {
             NSLog(@"timeControlStatus: %@, reason: %@, rate: %@", @(_audioPlayer.timeControlStatus), _audioPlayer.reasonForWaitingToPlay, @(_audioPlayer.rate));
