@@ -26,7 +26,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(40.0f, 100.0f, UIScreen.mainScreen.bounds.size.width - 80.0f, 0)];
-    dicView.vocabulary = @"wordswordswordswordswordswordswordswordswords";
+    dicView.vocabulary = @"words words words wordswordswordswordswordswords";
     [self.view addSubview:dicView];
     [dicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(100.0f);

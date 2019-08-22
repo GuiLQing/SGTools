@@ -43,7 +43,8 @@
             make.height.mas_greaterThanOrEqualTo(30.0f);
         }];
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.bottom.right.equalTo(self.contentView);
+            make.right.equalTo(self.contentView.mas_right).offset(-2.0f);
+            make.left.bottom.equalTo(self.contentView);
             make.height.mas_equalTo(1.0f);
         }];
         
@@ -126,7 +127,9 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
     if (self.answerArrays.count > 0) {
         NSInteger section = self.answerArrays.count - 1;
         NSInteger row = [self.answerArrays[self.answerArrays.count - 1] count] - 1;
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+//        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+        [self.collectionView scrollRectToVisible:CGRectMake(contentSize.width - 1, 0, 1.0, contentSize.height) animated:YES];
     }
 }
 
@@ -217,7 +220,7 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = UICollectionViewFlowLayout.alloc.init;
         flowLayout.estimatedItemSize = CGSizeMake(15.0f, 30.0f);
-        flowLayout.minimumLineSpacing = 2;
+        flowLayout.minimumLineSpacing = 0;
         flowLayout.minimumInteritemSpacing = 0;
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 5, 10, 5);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -228,7 +231,7 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
         _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 20);
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 10);
         [_collectionView registerClass:[SGVocabularySpellingCell class] forCellWithReuseIdentifier:SGVocabularySpellingCellIdentifier];
     }
     return _collectionView;
