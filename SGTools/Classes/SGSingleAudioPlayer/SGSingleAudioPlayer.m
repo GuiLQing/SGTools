@@ -100,7 +100,7 @@ static NSString * const SGTimeControlStatus        = @"timeControlStatus";
 - (void)play {
     AVAudioSession *session = [AVAudioSession sharedInstance];
     NSError *sessionError;
-    [session setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
+    [session setCategory:AVAudioSessionCategoryAmbient error:&sessionError];
     [session setActive:YES error:nil];
     
     [self.audioPlayer play];

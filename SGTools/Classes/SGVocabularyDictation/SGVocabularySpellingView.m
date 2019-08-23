@@ -39,7 +39,7 @@
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView.mas_right);
             make.top.left.bottom.equalTo(self.contentView);
-            make.width.mas_greaterThanOrEqualTo(8.0f);
+            make.width.mas_greaterThanOrEqualTo(15.0f);
             make.height.mas_greaterThanOrEqualTo(30.0f);
         }];
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -56,6 +56,15 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     NSString *text = change[NSKeyValueChangeNewKey];
     self.lineView.hidden = !SG_IsStrEmpty(text);
+    if (SG_IsStrEmpty(text)) {
+        [self.textLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_greaterThanOrEqualTo(15.0f);
+        }];
+    } else {
+        [self.textLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_greaterThanOrEqualTo(5.0f);
+        }];
+    }
 }
 
 - (void)dealloc {
@@ -86,8 +95,8 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
         
         [self addSubview:self.deleteButton];
         [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.collectionView.mas_right).offset(10.0f);
-            make.size.mas_equalTo(CGSizeMake(30.0f, 30.0f));
+            make.left.equalTo(self.collectionView.mas_right);
+            make.size.mas_equalTo(CGSizeMake(25.0f, 25.0f));
             make.centerY.equalTo(self.mas_centerY);
         }];
     }
@@ -117,19 +126,23 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
     CGSize contentSize = self.collectionView.collectionViewLayout.collectionViewContentSize;
     self.collectionView.contentSize = contentSize;
     
-    CGFloat collectionViewWidth = MIN(self.collectionView.contentSize.width + 20, CGRectGetWidth(self.bounds) - 40.0f);
-    CGFloat collectionViewX = (CGRectGetWidth(self.bounds) - (collectionViewWidth + 40.0f)) / 2;
+    CGFloat collectionViewWidth = MIN(self.collectionView.contentSize.width, CGRectGetWidth(self.bounds) - 25.0f);
+    CGFloat collectionViewX = (CGRectGetWidth(self.bounds) - (collectionViewWidth + 25.0f)) / 2;
     CGRect collectionViewRect = self.collectionView.frame;
     collectionViewRect.size.width = collectionViewWidth;
     collectionViewRect.origin.x = collectionViewX;
     self.collectionView.frame = collectionViewRect;
     
     if (self.answerArrays.count > 0) {
-        NSInteger section = self.answerArrays.count - 1;
-        NSInteger row = [self.answerArrays[self.answerArrays.count - 1] count] - 1;
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-//        [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
         [self.collectionView scrollRectToVisible:CGRectMake(contentSize.width - 1, 0, 1.0, contentSize.height) animated:YES];
+        
+        __weak typeof(self) weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSInteger section = weakSelf.answerArrays.count - 1;
+            NSInteger row = [weakSelf.answerArrays[weakSelf.answerArrays.count - 1] count] - 1;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+            [weakSelf.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+        });
     }
 }
 
@@ -231,7 +244,7 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
         _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 10);
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 1);
         [_collectionView registerClass:[SGVocabularySpellingCell class] forCellWithReuseIdentifier:SGVocabularySpellingCellIdentifier];
     }
     return _collectionView;
