@@ -1,0 +1,58 @@
+PODS:
+  - Masonry (1.1.0)
+  - SGTools (1.2.1):
+    - SGTools/SGAudioPlayer (= 1.2.1)
+    - SGTools/SGCollectionViewFlowLayout (= 1.2.1)
+    - SGTools/SGGradientProgress (= 1.2.1)
+    - SGTools/SGPickerView (= 1.2.1)
+    - SGTools/SGSearchController (= 1.2.1)
+    - SGTools/SGShadowView (= 1.2.1)
+    - SGTools/SGSingleAudioPlayer (= 1.2.1)
+    - SGTools/SGSpeechSynthesizer (= 1.2.1)
+    - SGTools/SGTriangleView (= 1.2.1)
+    - SGTools/SGVideoPlayer (= 1.2.1)
+    - SGTools/SGVocabularyDictation (= 1.2.1)
+    - SGTools/SGVoiceAnimationView (= 1.2.1)
+  - SGTools/SGAudioPlayer (1.2.1)
+  - SGTools/SGCollectionViewFlowLayout (1.2.1)
+  - SGTools/SGGradientProgress (1.2.1)
+  - SGTools/SGPickerView (1.2.1):
+    - SGTools/SGPickerView/SGAddressPickerView (= 1.2.1)
+    - SGTools/SGPickerView/SGBase (= 1.2.1)
+    - SGTools/SGPickerView/SGDatePickerView (= 1.2.1)
+    - SGTools/SGPickerView/SGStringPickerView (= 1.2.1)
+  - SGTools/SGPickerView/SGAddressPickerView (1.2.1):
+    - SGTools/SGPickerView/SGBase
+  - SGTools/SGPickerView/SGBase (1.2.1)
+  - SGTools/SGPickerView/SGDatePickerView (1.2.1):
+    - SGTools/SGPickerView/SGBase
+  - SGTools/SGPickerView/SGStringPickerView (1.2.1):
+    - SGTools/SGPickerView/SGBase
+  - SGTools/SGSearchController (1.2.1)
+  - SGTools/SGShadowView (1.2.1)
+  - SGTools/SGSingleAudioPlayer (1.2.1)
+  - SGTools/SGSpeechSynthesizer (1.2.1)
+  - SGTools/SGTriangleView (1.2.1)
+  - SGTools/SGVideoPlayer (1.2.1)
+  - SGTools/SGVocabularyDictation (1.2.1):
+    - Masonry
+  - SGTools/SGVoiceAnimationView (1.2.1)
+
+DEPENDENCIES:
+  - SGTools (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+
+EXTERNAL SOURCES:
+  SGTools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SGTools: 39ee18c0a1e8eebddbd388dbe2ce00db8b9eed5d
+
+PODFILE CHECKSUM: b8d8efa663b898bca68457801847821365b31524
+
+COCOAPODS: 1.7.5

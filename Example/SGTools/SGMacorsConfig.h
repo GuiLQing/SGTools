@@ -18,14 +18,6 @@
 #define SGLog(...) {}
 #endif
 
-static inline void SGGLog(NSString *sg_format, ...) {
-    va_list args;
-    va_start(args, sg_format);
-    NSString *format = [NSString stringWithFormat:@"\n文件名 : %s\n 函数名 : %s\n 行号 : %d\n%@",  __FILE__, __FUNCTION__, __LINE__, sg_format];
-    NSLogv(format, args);
-    va_end(args);
-}
-
 static inline BOOL SG_IS_IPHONE_X() {
     BOOL iPhoneX = NO;
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
@@ -41,7 +33,7 @@ static inline BOOL SG_IS_IPHONE_X() {
 }
 
 /** 处理带有中文的图片链接utf8编码，使用了正则表达式判断，如果没有中文则原样返回 */
-static inline NSString * SG_HandleImageUrl(NSString *urlString) {
+static inline NSString * _Nonnull SG_HandleImageUrl(NSString * _Nonnull urlString) {
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[\u4e00-\u9fa5]" options:NSRegularExpressionCaseInsensitive error:&error];
     if (!error) {
@@ -55,51 +47,72 @@ static inline NSString * SG_HandleImageUrl(NSString *urlString) {
     return urlString;
 }
 
-static inline void SG_GetMIMITypeFromNSULRSession(NSURL *url, void (^callback)(NSString *MIMEType)) {
+static inline void SG_GetVideoMIMITypeFromNSULRSession(NSURL * _Nonnull url, void (^ _Nullable callback)(NSString * _Nonnull MIMEType)) {
     [[NSURLSession.sharedSession downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        callback(response.MIMEType);
+        if (callback) callback(response.MIMEType);
     }] resume];
 }
 
-static inline UIColor * SG_RGBA(NSInteger r, NSInteger g, NSInteger b, CGFloat a) {
+#pragma mark - ColorMacors
+
+static inline UIColor * _Nonnull SG_RGBA(NSInteger r, NSInteger g, NSInteger b, CGFloat a) {
     return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a];
 }
 
-static inline UIColor * SG_RGB(NSInteger r, NSInteger g, NSInteger b) {
+static inline UIColor * _Nonnull SG_RGB(NSInteger r, NSInteger g, NSInteger b) {
     return SG_RGBA(r, g, b, 1.0f);
 }
 
-static inline UIColor * SG_HexColorA(NSInteger c, CGFloat a) {
+static inline UIColor * _Nonnull SG_HexColorA(NSInteger c, CGFloat a) {
     return [UIColor colorWithRed:((c>>16)&0xFF)/255.0f green:((c>>8)&0xFF)/255.0f blue:(c&0xFF)/255.0f alpha:a];
 }
 
-static inline UIColor * SG_HexColor(NSInteger c) {
+static inline UIColor * _Nonnull SG_HexColor(NSInteger c) {
     return SG_HexColorA(c, 1.0f);
 }
 
-static inline UIColor * SG_HexColorString(NSString *rgbValue) {
+static inline UIColor * _Nonnull SG_HexColorString(NSString * _Nonnull rgbValue) {
     rgbValue = [rgbValue stringByReplacingOccurrencesOfString:@"#" withString:@""];
     return [UIColor colorWithRed:((float)((strtoul(rgbValue.UTF8String, 0, 16) & 0xFF0000) >> 16))/255.0 green:((float)((strtoul((rgbValue).UTF8String, 0, 16) & 0xFF00) >> 8))/255.0 blue:((float)(strtoul((rgbValue).UTF8String, 0, 16) & 0xFF))/255.0 alpha:1.0];
 }
 
-static inline UIFont * SG_FontSize(CGFloat size) {
+#pragma mark - FontMacors
+
+static inline UIFont * _Nonnull SG_FontSize(CGFloat size) {
     return [UIFont systemFontOfSize:size];
 }
 
-static inline NSString * SG_PathTemp() {
-    return NSTemporaryDirectory();
+#pragma mark - PathMacors
+
+static inline NSString * _Nonnull SG_AppendPathComponent(NSString * _Nonnull path, NSString * _Nullable lastPathComponent) {
+    if (lastPathComponent && ![lastPathComponent isEqualToString:@""]) {
+        if ([lastPathComponent hasPrefix:@"/"]) {
+            path = [path stringByAppendingString:lastPathComponent];
+        } else {
+            path = [path stringByAppendingPathComponent:lastPathComponent];
+        }
+    }
+    return path;
 }
 
-static inline NSString * SG_PathDocument() {
-    return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+static inline NSString * _Nonnull SG_PathTemp(NSString * _Nullable lastPathComponent) {
+    NSString *pathTemp = NSTemporaryDirectory();
+    return SG_AppendPathComponent(pathTemp, lastPathComponent);
 }
 
-static inline NSString * SG_PathCache() {
-    return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+static inline NSString * _Nonnull SG_PathDocument(NSString * _Nullable lastPathComponent) {
+    NSString *pathDocument = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    return SG_AppendPathComponent(pathDocument, lastPathComponent);
 }
 
-static inline NSString * SG_PathLibrary() {
-    return NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+static inline NSString * _Nonnull SG_PathCache(NSString * _Nullable lastPathComponent) {
+    NSString *pathCache = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+    return SG_AppendPathComponent(pathCache, lastPathComponent);
+}
+
+static inline NSString * _Nonnull SG_PathLibraryAppend(NSString * _Nullable lastPathComponent) {
+    NSString *pathLibrary = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+    return SG_AppendPathComponent(pathLibrary, lastPathComponent);
 }
 
 #endif /* SGMacorsConfig_h */

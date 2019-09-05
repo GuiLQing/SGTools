@@ -34,7 +34,6 @@
         make.right.equalTo(self.view).offset(-40.0f);
     }];
 
-
     dicView.viewType = SGDictationViewTypeAnswer;
 //    dicView.sg_dictationVoiceDidClicked = ^(void (^ _Nonnull handleVoiceAnimation)(BOOL)) {
 //        handleVoiceAnimation(YES);
@@ -43,7 +42,10 @@
 //        });
 //    };
     
-    SGGLog(@"%@---%d---%lf", @"hahha", 555, 8293.0f);
+    
+//    SGLog(@"%@---%d---%lf", @"hahha", 555, 8293.0f);
+//
+//    NSLog(@"%@", SG_PathLibraryAppend(nil));
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
