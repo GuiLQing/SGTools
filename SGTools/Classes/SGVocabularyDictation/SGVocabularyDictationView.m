@@ -79,7 +79,7 @@
     __weak typeof(self) weakSelf = self;
     self.voiceView.voiceImageDidClicked = ^(void (^ _Nonnull handleVoiceAnimation)(BOOL)) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.sg_dictationVoiceDidClicked(handleVoiceAnimation);
+        if (strongSelf.sg_dictationVoiceDidClicked) strongSelf.sg_dictationVoiceDidClicked(handleVoiceAnimation);
     };
 }
 

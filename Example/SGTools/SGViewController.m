@@ -13,6 +13,13 @@
 #import "SGMacorsConfig.h"
 #import "SGVideoPlayer.h"
 
+static inline BOOL SG_IS_IPAD(void) {
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
+#define SG_SCREEN_WIDTH        ([UIScreen mainScreen].bounds.size.width)
+#define SG_SCREEN_HEIGHT       ([UIScreen mainScreen].bounds.size.height)
+
 @interface SGViewController ()
 
 @end
@@ -25,16 +32,17 @@
     self.view.backgroundColor = UIColor.whiteColor;
 	// Do any additional setup after loading the view, typically from a nib.
     
-    SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(40.0f, 100.0f, UIScreen.mainScreen.bounds.size.width - 80.0f, 0)];
-    dicView.vocabulary = @"words words words wordswordswordswordswordswords";
+    CGFloat dictationViewWidth = SG_IS_IPAD() ? (SG_SCREEN_WIDTH * 0.7) : (SG_SCREEN_WIDTH - 40.0f);
+    SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(20.0f, 0, dictationViewWidth, 0)];
+    dicView.vocabulary = @"words";
     [self.view addSubview:dicView];
     [dicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(100.0f);
-        make.left.equalTo(self.view).offset(40.0f);
-        make.right.equalTo(self.view).offset(-40.0f);
+        make.left.equalTo(self.view).offset(20.0f);
+        make.right.equalTo(self.view).offset(-20.0f);
     }];
 
-    dicView.viewType = SGDictationViewTypeAnswer;
+    dicView.viewType = SGDictationViewTypeVoice;
 //    dicView.sg_dictationVoiceDidClicked = ^(void (^ _Nonnull handleVoiceAnimation)(BOOL)) {
 //        handleVoiceAnimation(YES);
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

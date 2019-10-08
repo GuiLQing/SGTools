@@ -33,7 +33,7 @@
         [self.voiceLabel sizeToFit];
         [self addSubview:self.voiceLabel];
         [self.voiceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.bottom.equalTo(self);
+            make.top.right.bottom.equalTo(self);
         }];
         
         self.voiceIV = UIImageView.alloc.init;
@@ -47,8 +47,8 @@
         [self addSubview:self.voiceIV];
         [self.voiceIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(18.0f, 18.0f));
-            make.left.equalTo(self.voiceLabel.mas_right).offset(15.0f);
-            make.top.right.bottom.equalTo(self);
+            make.right.equalTo(self.voiceLabel.mas_left).offset(-5.0f);
+            make.top.left.bottom.equalTo(self);
         }];
         
         UITapGestureRecognizer *tapGR = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(voiceTapAction)];

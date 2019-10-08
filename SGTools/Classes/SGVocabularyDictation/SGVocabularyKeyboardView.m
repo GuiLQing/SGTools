@@ -133,7 +133,12 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = UICollectionViewFlowLayout.alloc.init;
-        flowLayout.itemSize = CGSizeMake((CGRectGetWidth(self.bounds) - 3 * 10) / 4, 45.0f);
+        CGFloat itemWidth = (CGRectGetWidth(self.bounds) - 3 * 10) / 4;
+        CGFloat itemHeight = itemWidth * 0.65;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            itemHeight = itemWidth * 0.45;
+        }
+        flowLayout.itemSize = CGSizeMake(itemWidth, itemHeight);
         flowLayout.minimumLineSpacing = 10.0f;
         flowLayout.minimumInteritemSpacing = 10.0f;
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 0, 10, 0);
