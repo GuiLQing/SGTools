@@ -14,7 +14,8 @@ PODS:
     - SGTools/SGVideoPlayer (= 1.2.6)
     - SGTools/SGVocabularyDictation (= 1.2.6)
     - SGTools/SGVoiceAnimationView (= 1.2.6)
-  - SGTools/SGAlertView (1.2.6)
+  - SGTools/SGAlertView (1.2.6):
+    - Masonry
   - SGTools/SGAudioPlayer (1.2.6)
   - SGTools/SGCollectionViewFlowLayout (1.2.6)
   - SGTools/SGGradientProgress (1.2.6)
@@ -53,7 +54,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SGTools: d2be0b65928b1226b68e8cdc842c9ea1392bcc1d
+  SGTools: e567e186ba89235346db5c3827144cb422207b03
 
 PODFILE CHECKSUM: b8d8efa663b898bca68457801847821365b31524
 

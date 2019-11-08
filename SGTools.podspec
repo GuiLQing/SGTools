@@ -104,6 +104,7 @@ TODO: Add long description of the pod here.
   s.subspec 'SGAlertView' do |alertView|
       alertView.source_files = 'SGTools/Classes/SGAlertView/**/*.{h,m}'
       alertView.resources = 'SGTools/Classes/SGAlertView/SGAlert.bundle'
+      alertView.dependency 'Masonry'
   end
   
 end

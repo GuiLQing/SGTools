@@ -112,7 +112,12 @@
     {
       "name": "SGAlertView",
       "source_files": "SGTools/Classes/SGAlertView/**/*.{h,m}",
-      "resources": "SGTools/Classes/SGAlertView/SGAlert.bundle"
+      "resources": "SGTools/Classes/SGAlertView/SGAlert.bundle",
+      "dependencies": {
+        "Masonry": [
+
+        ]
+      }
     }
   ]
 }
