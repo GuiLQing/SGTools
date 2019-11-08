@@ -102,6 +102,10 @@ static inline SGAlertView * SGAlertViewShow(NSString * _Nullable title, NSString
     .sg_show();
 }
 
+static inline SGAlertView * SGAlertViewNormalShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
+    return SGAlertViewShow(title, message, ensureTitle, cancelTitle, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil);
+}
+
 static inline SGAlertView * SGAlertViewLancooNormalShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
     return SGAlertViewShow(title, message, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, nil, nil, nil, ensureHandle, cancelHandle, nil);
 }
