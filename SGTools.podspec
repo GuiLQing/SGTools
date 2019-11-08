@@ -102,8 +102,8 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'SGAlertView' do |alertView|
-      searchController.source_files = 'SGTools/Classes/SGAlertView/**/*.{h,m}'
-      searchController.resources = 'SGTools/Classes/SGAlertView/SGAlert.bundle'
+      alertView.source_files = 'SGTools/Classes/SGAlertView/**/*.{h,m}'
+      alertView.resources = 'SGTools/Classes/SGAlertView/SGAlert.bundle'
   end
   
 end

@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "SGAlertView.h"
 #import "SGAudioPlayer.h"
 #import "SGCollectionViewFlowLayout.h"
 #import "SGGradientProgress.h"

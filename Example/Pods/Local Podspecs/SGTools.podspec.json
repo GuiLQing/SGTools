@@ -1,6 +1,6 @@
 {
   "name": "SGTools",
-  "version": "1.2.1",
+  "version": "1.2.6",
   "summary": "A short description of SGTools.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/GuiLQing/SGTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/GuiLQing/SGTools.git",
-    "tag": "1.2.1"
+    "tag": "1.2.6"
   },
   "platforms": {
     "ios": "9.0"
@@ -108,6 +108,11 @@
 
         ]
       }
+    },
+    {
+      "name": "SGAlertView",
+      "source_files": "SGTools/Classes/SGAlertView/**/*.{h,m}",
+      "resources": "SGTools/Classes/SGAlertView/SGAlert.bundle"
     }
   ]
 }

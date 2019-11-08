@@ -12,6 +12,7 @@
 #import "SGSearchController.h"
 #import "SGMacorsConfig.h"
 #import "SGVideoPlayer.h"
+#import "SGAlertView.h"
 
 static inline BOOL SG_IS_IPAD(void) {
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -32,17 +33,17 @@ static inline BOOL SG_IS_IPAD(void) {
     self.view.backgroundColor = UIColor.whiteColor;
 	// Do any additional setup after loading the view, typically from a nib.
     
-    CGFloat dictationViewWidth = SG_IS_IPAD() ? (SG_SCREEN_WIDTH * 0.7) : (SG_SCREEN_WIDTH - 40.0f);
-    SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(20.0f, 0, dictationViewWidth, 0)];
-    dicView.vocabulary = @"words";
-    [self.view addSubview:dicView];
-    [dicView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(100.0f);
-        make.left.equalTo(self.view).offset(20.0f);
-        make.right.equalTo(self.view).offset(-20.0f);
-    }];
-
-    dicView.viewType = SGDictationViewTypeVoice;
+//    CGFloat dictationViewWidth = SG_IS_IPAD() ? (SG_SCREEN_WIDTH * 0.7) : (SG_SCREEN_WIDTH - 40.0f);
+//    SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(20.0f, 0, dictationViewWidth, 0)];
+//    dicView.vocabulary = @"words";
+//    [self.view addSubview:dicView];
+//    [dicView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view).offset(100.0f);
+//        make.left.equalTo(self.view).offset(20.0f);
+//        make.right.equalTo(self.view).offset(-20.0f);
+//    }];
+//
+//    dicView.viewType = SGDictationViewTypeVoice;
 //    dicView.sg_dictationVoiceDidClicked = ^(void (^ _Nonnull handleVoiceAnimation)(BOOL)) {
 //        handleVoiceAnimation(YES);
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -59,6 +60,10 @@ static inline BOOL SG_IS_IPAD(void) {
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    SGSearchController *searchVC = [[SGSearchController alloc] initWithDefaultText:@"" placeholderText:@"hahaha" historySaveKey:@""];
 //    [self.navigationController pushViewController:searchVC animated:YES];
+    
+    SGAlertViewLancooNormalShow(@"温馨提示", @"      您可以通过课前预习、课后作业、测试及做习题等其他途径，提高掌握的词汇数量。", @"确定", nil, ^(void) {
+        NSLog(@"确定");
+    }, nil);
 }
 
 - (void)didReceiveMemoryWarning
