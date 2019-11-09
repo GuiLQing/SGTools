@@ -8,6 +8,7 @@
 
 #import "SGAlertView.h"
 #import <Masonry/Masonry.h>
+#import "SGCheckBox.h"
 
 static NSInteger const SGAlertEnsureTag = 1573117264;
 static NSInteger const SGAlertCancelTag = 1573117265;
@@ -109,6 +110,83 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     return alertTitle;
 }
 
+@interface SGAlertNoLongerItem : UIView
+
+@property (nonatomic, strong) SGCheckBox *checkBox;
+
+@property (nonatomic, strong) UILabel *textLabel;
+
+@property (nonatomic, assign) BOOL selected;
+
+@property (nonatomic, copy) void (^itemDidClicked)(BOOL selected);
+
+@end
+
+@implementation SGAlertNoLongerItem
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupSubviews];
+        
+        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAction)];
+        [self addGestureRecognizer:tapGR];
+    }
+    return self;
+}
+
+- (void)setupSubviews {
+    self.textLabel = [[UILabel alloc] init];
+    self.textLabel.font = SGAlertFontDynamicSize(14.0f);
+    self.textLabel.text = @"不再提示";
+    self.textLabel.textAlignment = NSTextAlignmentCenter;
+    self.textLabel.textColor = SGAlertHexColor(0x989898);
+    self.textLabel.numberOfLines = 1;
+    [self addSubview:self.textLabel];
+    [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_greaterThanOrEqualTo(self.mas_top).offset(5.0f);
+        make.bottom.mas_lessThanOrEqualTo(self.mas_bottom).offset(-5.0f);
+        make.right.mas_lessThanOrEqualTo(self.mas_right).offset(-5.0f);
+    }];
+    
+    self.checkBox = [[SGCheckBox alloc] init];
+    self.checkBox.onAnimationType = SGAnimationTypeStroke;
+    self.checkBox.offAnimationType = SGAnimationTypeBounce;
+    self.checkBox.boxType = SGBoxTypeSquare;
+    self.checkBox.lineWidth = 1.0f;
+    self.checkBox.animationDuration = 0.2;
+    self.checkBox.tintColor = SGAlertHexColor(0xff6600);
+    self.checkBox.onTintColor = SGAlertHexColor(0xff6600);
+    self.checkBox.onFillColor = [UIColor clearColor];
+    self.checkBox.onCheckColor = SGAlertHexColor(0xff6600);
+    self.checkBox.userInteractionEnabled = NO;
+    [self addSubview:self.checkBox];
+    [self.checkBox mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.textLabel.mas_top);
+        make.bottom.equalTo(self.textLabel.mas_bottom);
+        make.left.mas_greaterThanOrEqualTo(self.mas_left).offset(5.0f);
+        make.right.mas_lessThanOrEqualTo(self.textLabel.mas_left).offset(-5.0f);
+        make.width.equalTo(self.checkBox.mas_height);
+    }];
+}
+
+- (void)setSelected:(BOOL)selected {
+    _selected = selected;
+    
+    [self.checkBox setOn:selected animated:YES];
+}
+
+- (void)clickAction {
+    self.selected = !_selected;
+    
+    if (self.itemDidClicked) {
+        self.itemDidClicked(_selected);
+    }
+}
+
+@end
+
 @interface SGAlertView ()
 
 @property (nonatomic, strong) UIWindow *window;
@@ -119,13 +197,21 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 
 @property (nonatomic, strong) UIView *contentView;
 
+@property (nonatomic, strong) UIImageView *tipsIV;
+
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @property (nonatomic, strong) UILabel *messageLabel;
 
+@property (nonatomic, strong) UIView *customContentView;
+
 @property (nonatomic, strong) NSString *title;
 
+@property (nonatomic, strong) NSAttributedString *attributedTitle;
+
 @property (nonatomic, strong) NSString *message;
+
+@property (nonatomic, strong) NSAttributedString *attributedMessage;
 
 @property (nonatomic, strong) NSString *ensureTitle;
 
@@ -135,13 +221,13 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 
 @property (nonatomic, strong) UIImage *tipsImage;
 
-@property (nonatomic, assign) SGAlertViewImageType imageType;
-
 @property (nonatomic, strong) void (^ensureHandle)(void);
 
 @property (nonatomic, strong) void (^cancelHandle)(void);
 
 @property (nonatomic, strong) void (^otherHandle)(NSNumber *index);
+
+@property (nonatomic, strong) void (^noLongerShowHander)(BOOL selected);
 
 @property (nonatomic, strong) SGAlertTitleConfig *ensureTitleConfig;
 
@@ -150,6 +236,12 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 @property (nonatomic, strong) NSArray<SGAlertTitleConfig *> *otherTitleConfigs;
 
 @property (nonatomic, strong) NSMutableDictionary *alertItems;
+
+@property (nonatomic, assign) SGAlertViewImageType imageType;
+
+@property (nonatomic, assign) SGAlertViewCustomContentViewType customContentViewType;
+
+@property (nonatomic, strong) NSString *noLongerShowKey;
 
 @end
 
@@ -177,8 +269,8 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     _maskView.backgroundColor = UIColor.blackColor;
     [self addSubview:_maskView];
     
-    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
-    [_maskView addGestureRecognizer:tapGR];
+//    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
+//    [_maskView addGestureRecognizer:tapGR];
     
     _alertView = [[UIView alloc] init];
     [self addSubview:_alertView];
@@ -203,7 +295,18 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
         make.height.mas_greaterThanOrEqualTo(100.0f);
     }];
     
-    UIImageView *tipsIV = nil;
+    [self setupTipsImageView];
+    
+    [self setupTitleLabel];
+    
+    [self setupMessageLabel];
+    
+    [self setupCustomContentView];
+    
+    [self setupItemsContentView];
+}
+
+- (void)setupTipsImageView {
     if (_imageType != SGAlertViewImageTypeNone) {
         UIImage *tipsImage = self.tipsImage;
         if (_imageType == SGAlertViewImageTypeLancooNormal) {
@@ -212,9 +315,9 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
             tipsImage = SGAlertImage(@"sg_alert_icon_lancoo_submit");
         }
         if (!SGAlertIsEmptyObject(tipsImage)) {
-            tipsIV = [[UIImageView alloc] initWithImage:tipsImage];
-            [_alertView addSubview:tipsIV];
-            [tipsIV mas_makeConstraints:^(MASConstraintMaker *make) {
+            self.tipsIV = [[UIImageView alloc] initWithImage:tipsImage];
+            [_alertView addSubview:self.tipsIV];
+            [self.tipsIV mas_makeConstraints:^(MASConstraintMaker *make) {
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ||
                     self.imageType == SGAlertViewImageTypeLancooNormal ||
                     self.imageType == SGAlertViewImageTypeLancooSubmit) {
@@ -222,7 +325,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
                 } else {
                     make.width.mas_equalTo(120.0f);
                 }
-                make.height.equalTo(tipsIV.mas_width).multipliedBy(tipsImage.size.height / tipsImage.size.width);
+                make.height.equalTo(self.tipsIV.mas_width).multipliedBy(tipsImage.size.height / tipsImage.size.width);
                 make.top.mas_greaterThanOrEqualTo(self.alertView.mas_top);
                 if (self.imageType == SGAlertViewImageTypeLancooSubmit) {
                     make.centerX.equalTo(self.alertView.mas_centerX).offset(20.0f);
@@ -234,17 +337,23 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
             }];
         }
     }
-    
+}
+
+- (void)setupTitleLabel {
     UILabel *titleLabel = [[UILabel alloc] init];
     self.titleLabel = titleLabel;
-    titleLabel.attributedText = SGAlertAttributedString(self.title);
+    if (!SGAlertIsEmptyString(self.attributedTitle.string)) {
+        titleLabel.attributedText = self.attributedTitle;
+    } else {
+        titleLabel.attributedText = SGAlertAttributedString(self.title);
+    }
     titleLabel.textColor = SGAlertHexColor(0x252525);
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.numberOfLines = 0;
     titleLabel.font = SGAlertFontDynamicSize(18.0f);
     [_contentView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (!SGAlertIsEmptyObject(tipsIV)) {
+        if (!SGAlertIsEmptyObject(self.tipsIV)) {
             if (self.imageType == SGAlertViewImageTypeLancooSubmit) {
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                     make.top.equalTo(self.contentView.mas_top).offset(50.0f);
@@ -269,10 +378,16 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
         make.left.mas_greaterThanOrEqualTo(self.contentView.mas_left).offset(40.0f);
         make.right.mas_lessThanOrEqualTo(self.contentView.mas_right).offset(-40.0f);
     }];
-    
+}
+
+- (void)setupMessageLabel {
     UILabel *messageLabel = [[UILabel alloc] init];
     self.messageLabel = messageLabel;
-    messageLabel.attributedText = SGAlertAttributedString(self.message);
+    if (!SGAlertIsEmptyString(self.attributedMessage.string)) {
+        messageLabel.attributedText = self.attributedMessage;
+    } else {
+        messageLabel.attributedText = SGAlertAttributedString(self.message);
+    }
     messageLabel.textColor = SGAlertHexColor(0x656565);
     messageLabel.textAlignment = NSTextAlignmentLeft;
     messageLabel.numberOfLines = 0;
@@ -280,16 +395,47 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     [_contentView addSubview:messageLabel];
     [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            make.top.equalTo(titleLabel.mas_bottom).offset(30.0f);
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(30.0f);
         } else {
-            make.top.equalTo(titleLabel.mas_bottom).offset(20.0f);
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(20.0f);
         }
         make.centerX.equalTo(self.contentView.mas_centerX);
         make.left.mas_greaterThanOrEqualTo(self.contentView.mas_left).offset(40.0f);
         make.right.mas_lessThanOrEqualTo(self.contentView.mas_right).offset(-40.0f);
     }];
-    
-    [self setupItemsContentView];
+}
+
+- (void)setupCustomContentView {
+    if (_customContentViewType != SGAlertViewCustomContentViewTypeNone) {
+        self.customContentView = [[UIView alloc] init];
+        [_contentView addSubview:self.customContentView];
+        [self.customContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                make.top.equalTo(self.messageLabel.mas_bottom).offset(20.0f);
+            } else {
+                make.top.equalTo(self.messageLabel.mas_bottom).offset(10.0f);
+            }
+            make.centerX.equalTo(self.contentView.mas_centerX);
+            make.left.mas_greaterThanOrEqualTo(self.contentView.mas_left);
+            make.bottom.mas_lessThanOrEqualTo(self.contentView.mas_bottom);
+            make.right.mas_lessThanOrEqualTo(self.contentView.mas_right);
+        }];
+        
+        if (_customContentViewType == SGAlertViewCustomContentViewTypeNoLongerShow) {
+            SGAlertNoLongerItem *noLongerItem = [[SGAlertNoLongerItem alloc] init];
+            __weak typeof(self) weakSelf = self;
+            noLongerItem.itemDidClicked = ^(BOOL selected) {
+                if (self.noLongerShowHander) self.noLongerShowHander(selected);
+                if (!SGAlertIsEmptyString(self.noLongerShowKey)) {
+                    [NSUserDefaults.standardUserDefaults setBool:selected forKey:weakSelf.noLongerShowKey];
+                }
+            };
+            [_customContentView addSubview:noLongerItem];
+            [noLongerItem mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.customContentView);
+            }];
+        }
+    }
 }
 
 - (void)setupItemsContentView {
@@ -309,10 +455,18 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     UIView *itemsContentView = [[UIView alloc] init];
     [_contentView addSubview:itemsContentView];
     [itemsContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            make.top.equalTo(self.messageLabel.mas_bottom).offset(40.0f);
+        if (!SGAlertIsEmptyObject(self.customContentView)) {
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                make.top.equalTo(self.customContentView.mas_bottom).offset(20.0f);
+            } else {
+                make.top.equalTo(self.customContentView.mas_bottom).offset(10.0f);
+            }
         } else {
-            make.top.equalTo(self.messageLabel.mas_bottom).offset(20.0f);
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                make.top.equalTo(self.messageLabel.mas_bottom).offset(40.0f);
+            } else {
+                make.top.equalTo(self.messageLabel.mas_bottom).offset(20.0f);
+            }
         }
         make.centerX.equalTo(self.contentView.mas_centerX);
         make.left.mas_greaterThanOrEqualTo(self.contentView.mas_left);
@@ -321,7 +475,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     }];
     
     if (!SGAlertIsEmptyArray(itemTitles)) {
-        _alertItems = [NSMutableDictionary dictionary];
+        self.alertItems = [NSMutableDictionary dictionary];
         NSMutableArray *items = [NSMutableArray array];
         for (SGAlertTitle *itemTitle in itemTitles) {
             UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -331,7 +485,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
             [item addTarget:self action:@selector(itemAction:) forControlEvents:UIControlEventTouchUpInside];
             [itemsContentView addSubview:item];
             [items addObject:item];
-            [_alertItems setObject:item forKey:[NSIndexPath indexPathWithIndex:itemTitle.titleTag]];
+            [self.alertItems setObject:item forKey:[NSIndexPath indexPathWithIndex:itemTitle.titleTag]];
         }
         
         if (items.count == 1) {
@@ -392,7 +546,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 
 - (void)updateAlertTitles:(NSArray *)itemTitles {
     for (SGAlertTitle *itemTitle in itemTitles) {
-        UIButton *item = [_alertItems objectForKey:[NSIndexPath indexPathWithIndex:itemTitle.titleTag]];
+        UIButton *item = [self.alertItems objectForKey:[NSIndexPath indexPathWithIndex:itemTitle.titleTag]];
         SGAlertTitleConfig *config = itemTitle.titleConfig;
         if (item && !SGAlertIsEmptyObject(config)) {
             if (!SGAlertIsEmptyObject(config.font)) {
@@ -430,6 +584,12 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 }
 
 - (void)show {
+    if (self.customContentViewType == SGAlertViewCustomContentViewTypeNoLongerShow &&
+        !SGAlertIsEmptyString(self.noLongerShowKey) &&
+        [NSUserDefaults.standardUserDefaults boolForKey:self.noLongerShowKey]) {
+        return;
+    }
+    
     [self setupSubviews];
     [self.window addSubview:self];
     self.maskView.alpha = 0.0f;
@@ -469,9 +629,23 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     };
 }
 
+- (SGAlertView * (^)(NSAttributedString * _Nullable attributedTitle))sg_attributedTitle {
+    return ^(NSAttributedString * _Nullable attributedTitle) {
+        self.attributedTitle = attributedTitle;
+        return self;
+    };
+}
+
 - (SGAlertView * (^)(NSString * _Nullable message))sg_message {
     return ^(NSString * _Nullable message) {
         self.message = message;
+        return self;
+    };
+}
+
+- (SGAlertView * (^)(NSAttributedString * _Nullable attributedMessage))sg_attributedMessage {
+    return ^(NSAttributedString * _Nullable attributedMessage) {
+        self.attributedMessage = attributedMessage;
         return self;
     };
 }
@@ -549,6 +723,34 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 - (SGAlertView * (^)(UIImage * _Nullable tipsImage))sg_tipsImage {
     return ^(UIImage * _Nullable tipsImage) {
         self.tipsImage = tipsImage;
+        return self;
+    };
+}
+
+- (SGAlertView * (^)(NSNumber * _Nullable customContentViewType))sg_customContentViewType {
+    return ^(NSNumber * _Nullable customContentViewType) {
+        self.customContentViewType = customContentViewType.integerValue;
+        return self;
+    };
+}
+
+- (SGAlertView * (^)(void (^ _Nullable sg_customContentView)(UIView *customContentView)))sg_customContentView {
+    return ^(void (^ _Nullable sg_customContentView)(UIView *customContentView)) {
+        if (sg_customContentView) sg_customContentView(self.customContentView);
+        return self;
+    };
+}
+
+- (SGAlertView * (^)(NSString * _Nullable noLongerShowKey))sg_noLongerShowKey {
+    return ^(NSString * _Nullable noLongerShowKey) {
+        self.noLongerShowKey = noLongerShowKey;
+        return self;
+    };
+}
+
+- (SGAlertView * (^)(void (^ _Nullable noLongerShowHandle)(BOOL selected)))sg_noLongerShowHandle {
+    return ^(void (^ _Nullable noLongerShowHandle)(BOOL selected)) {
+        if (noLongerShowHandle) self.noLongerShowHander = noLongerShowHandle;
         return self;
     };
 }

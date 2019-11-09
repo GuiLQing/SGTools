@@ -12,6 +12,10 @@
 
 #import "SGAlertView.h"
 #import "SGAudioPlayer.h"
+#import "SGAnimationManager.h"
+#import "SGCheckBox.h"
+#import "SGCheckBoxGroup.h"
+#import "SGPathManager.h"
 #import "SGCollectionViewFlowLayout.h"
 #import "SGGradientProgress.h"
 #import "SGPickerView.h"

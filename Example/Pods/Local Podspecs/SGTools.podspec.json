@@ -1,6 +1,6 @@
 {
   "name": "SGTools",
-  "version": "1.2.6",
+  "version": "1.2.8",
   "summary": "A short description of SGTools.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/GuiLQing/SGTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/GuiLQing/SGTools.git",
-    "tag": "1.2.6"
+    "tag": "1.2.8"
   },
   "platforms": {
     "ios": "9.0"
@@ -110,11 +110,18 @@
       }
     },
     {
+      "name": "SGCheckBox",
+      "source_files": "SGTools/Classes/SGCheckBox/**/*.{h,m}"
+    },
+    {
       "name": "SGAlertView",
       "source_files": "SGTools/Classes/SGAlertView/**/*.{h,m}",
       "resources": "SGTools/Classes/SGAlertView/SGAlert.bundle",
       "dependencies": {
         "Masonry": [
+
+        ],
+        "SGTools/SGCheckBox": [
 
         ]
       }

@@ -1,45 +1,48 @@
 PODS:
   - Masonry (1.1.0)
-  - SGTools (1.2.6):
-    - SGTools/SGAlertView (= 1.2.6)
-    - SGTools/SGAudioPlayer (= 1.2.6)
-    - SGTools/SGCollectionViewFlowLayout (= 1.2.6)
-    - SGTools/SGGradientProgress (= 1.2.6)
-    - SGTools/SGPickerView (= 1.2.6)
-    - SGTools/SGSearchController (= 1.2.6)
-    - SGTools/SGShadowView (= 1.2.6)
-    - SGTools/SGSingleAudioPlayer (= 1.2.6)
-    - SGTools/SGSpeechSynthesizer (= 1.2.6)
-    - SGTools/SGTriangleView (= 1.2.6)
-    - SGTools/SGVideoPlayer (= 1.2.6)
-    - SGTools/SGVocabularyDictation (= 1.2.6)
-    - SGTools/SGVoiceAnimationView (= 1.2.6)
-  - SGTools/SGAlertView (1.2.6):
+  - SGTools (1.2.8):
+    - SGTools/SGAlertView (= 1.2.8)
+    - SGTools/SGAudioPlayer (= 1.2.8)
+    - SGTools/SGCheckBox (= 1.2.8)
+    - SGTools/SGCollectionViewFlowLayout (= 1.2.8)
+    - SGTools/SGGradientProgress (= 1.2.8)
+    - SGTools/SGPickerView (= 1.2.8)
+    - SGTools/SGSearchController (= 1.2.8)
+    - SGTools/SGShadowView (= 1.2.8)
+    - SGTools/SGSingleAudioPlayer (= 1.2.8)
+    - SGTools/SGSpeechSynthesizer (= 1.2.8)
+    - SGTools/SGTriangleView (= 1.2.8)
+    - SGTools/SGVideoPlayer (= 1.2.8)
+    - SGTools/SGVocabularyDictation (= 1.2.8)
+    - SGTools/SGVoiceAnimationView (= 1.2.8)
+  - SGTools/SGAlertView (1.2.8):
     - Masonry
-  - SGTools/SGAudioPlayer (1.2.6)
-  - SGTools/SGCollectionViewFlowLayout (1.2.6)
-  - SGTools/SGGradientProgress (1.2.6)
-  - SGTools/SGPickerView (1.2.6):
-    - SGTools/SGPickerView/SGAddressPickerView (= 1.2.6)
-    - SGTools/SGPickerView/SGBase (= 1.2.6)
-    - SGTools/SGPickerView/SGDatePickerView (= 1.2.6)
-    - SGTools/SGPickerView/SGStringPickerView (= 1.2.6)
-  - SGTools/SGPickerView/SGAddressPickerView (1.2.6):
+    - SGTools/SGCheckBox
+  - SGTools/SGAudioPlayer (1.2.8)
+  - SGTools/SGCheckBox (1.2.8)
+  - SGTools/SGCollectionViewFlowLayout (1.2.8)
+  - SGTools/SGGradientProgress (1.2.8)
+  - SGTools/SGPickerView (1.2.8):
+    - SGTools/SGPickerView/SGAddressPickerView (= 1.2.8)
+    - SGTools/SGPickerView/SGBase (= 1.2.8)
+    - SGTools/SGPickerView/SGDatePickerView (= 1.2.8)
+    - SGTools/SGPickerView/SGStringPickerView (= 1.2.8)
+  - SGTools/SGPickerView/SGAddressPickerView (1.2.8):
     - SGTools/SGPickerView/SGBase
-  - SGTools/SGPickerView/SGBase (1.2.6)
-  - SGTools/SGPickerView/SGDatePickerView (1.2.6):
+  - SGTools/SGPickerView/SGBase (1.2.8)
+  - SGTools/SGPickerView/SGDatePickerView (1.2.8):
     - SGTools/SGPickerView/SGBase
-  - SGTools/SGPickerView/SGStringPickerView (1.2.6):
+  - SGTools/SGPickerView/SGStringPickerView (1.2.8):
     - SGTools/SGPickerView/SGBase
-  - SGTools/SGSearchController (1.2.6)
-  - SGTools/SGShadowView (1.2.6)
-  - SGTools/SGSingleAudioPlayer (1.2.6)
-  - SGTools/SGSpeechSynthesizer (1.2.6)
-  - SGTools/SGTriangleView (1.2.6)
-  - SGTools/SGVideoPlayer (1.2.6)
-  - SGTools/SGVocabularyDictation (1.2.6):
+  - SGTools/SGSearchController (1.2.8)
+  - SGTools/SGShadowView (1.2.8)
+  - SGTools/SGSingleAudioPlayer (1.2.8)
+  - SGTools/SGSpeechSynthesizer (1.2.8)
+  - SGTools/SGTriangleView (1.2.8)
+  - SGTools/SGVideoPlayer (1.2.8)
+  - SGTools/SGVocabularyDictation (1.2.8):
     - Masonry
-  - SGTools/SGVoiceAnimationView (1.2.6)
+  - SGTools/SGVoiceAnimationView (1.2.8)
 
 DEPENDENCIES:
   - SGTools (from `../`)
@@ -54,7 +57,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SGTools: e567e186ba89235346db5c3827144cb422207b03
+  SGTools: 531e9284cd2b8c736049d8fcc846923018dbb41d
 
 PODFILE CHECKSUM: b8d8efa663b898bca68457801847821365b31524
 

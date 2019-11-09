@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.2.7'
+  s.version          = '1.2.8'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -101,10 +101,15 @@ TODO: Add long description of the pod here.
       vocabularyDictation.dependency 'Masonry'
   end
   
+  s.subspec 'SGCheckBox' do |checkBox|
+      checkBox.source_files = 'SGTools/Classes/SGCheckBox/**/*.{h,m}'
+  end
+  
   s.subspec 'SGAlertView' do |alertView|
       alertView.source_files = 'SGTools/Classes/SGAlertView/**/*.{h,m}'
       alertView.resources = 'SGTools/Classes/SGAlertView/SGAlert.bundle'
       alertView.dependency 'Masonry'
+      alertView.dependency 'SGTools/SGCheckBox'
   end
   
 end
