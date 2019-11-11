@@ -71,13 +71,17 @@
     [self.lookAnswerBtn setTitle:@"查看答案" forState:UIControlStateSelected];
     [self.lookAnswerBtn setImage:[UIImage sg_imageNamed:@"sg_dictation_icon_lookAnswer_down"] forState:UIControlStateNormal];
     [self.lookAnswerBtn setImage:[UIImage sg_imageNamed:@"sg_dictation_icon_lookAnswer_up"] forState:UIControlStateSelected];
-    self.lookAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.lookAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    } else {
+        self.lookAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    }
     [self.lookAnswerBtn setTitleColor:SG_HexColor(0x0baffb) forState:UIControlStateNormal];
     [self.lookAnswerBtn setTitleColor:SG_HexColor(0x0baffb) forState:UIControlStateSelected];
     
-    CGFloat spacing = 5.0f;
+    CGFloat spacing = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 10.0 : 5.0f;
     CGFloat imageHeight = self.lookAnswerBtn.imageView.image.size.height;
-    CGFloat labelWidth = [self.lookAnswerBtn.currentTitle sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14.0f]}].width;
+    CGFloat labelWidth = [self.lookAnswerBtn.currentTitle sizeWithAttributes:@{NSFontAttributeName : self.lookAnswerBtn.titleLabel.font}].width;
     self.lookAnswerBtn.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
     self.lookAnswerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageHeight + spacing/2), 0, imageHeight + spacing/2);
     
@@ -94,7 +98,7 @@
     [self addSubview:self.answerLabel];
     
     self.answerBackView = UIView.alloc.init;
-    self.answerBackView.backgroundColor = SG_HexColor(0xf5f7f9);
+    self.answerBackView.backgroundColor = SG_HexColor(0xf2f2f2);
     self.answerBackView.layer.cornerRadius = 8;
     [self insertSubview:self.answerBackView belowSubview:self.answerLabel];
     

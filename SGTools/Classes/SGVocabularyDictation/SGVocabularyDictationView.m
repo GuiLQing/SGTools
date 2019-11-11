@@ -65,7 +65,7 @@
         make.centerX.equalTo(self.mas_centerX);
     }];
     
-    CGSize keyboardViewSize = CGSizeMake(CGRectGetWidth(self.bounds) - 20.0f * 2, 175.0f);
+    CGSize keyboardViewSize = CGSizeMake(CGRectGetWidth(self.bounds) - 20.0f * 2, UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 220.0f : 175.0f);
     self.keyboardView = [[SGVocabularyKeyboardView alloc] initWithFrame:(CGRect){CGPointMake(20.0f, CGRectGetMaxY(self.answerView.frame) + 10.0f), keyboardViewSize}];
     self.keyboardView.delegate = self;
     [self addSubview:self.keyboardView];

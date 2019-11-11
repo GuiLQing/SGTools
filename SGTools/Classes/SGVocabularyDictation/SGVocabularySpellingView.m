@@ -26,14 +26,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.textLabel = UILabel.alloc.init;
-        self.textLabel.font = [UIFont systemFontOfSize:17.0f];
-        self.textLabel.textColor = [UIColor colorWithRed:17/255.0 green:17/255.0 blue:17/255.0 alpha:1];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.textLabel.font = [UIFont systemFontOfSize:25.0f];
+        } else {
+            self.textLabel.font = [UIFont systemFontOfSize:17.0f];
+        }
+        self.textLabel.textColor = [UIColor colorWithRed:37/255.0 green:37/255.0 blue:37/255.0 alpha:1];
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.textLabel.numberOfLines = 1;
         [self.contentView addSubview:self.textLabel];
         
         self.lineView = UIView.alloc.init;
-        self.lineView.backgroundColor = UIColor.blackColor;
+        self.lineView.backgroundColor = [UIColor colorWithRed:216/255.0 green:216/255.0 blue:216/255.0 alpha:1];
         [self.contentView addSubview:self.lineView];
         
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,7 +100,12 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
         [self addSubview:self.deleteButton];
         [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.collectionView.mas_right);
-            make.size.mas_equalTo(CGSizeMake(25.0f, 25.0f));
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                make.height.mas_equalTo(22.0f);
+            } else {
+                make.height.mas_equalTo(20.0f);
+            }
+            make.width.equalTo(self.deleteButton.mas_height).multipliedBy(43.0 / 30);
             make.centerY.equalTo(self.mas_centerY);
         }];
     }
@@ -253,7 +262,7 @@ static NSString * const SGVocabularySpellingCellIdentifier = @"SGVocabularySpell
 - (UIButton *)deleteButton {
     if (!_deleteButton) {
         _deleteButton = [[UIButton alloc] init];
-        [_deleteButton setImage:[UIImage sg_imageNamed:@"sg_dictation_icon_spelling_delete"] forState:UIControlStateNormal];
+        [_deleteButton setBackgroundImage:[UIImage sg_imageNamed:@"sg_dictation_icon_spelling_delete"] forState:UIControlStateNormal];
         [_deleteButton addTarget:self action:@selector(answerDeleteAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _deleteButton;

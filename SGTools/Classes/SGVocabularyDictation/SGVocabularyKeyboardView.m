@@ -32,11 +32,19 @@
         _keyboardLabel = UILabel.alloc.init;
         _keyboardLabel.textColor = UIColor.whiteColor;
         _keyboardLabel.textAlignment = NSTextAlignmentCenter;
-        _keyboardLabel.font = [UIFont systemFontOfSize:15.0f];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            _keyboardLabel.font = [UIFont systemFontOfSize:25.0f];
+        } else {
+            _keyboardLabel.font = [UIFont systemFontOfSize:15.0f];
+        }
         [self addSubview:_keyboardLabel];
         [_keyboardLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.equalTo(self.contentView);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10.0f);
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                make.bottom.equalTo(self.contentView.mas_bottom).offset(-15.0f);
+            } else {
+                make.bottom.equalTo(self.contentView.mas_bottom).offset(-10.0f);
+            }
         }];
     }
     return self;
@@ -136,7 +144,7 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
         CGFloat itemWidth = (CGRectGetWidth(self.bounds) - 3 * 10) / 4;
         CGFloat itemHeight = itemWidth * 0.65;
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            itemHeight = itemWidth * 0.45;
+            itemHeight = itemWidth * 0.5;
         }
         flowLayout.itemSize = CGSizeMake(itemWidth, itemHeight);
         flowLayout.minimumLineSpacing = 10.0f;
