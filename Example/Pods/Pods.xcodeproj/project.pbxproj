@@ -7,115 +7,111 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01D6352A4C187E87E532CCB3E516D6D8 /* SGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1816202225CB23B1A41E53796BFA5901 /* SGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03300296468C305909BC356A16534161 /* SGGradientProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = FE7ECEC8D76C3590B1B57CC3C031D265 /* SGGradientProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04482154FE394104C9ADEA40682D462A /* SGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD884E11F80AE5CDEEA8BD8D77680FE /* SGAlertView.m */; };
+		02CC9412C85CE8CE240AFF259703410A /* SGAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A09A196FA546673B6550796CA9984D /* SGAudioPlayer.m */; };
+		033486B410D5C66332EB9655698C186B /* SGCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = F09975772BD33761A679280F1E3744D8 /* SGCheckBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04DF40435EAC3FBC37E38D39505037C4 /* SGGradientProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9FD269E381578273AAEFFE7B6516E /* SGGradientProgress.m */; };
 		05A040F35BF1C88F869404E1A940B493 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DF48D82622C6D1FFAC5752C7BB004472 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05EA1447EEA0EB669F8DEE73964A7C60 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F20A7188ABF123273A3C22C4340688AC /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		061E692D8442AB204D0303FC8D422FE2 /* SGSearchController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A19247727FFF77E290094D550909EAA7 /* SGSearchController.bundle */; };
-		066F5C12AC814EDDDE248DD3EA696EDC /* UIImage+SGVocabularyResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D9EEC6073B8B6BF415D0249EF61630 /* UIImage+SGVocabularyResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B8C8AA634AD6E9A9B9F6D96FAA8446 /* SGAlert.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1BAE84F41B4DFAEB35A4058816D2D11 /* SGAlert.bundle */; };
+		08743F863A9FAA01FD7ECDA2019FE5C1 /* SGCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 46041A44DBA3DCD56BCC06A5DD6D6FFB /* SGCheckBoxGroup.m */; };
 		0967598607D521318F69D7D39D517B20 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 071ABA9DA4A53122DD0382E7C7F6CBEB /* ViewController+MASAdditions.m */; };
 		098630ECDB64ED7B89F5F687C82B4AC3 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BB2E40FA7314FFFF244B2FD839A658 /* NSArray+MASAdditions.m */; };
 		0AF1AD35706D90B1A91F291B899EF8C0 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD1AD2192C246BE568B6CFBA7EB9C68 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		167BD5E33F8C00C9FD6337975EB80184 /* SGSingleAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE329318421627F743BA29000FED138 /* SGSingleAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		179584126133411CA8923FE848250928 /* SGAddressModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A76BBD1946FCB7B4992FC6B5D17E238A /* SGAddressModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B450A6E2801B16BC51160898D1992C3 /* SGTriangleView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA183E21FE67A5584A81F0E7487DE479 /* SGTriangleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FC9250C6D061F936C97FE0A2B40F2C3 /* SGStringPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = F6968071F949FEC3F05B0C7FCB3AB73F /* SGStringPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		104410C78C069EB1A4511B43742B563B /* SGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01495E4CC308FDE4C0823387966DA529 /* SGDatePickerView.m */; };
+		14AA8B35E2C9BCAFD79C9B8AC87FBDF6 /* SGAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C36CE3C2D99D77C6CB6E92538769F /* SGAddressPickerView.m */; };
 		1972E85F0FCD0F3EAF28ED7CD036286E /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E476E5DC364B11085C84F8770A12FD3B /* Masonry-dummy.m */; };
-		1CBABB29CEE5B75773A06EB15C85C47B /* SGCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 991F52F1FB83D64AA9AEAFFAC50F961C /* SGCheckBox.m */; };
+		1B205817620EF701BFEA978FBA55CBE0 /* SGVocabularySpellingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C881C3910CCEB30A837C5B46EFEF36 /* SGVocabularySpellingView.m */; };
 		1D25BB212A5F14199DC3E62C96EFA79A /* Pods-SGTools_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B520B37784555D7D45481044CBD321 /* Pods-SGTools_Example-dummy.m */; };
-		1F9450A992B3C55D8849F904A88363FF /* SGSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A3FE27A6ECA2753CB98D063B7FEBEE /* SGSearchController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21D71BB03B98994F05034A3C8C0CB1B3 /* SGTriangleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A67A2B2BE6374005C1D4B8609BDDED /* SGTriangleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24E02D4A371EBDE2D91FA32FE14650A0 /* SGVocabularyVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F89A8CD194601394393AF95F41870333 /* SGVocabularyVoiceView.m */; };
-		2763E9628BE719658C0C8FDC41CE648F /* SGDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 51E5D7425F1FC9124B4338BCE72442E0 /* SGDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2790E49796F7E7659E78F640240BAD45 /* NSDate+SGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FDEFFF8B9048DC7B66AA9AA5E307E8A /* NSDate+SGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DDD1293CE7E7DC8DEE75ECD71EE7523 /* UIView+SGShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FE4123217F5EF55C735DCF6C8A9F50 /* UIView+SGShadow.m */; };
+		1F78892040A6DEA32DF06F4FE4E704E0 /* SGSearchController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7926FDEBC5C0EC3384836E71C3CC86E8 /* SGSearchController.bundle */; };
 		280D36330BAC5715615FF4A8B42D60D6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DFFE3C8ABE515058DCF105EB608F37 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		287374012C942F13C4150877B4A73AA2 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28864E3F11E1DDE7AEF55AFFD8B0FE /* Masonry.framework */; };
 		297A3627CF2F032CBFDC61D1A3786E63 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB7B80D58CFA003C25B538A405A341D /* MASViewAttribute.m */; };
-		2B13AE0EB2649E33394EA31D8F29BC08 /* SGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC0FB1023C2280A07291EBB1B3DCD5 /* SGDatePickerView.m */; };
-		2D8F09713C061CE322EC7598B8698EA0 /* SGVocabularyKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 191EEC83AD2490E0BC99A783DF5E6F79 /* SGVocabularyKeyboardView.m */; };
-		2DD5C237E3FFA80438ED0F5312E0BBFB /* SGAlert.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D7B3B256428C1B0C6BF142287045CD4 /* SGAlert.bundle */; };
-		32C598263B1C7E5F1A7C428B141945A8 /* SGAddressPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C9C092D763FDCCD0AC527BFD128F07F /* SGAddressPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29FA353C988639FBB7133B49C9E203F0 /* SGVoiceAnimationView.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5CEF90FC0505C2A9139DD5FB961BFC /* SGVoiceAnimationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E225E7DDFC766F85A2AE61C7E9D6170 /* SGSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 98F9120ED691BDC044C82F6CA308075A /* SGSearchController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F14C15F1482DD2934877A33C22897D7 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B28864E3F11E1DDE7AEF55AFFD8B0FE /* Masonry.framework */; };
+		3238DD1EC965F1F3B7C7C879F67372F9 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D8B3C7D4C3CD97107959487DF82A8 /* SGCollectionViewFlowLayout.m */; };
+		33095BF6730A5A5FC4223A7C613AE5DA /* SGShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D99EC971D2AA6D330F032C4F0B021EA5 /* SGShadowView.m */; };
 		346080C0D1CA23399ADD739D722D7CEF /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = F05C6EDBC8E4591F89BD9F1E17FBFC97 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A92E8D82DE30D8AF0E97A9F8A93D989 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D7006B1B0B95C387C497EF081991FBA /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D2B4BA29B994381F5C4041460E1E56D /* SGAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAF17D36759222D00B774F5CEF21F7 /* SGAddressPickerView.m */; };
+		3A7CB0568653A9BFAF0DC644CDDE67E8 /* SGShadowView.h in Headers */ = {isa = PBXBuildFile; fileRef = D54075D8E9785AD52A4D7CD4D4918BC9 /* SGShadowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DA5F1D8E51CDD102A871C2F37770C7B /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5718E89E4E5165AA49B980D89CBCF8 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F0D41609DE345076C7DC5B9B0E98EAF /* SGTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AD257832676E56B3F95C854337AB97 /* SGTools-dummy.m */; };
-		400A77903563BA681ADA12214E49742E /* SGAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B22B657A2898AC6D36CD716721D1043B /* SGAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B017DA02BF3A0015132F726478C9818 /* SGSpeechSynthesizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B21B648DD107364C18C47333437CDD7 /* SGSpeechSynthesizerManager.m */; };
+		42100DCBD77E5899EBFE51FE8E475DCD /* UIImage+SGVocabularyResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EED9618D1B32426D8B80C9A37F121D5 /* UIImage+SGVocabularyResource.m */; };
 		4B0981F9AC628CF5100C50FF4A163A4A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 896A4BCB5B3DBC78E1CF6EBF5AC2862F /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4DBDA7D1CB65E3E758F1947D5DC28409 /* SGPathManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EC58F421FA759C61EF6A42BBAE0C54F1 /* SGPathManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		524E209F437A22BE9DD2BAF83BEA14E2 /* SGBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307D1761069F568E059311D50A47E1B /* SGBaseView.m */; };
-		54C3385F8B20E1BBD734D341752FB6AB /* SGShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B37825A11B297F92381873AB57C9479 /* SGShadowView.m */; };
-		5D460824400E469F0156E7E012ABEDFD /* SGPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6192BB86BC504B024C7437DC8F678DD7 /* SGPathManager.m */; };
-		6340508910DACF8B05E4F364340AA514 /* SGBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83ABD8CD4A53D2FDCD8A26CDC03C3D27 /* SGBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66831C50C3DB772DF3211B49DCFFDD04 /* SGShadowView.h in Headers */ = {isa = PBXBuildFile; fileRef = A995F052A8E4A18BE7AB1D3B205A665C /* SGShadowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5926EFE4A0F906B66E737F4E33A631D2 /* SGVocabularySpellingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D36D3E12294B3BC2C1A27B7E0859DB2 /* SGVocabularySpellingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5953078B6E4DCE1AFD2915FB7BAC9CDF /* SGAddressPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8D5029AA9EAEBE0F30794C04A7E3660 /* SGAddressPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BC0486F39CC25664DD09539776CFEE5 /* SGBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FACD6FA1E6C8EE3A5516F3ECEA57321 /* SGBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CBE38D65DAE8722EF54A89F6F003F1A /* SGVocabularyDictationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB76561229FC5129385844AE831C9996 /* SGVocabularyDictationView.m */; };
+		6657860ECC679F589F793E7B593A9974 /* UIView+SGShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 45105545A7BEE315C17F22E658702056 /* UIView+SGShadow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A6AD3A5BBDBFD0B4AF936BD518EC0B1 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D4CA7B92265A15B80B1666634FF46C0 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CD21EBEBA1F73121A062D864609A63C /* SGAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BF0AED0BD34CAC6E15FE95861076AAB /* SGAnimationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72A118944EB30A2DF9CD135C1455F640 /* SGCheckBoxGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C63F5EDAB52B8DDE4CCEF14D6AE8B32 /* SGCheckBoxGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72C65CCFEC4C69DDD84D1DD3BFAD8493 /* SGTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 718117970C9EAA819230CA779A691721 /* SGTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74AB8172CAAD50AA832249632C8EBCDB /* SGVocabularyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 61553ED6EF712BC7FAEA9AACC6B9DEDE /* SGVocabularyTools.m */; };
-		77F3A78274F0B2636CB335E250028843 /* SGVocabularyTools.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEAD18E1CF3EEA809A1507AEC7C259B /* SGVocabularyTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71558DE54B141481D76F107EB1047112 /* SGVocabularyVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA29818F7BEA1B880A93E1C7A0CBF49 /* SGVocabularyVoiceView.m */; };
+		74CFBE13E7F71F0DFC11121BAB7E98D7 /* SGCheckBoxGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BBC49937A69EF6BFB842163B698A5C /* SGCheckBoxGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7795480104C7CDF1E3382FCCB06A0B07 /* SGGradientProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4162DEB60F00A747190110C75D3DE89C /* SGGradientProgress.bundle */; };
 		78B2727EE5D693F58D019DB098005101 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D9333B00F315696855ADE85C3E6D15 /* MASConstraintMaker.m */; };
-		7A21E5A4AAB36A38BF11ACDDC6ED81D0 /* SGSingleAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 12474DAC1A9DCE178AC5FFB5926A5B7E /* SGSingleAudioPlayer.m */; };
-		7AAB04748932B5DEAC352C16292ECA40 /* SGAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E02712E1BCB80972BD75FC5158E0ABFC /* SGAddressModel.m */; };
 		7BFF65958F014760B6AC4742824892EB /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B377289AFAE7DF9945B981F14B4AF95C /* MASCompositeConstraint.m */; };
-		7CB3F84E870521EDA63786B24708AFD1 /* SGVoiceAnimationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53C80DB482061CD5701AB49DC7FD34FF /* SGVoiceAnimationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D06308A7E0992993613C18414F37E7B /* SGCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A4ECA152F2A32148EBB546B01193C /* SGCheckBoxGroup.m */; };
-		812D828A13D3955C389350F3A505441B /* SGAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF694F8BC114C6299F6C77421FC358 /* SGAudioPlayer.m */; };
-		81661FBF42C9DA8F3CFFD0EE1894FA87 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DACEC1D5046121F9B99A135DCC41283 /* SGCollectionViewFlowLayout.m */; };
+		83A84407EEFDB5BBC22E792430C1748A /* SGGradientProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA4910B57145257D3452B3B071C1C9D /* SGGradientProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		853090A376AD2EC0B9EFE948A8541F05 /* SGSingleAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EE4F67C2EFF423EE2CD5104AEDA348 /* SGSingleAudioPlayer.m */; };
 		8539B851E01A58467BE49CA3FA77223C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FADB5EBFADA2A419371CF5E6C927F1E /* MASLayoutConstraint.m */; };
+		86BE9701C4225F6176BE0305C9671A9E /* SGVoiceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA36D69CA9A4D3ACB481FF966B906B /* SGVoiceAnimationView.m */; };
+		87234B72F85C392D82237D476DE2F8D9 /* SGVocabularyDictation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 749754A3D7D46B8C7CA282334D66A38E /* SGVocabularyDictation.bundle */; };
+		875D8298EC7A3B5C581EE3A831BCB1AF /* SGTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5B03D53E3A850B10B4D52AA21D0410 /* SGTriangleView.m */; };
+		8B027D6583116F777FC6932AD17FF9A8 /* SGVocabularyAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC282A7171C8D871A5B4E23BB21B09AB /* SGVocabularyAnswerView.m */; };
+		8B3F4E32DD2A43E3DCC3513F528D4C80 /* SGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E445207D7D49B80D7E100EE25772542B /* SGAlertView.m */; };
 		8B92011C9373001132C8148BFC8F50B3 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E780607D798BC01DDE3031621C51501 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D4D1F6E4709EBB13974E95DC1059DDC /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 115A4EA8F789344C790FEA5CDC507FB7 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D65CE579E516BDD5FB36CAA21D693F6 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E5709CED54C3B8DC4B50B19520F6771 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EF2ACC600762776E53D550BD859F45D /* SGVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9805473F2EDA4F414956B442CCA4B217 /* SGVideoPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93485DE5836B17CD6EFEEB1E9BFFFB11 /* SGVocabularyAnswerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBB5015207BB543940E3F2DE4367B32 /* SGVocabularyAnswerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E012E10A5954D0730221DCE614D7A90 /* NSDate+SGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 75C41A7B2E3FE921298E795D21A992FA /* NSDate+SGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F4445EEC761BB15750DA6A1405789BC /* SGPickerViewMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E1DC98AEDFCFB9D3954F66980E2E9D7 /* SGPickerViewMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90742C510F217E45C5A30DF3C885E03C /* SGAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E65C52A3E9A17B989A11F7893F1F23 /* SGAddressModel.m */; };
+		929A15B948B3EBAD8B4DD80343F6D1CE /* SGVocabularyKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 291B286671E11146B39DD752CB803389 /* SGVocabularyKeyboardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		939A7FF13251A8B36C90F472F5C427F0 /* SGPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D57467DD2236568784084E0D1A079766 /* SGPickerView.bundle */; };
 		941955A19C40899D275604E6E9C21A6D /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 130F3B92BAB28630295F57E8AAC12EA1 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		953A59086A4E03C4F062EC45D7D4CB46 /* Pods-SGTools_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 446E88E334EB69521BBAB2384A5F950C /* Pods-SGTools_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		972C76FCBEED5DD14FE6E5421287EB43 /* SGVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E3C682E2B6194D86F2BD93672B556B /* SGVideoPlayer.m */; };
+		9A09A3945C2D04B422362BB3F3CB8FE9 /* SGVocabularyVoiceView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94DE7CF6B604C25CEAEBC8A7650465E1 /* SGVocabularyVoiceView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D546E1168C04B0B2EAE005D9275D18B /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F47F5FECCA555C616F7D93D7CB4B /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1EF341669D242891AEE3A42FB6B1D9D /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B6CBAA88FA4B5A72789655AB678B89B /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A35FBEEC7D088AEC05297E8292A32C77 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7A0F064F168E6660B03C9639A19329 /* View+MASAdditions.m */; };
-		A9395CE31AF53E7487647C181B635AEB /* SGGradientProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFA1D1B9B8216620038AEDF2986AF11 /* SGGradientProgress.m */; };
-		AB269408A816329529402D910B3D4DB1 /* SGVocabularyDictationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4039F3B0CE3F9BD829142A7128D18444 /* SGVocabularyDictationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1264B7B41286895A027F3D96BD2955D /* SGStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 933D01FFF8965BA1958B1E6889AB5F91 /* SGStringPickerView.m */; };
-		B2AE3B6CDD7DAEC02BC541DEF7BDAA66 /* SGSpeechSynthesizerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D2FAA82805F6F4F6B13369D8818E7144 /* SGSpeechSynthesizerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B78B21D5A3ADC0FD52BD7BF26F0A38FB /* SGVocabularyVoiceView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4914899C40D799285BE7689770D60667 /* SGVocabularyVoiceView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A664F4A6A8AF1DD6653B09007991D70B /* SGCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F8E417B709483A730083936B438525 /* SGCheckBox.m */; };
+		AE41BA3CB7ADE0B8CBB7AE15F9DA8DFE /* SGSingleAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F8358A8D4E8FC9ED96838CC81C5EF3 /* SGSingleAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEE9CBA56D86652EA87F26FA576E27A6 /* SGVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EA3F711BA4A6E1978B3D68BC2867611 /* SGVideoPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5C3C9CB85EFA675F133242E9D5B0A4C /* SGAddressModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 960F9F0B1D48D8896907F028BA3F2EE6 /* SGAddressModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7D645EC004610E8A581E532D28771EC /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EAC4713F6B85A6124DB11F111B072 /* MASViewConstraint.m */; };
+		B923FCBFA27A2CC19122CF8362D63952 /* SGDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AE9A892CBDB6D1C974F41D1AF9B321 /* SGDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B95288D232EB854ED813D8EBDD6908C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28147EF640D73DD5BE8B797CFD199606 /* Foundation.framework */; };
-		BBAE25A9FE5E40274879A21539575726 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28147EF640D73DD5BE8B797CFD199606 /* Foundation.framework */; };
-		BE2E70C81A85E54D196103ADA4D23EA8 /* SGVocabularyDictationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F9AEADB48DFA0C345636032F0EB569 /* SGVocabularyDictationView.m */; };
+		BA826FF3641655A1C9949DA3E4C2DA83 /* SGVocabularyDictationView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5C3D8F04B552E4255E60C4CCFB0728 /* SGVocabularyDictationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC72C2FD9C89C17FEED82956FDF97A42 /* SGVocabularyKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 074611D4062DB5E56A37724486D3256E /* SGVocabularyKeyboardView.m */; };
+		BFEC96A4C346C5363703FE2FCB11015E /* SGAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BDBCF0AD872E3B7761CF46577BF5079 /* SGAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0861ADB4C5FA30F4F9E051F7638A264 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 62890C896C598E9650B511A4A9BA249A /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		C1A0DE351CC32A44947F7DB8C72E85BD /* SGStringPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B789BE408D67A8E2D9E16E05AB0D1C6A /* SGStringPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4F0CD76D28E321584673764E9F8AA11 /* SGSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A632BE9153A8363A6FAAF90B905F899 /* SGSearchController.m */; };
-		C9E43A293D021F7306B3D3ED9E55E655 /* SGVocabularySpellingView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E8CF350B01BD40FE9D1FCD858266DD /* SGVocabularySpellingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD4B01F672ED08FE68F17D9F275657A2 /* SGVocabularyAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B5348EBB23C9BD9B4EB6CD7D5FDB9F /* SGVocabularyAnswerView.m */; };
+		C2E9570444F67006F434E1A3BD7BE95C /* SGStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD286FD5438F87B04FE9152BCB9FD6F /* SGStringPickerView.m */; };
+		C314BC50EDD9E070EAF900B58CFBF92E /* SGBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0C1CF3A5CFD5E34353C0DA771221C1 /* SGBaseView.m */; };
+		C5B63504C7DFE81E7FE9B314E06C40DE /* SGVocabularyAnswerView.h in Headers */ = {isa = PBXBuildFile; fileRef = A137940007B154F5A3750B9B50A17F41 /* SGVocabularyAnswerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5C965DA016B21E0A7E5E7E1A1E3BEDF /* SGSpeechSynthesizerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA0FAB66D786F76D8CFA1AEA4F2AA1 /* SGSpeechSynthesizerManager.m */; };
+		C7DEE175C9FE92E78366E804C2C4D149 /* SGVocabularyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B680A9478E3EEB199FFD12C86986CF /* SGVocabularyTools.m */; };
+		C8715BD517BDCD09993C753482AF0784 /* NSDate+SGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9672547525A42B4BDCA03C406D9D388 /* NSDate+SGPickerView.m */; };
+		CA931D687AC3DA142CFC436327806510 /* SGSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CBB3E3A9EAB132A7A9B25E7A1E8E7 /* SGSearchController.m */; };
 		CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF909907D9794E4C781DAC1693A7018 /* UIKit.framework */; };
-		CF7EE3AA319D24ABF324E8BD94A798B3 /* NSDate+SGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E301DE7D62BAFCF1FABBE719BAFC652B /* NSDate+SGPickerView.m */; };
-		DCB84CF473C938BE6ED134477F811B56 /* SGVocabularySpellingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8AFB14DA26EFE0796B5981419EF104 /* SGVocabularySpellingView.m */; };
-		E17D62C2F0574A4BD16E8475C25773E3 /* SGVocabularyKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = F48652FBF41643465F12749C862E366C /* SGVocabularyKeyboardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2F5EB05F27B01C70648BD92D480323E /* SGAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7676C2E4430D4D34496C77ABDFD8C /* SGAnimationManager.m */; };
+		D0C89930CEFD0922A8B30B49D24F8929 /* SGAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1079B7F76369C555C0EE431D7BCAD591 /* SGAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D243566B0FC4CCF43EC00F823551D19C /* SGUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 36487B5D5EC0663C11D30DB47CE1F0A8 /* SGUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC1E6E18A1D760AFC0AE8889BEF9220F /* SGPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B961BD0FD463DBD5FEC6288CAD923464 /* SGPathManager.m */; };
 		E51F496BDC6ACADE04FDA059C6CB2342 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28147EF640D73DD5BE8B797CFD199606 /* Foundation.framework */; };
-		E66FAF942877EB3710A5CCA10A5FBD34 /* SGGradientProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E0F33993FC68C893FC0B6707CBF6F0A /* SGGradientProgress.bundle */; };
+		E775014735CF644FF1984EB2D7E54F9B /* SGTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E43A73D3D029239C61EEA6832B8B09 /* SGTools-dummy.m */; };
 		E7CA20228B3583F41927813EE904CAD3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C783239D12541FA278CBEBA15780CE4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7CFA5310B896D006853650570DF394D /* SGCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB19F8307C17C04E010F8CDBC63C8A8 /* SGCheckBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8936CB6101E58EB6C1769A28B42C0BB /* SGVoiceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA6CD4EBBE9C37517959A74B532C5F /* SGVoiceAnimationView.m */; };
+		E8269D68BB7B85C10DA659CD024E7C0D /* SGSpeechSynthesizerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FE3BA4A42E78015CAE97C3577C5115A3 /* SGSpeechSynthesizerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8C22FC133CCC15872F64AEF73D1962F /* SGPathManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C9DC1E9EFE1FA25092C768E46BD0AA01 /* SGPathManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8DD5D1D406150E1C80AD015271B6848 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1BF5683BFFCF57BA0C385B36CC0BE2 /* MASConstraint.m */; };
+		EAD32254B2724560B90F76338F69F2DD /* SGAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ADA84970A1D85B9C5511AE3076B6D6 /* SGAnimationManager.m */; };
 		EAE8B0895956885A752B173683A0D889 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B47E0CCE07C313DF7CE5A32C063379DF /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED68F7C0076E1A96696D37E79A1FD4CB /* SGPickerViewMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 518DAF8DF3FD848C645B5E8AB4D18228 /* SGPickerViewMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF260EFE95A0481BC553184FEBFA376A /* SGTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 286CE9CA571822F745D29040F20C637D /* SGTriangleView.m */; };
-		F125B360572F170BC92FC45253F1DDC7 /* UIImage+SGVocabularyResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D67DB50D79EA696CB5BE13B7E7A9D2C /* UIImage+SGVocabularyResource.m */; };
-		F344E5AAD71B970BA5512482FC828CB7 /* SGVocabularyDictation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE3208E8751D1C748BD74343D2F75A0F /* SGVocabularyDictation.bundle */; };
+		EBF37D40EAED83684405948E9F885CFF /* SGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B42CCB153C30B86D4115772A20A568C6 /* SGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED6ACE4E8637E618BBB6F939108D5F1E /* SGAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4883E5C040CF3F6B7E3E856C023C3A /* SGAnimationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3ACD81E374B984A8AE2A8CC41DFEABE /* SGTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D26E5E33ADECD61DCB3C656886249B2 /* SGTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F739AFCE51465A0F81796EF48DA6B924 /* SGVocabularyTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 879D7A6B48CA72869709838A37B8F4C4 /* SGVocabularyTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAFBFA90F7BC3E7CF50F8A5CF0A8B264 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BCF93F338546FCB058B68A5B6F26B32 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC222A74FCB7A95DCE1C6C7099166277 /* SGAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D95D064E41507FDCE48DA4014ADE172 /* SGAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FCA97E14EA0F11887389237375DDD344 /* SGPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86C3D9B4B00D2D94F93CBFCD745185D0 /* SGPickerView.bundle */; };
-		FD56BA9DA78458549CD1B50B2D5ADBAB /* SGVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AF1670FB09ADF21B8B35AF128C4C39 /* SGVideoPlayer.m */; };
+		FCB133D36A21777021153EAFAD31E3EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28147EF640D73DD5BE8B797CFD199606 /* Foundation.framework */; };
+		FD77D1E90DFF774C36D4EF094D16399B /* UIImage+SGVocabularyResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D0811FED07ABBB608621392261506A6 /* UIImage+SGVocabularyResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4E9CFBBB37D894B718570B52FA6934AA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
-			remoteInfo = Masonry;
-		};
 		9AC3D1724840DBBF36308C469AF949FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -130,137 +126,147 @@
 			remoteGlobalIDString = C08DB5DE7EDB7A90B707B6628B857504;
 			remoteInfo = SGTools;
 		};
+		D113EC8AC18AC4E545B3E6E4A745FF8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		002BF3DDD89C177475702379D618BDA2 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		01495E4CC308FDE4C0823387966DA529 /* SGDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGDatePickerView.m; path = SGTools/Classes/SGPickerView/SGDatePickerView/SGDatePickerView.m; sourceTree = "<group>"; };
 		01B520B37784555D7D45481044CBD321 /* Pods-SGTools_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SGTools_Example-dummy.m"; sourceTree = "<group>"; };
 		025EB543E67AF6218FBFEFBEC406E598 /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
-		031A4ECA152F2A32148EBB546B01193C /* SGCheckBoxGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGCheckBoxGroup.m; path = SGTools/Classes/SGCheckBox/SGCheckBoxGroup.m; sourceTree = "<group>"; };
-		04F7676C2E4430D4D34496C77ABDFD8C /* SGAnimationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAnimationManager.m; path = SGTools/Classes/SGCheckBox/SGAnimationManager.m; sourceTree = "<group>"; };
+		03B680A9478E3EEB199FFD12C86986CF /* SGVocabularyTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyTools.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyTools.m; sourceTree = "<group>"; };
+		04EF846D9C59C3507A02B86519CCA040 /* SGTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SGTools.modulemap; sourceTree = "<group>"; };
 		069114FC9797B50ECF059BAD8DB2AB14 /* Pods-SGTools_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SGTools_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		071ABA9DA4A53122DD0382E7C7F6CBEB /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		074611D4062DB5E56A37724486D3256E /* SGVocabularyKeyboardView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyKeyboardView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyKeyboardView.m; sourceTree = "<group>"; };
+		0D0811FED07ABBB608621392261506A6 /* UIImage+SGVocabularyResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SGVocabularyResource.h"; path = "SGTools/Classes/SGVocabularyDictation/UIImage+SGVocabularyResource.h"; sourceTree = "<group>"; };
 		0D0D99B2DD2FE9FA411E2533A5216A34 /* Pods-SGTools_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SGTools_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0F5718E89E4E5165AA49B980D89CBCF8 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		10AF1670FB09ADF21B8B35AF128C4C39 /* SGVideoPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVideoPlayer.m; path = SGTools/Classes/SGVideoPlayer/SGVideoPlayer.m; sourceTree = "<group>"; };
+		1079B7F76369C555C0EE431D7BCAD591 /* SGAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAudioPlayer.h; path = SGTools/Classes/SGAudioPlayer/SGAudioPlayer.h; sourceTree = "<group>"; };
 		115A4EA8F789344C790FEA5CDC507FB7 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		11AEB423B4AD113A572A448538F7012F /* Pods_SGTools_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SGTools_Example.framework; path = "Pods-SGTools_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		12474DAC1A9DCE178AC5FFB5926A5B7E /* SGSingleAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGSingleAudioPlayer.m; path = SGTools/Classes/SGSingleAudioPlayer/SGSingleAudioPlayer.m; sourceTree = "<group>"; };
 		130F3B92BAB28630295F57E8AAC12EA1 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		13D9EEC6073B8B6BF415D0249EF61630 /* UIImage+SGVocabularyResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SGVocabularyResource.h"; path = "SGTools/Classes/SGVocabularyDictation/UIImage+SGVocabularyResource.h"; sourceTree = "<group>"; };
 		150A5738095684D23E50A7060CE3F2C7 /* SGTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SGTools.framework; path = SGTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1816202225CB23B1A41E53796BFA5901 /* SGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGPickerView.h; path = SGTools/Classes/SGPickerView/SGPickerView.h; sourceTree = "<group>"; };
-		191EEC83AD2490E0BC99A783DF5E6F79 /* SGVocabularyKeyboardView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyKeyboardView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyKeyboardView.m; sourceTree = "<group>"; };
-		1AB19F8307C17C04E010F8CDBC63C8A8 /* SGCheckBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGCheckBox.h; path = SGTools/Classes/SGCheckBox/SGCheckBox.h; sourceTree = "<group>"; };
-		1B8AFB14DA26EFE0796B5981419EF104 /* SGVocabularySpellingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularySpellingView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularySpellingView.m; sourceTree = "<group>"; };
-		1D67DB50D79EA696CB5BE13B7E7A9D2C /* UIImage+SGVocabularyResource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SGVocabularyResource.m"; path = "SGTools/Classes/SGVocabularyDictation/UIImage+SGVocabularyResource.m"; sourceTree = "<group>"; };
+		19ADA84970A1D85B9C5511AE3076B6D6 /* SGAnimationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAnimationManager.m; path = SGTools/Classes/SGCheckBox/SGAnimationManager.m; sourceTree = "<group>"; };
+		1B695D29A8B455CD4B78CA69F8ADA2EB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1BDBCF0AD872E3B7761CF46577BF5079 /* SGAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAlertView.h; path = SGTools/Classes/SGAlertView/SGAlertView.h; sourceTree = "<group>"; };
 		1E780607D798BC01DDE3031621C51501 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		1F1BF5683BFFCF57BA0C385B36CC0BE2 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		1FBB5015207BB543940E3F2DE4367B32 /* SGVocabularyAnswerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyAnswerView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyAnswerView.h; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24F9AEADB48DFA0C345636032F0EB569 /* SGVocabularyDictationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyDictationView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyDictationView.m; sourceTree = "<group>"; };
+		252ECEAE838F209C4D3CBCAE21CA89A7 /* SGTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SGTools-Info.plist"; sourceTree = "<group>"; };
 		28147EF640D73DD5BE8B797CFD199606 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		286CE9CA571822F745D29040F20C637D /* SGTriangleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGTriangleView.m; path = SGTools/Classes/SGTriangleView/SGTriangleView.m; sourceTree = "<group>"; };
-		2D7006B1B0B95C387C497EF081991FBA /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGCollectionViewFlowLayout.h; path = SGTools/Classes/SGCollectionViewFlowLayout/SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		2DCF694F8BC114C6299F6C77421FC358 /* SGAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAudioPlayer.m; path = SGTools/Classes/SGAudioPlayer/SGAudioPlayer.m; sourceTree = "<group>"; };
+		291B286671E11146B39DD752CB803389 /* SGVocabularyKeyboardView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyKeyboardView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyKeyboardView.h; sourceTree = "<group>"; };
+		2A5C36CE3C2D99D77C6CB6E92538769F /* SGAddressPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAddressPickerView.m; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressPickerView.m; sourceTree = "<group>"; };
+		2DA4910B57145257D3452B3B071C1C9D /* SGGradientProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGGradientProgress.h; path = SGTools/Classes/SGGradientProgress/SGGradientProgress.h; sourceTree = "<group>"; };
+		2EED9618D1B32426D8B80C9A37F121D5 /* UIImage+SGVocabularyResource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SGVocabularyResource.m"; path = "SGTools/Classes/SGVocabularyDictation/UIImage+SGVocabularyResource.m"; sourceTree = "<group>"; };
+		30C881C3910CCEB30A837C5B46EFEF36 /* SGVocabularySpellingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularySpellingView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularySpellingView.m; sourceTree = "<group>"; };
+		36487B5D5EC0663C11D30DB47CE1F0A8 /* SGUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGUIKit.h; path = SGTools/Classes/SGUIKit/SGUIKit.h; sourceTree = "<group>"; };
 		36D9333B00F315696855ADE85C3E6D15 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
-		3A93E33ACFACE9325431C9F682B6331E /* SGTools.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SGTools.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3BCF93F338546FCB058B68A5B6F26B32 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
-		3C9C092D763FDCCD0AC527BFD128F07F /* SGAddressPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAddressPickerView.h; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressPickerView.h; sourceTree = "<group>"; };
-		4039F3B0CE3F9BD829142A7128D18444 /* SGVocabularyDictationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyDictationView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyDictationView.h; sourceTree = "<group>"; };
-		41A3FE27A6ECA2753CB98D063B7FEBEE /* SGSearchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGSearchController.h; path = SGTools/Classes/SGSearchController/SGSearchController.h; sourceTree = "<group>"; };
+		4162DEB60F00A747190110C75D3DE89C /* SGGradientProgress.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGGradientProgress.bundle; path = SGTools/Classes/SGGradientProgress/SGGradientProgress.bundle; sourceTree = "<group>"; };
+		43F8358A8D4E8FC9ED96838CC81C5EF3 /* SGSingleAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGSingleAudioPlayer.h; path = SGTools/Classes/SGSingleAudioPlayer/SGSingleAudioPlayer.h; sourceTree = "<group>"; };
 		446E88E334EB69521BBAB2384A5F950C /* Pods-SGTools_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SGTools_Example-umbrella.h"; sourceTree = "<group>"; };
-		4914899C40D799285BE7689770D60667 /* SGVocabularyVoiceView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyVoiceView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyVoiceView.h; sourceTree = "<group>"; };
-		4D02DD08F891F9F3B8436A73108E99B9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		45105545A7BEE315C17F22E658702056 /* UIView+SGShadow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SGShadow.h"; path = "SGTools/Classes/SGUIKit/SGUIView/UIView+SGShadow.h"; sourceTree = "<group>"; };
+		46041A44DBA3DCD56BCC06A5DD6D6FFB /* SGCheckBoxGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGCheckBoxGroup.m; path = SGTools/Classes/SGCheckBox/SGCheckBoxGroup.m; sourceTree = "<group>"; };
+		46F8E417B709483A730083936B438525 /* SGCheckBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGCheckBox.m; path = SGTools/Classes/SGCheckBox/SGCheckBox.m; sourceTree = "<group>"; };
 		4E5709CED54C3B8DC4B50B19520F6771 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		518DAF8DF3FD848C645B5E8AB4D18228 /* SGPickerViewMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGPickerViewMacro.h; path = SGTools/Classes/SGPickerView/SGBase/SGPickerViewMacro.h; sourceTree = "<group>"; };
-		51E5D7425F1FC9124B4338BCE72442E0 /* SGDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGDatePickerView.h; path = SGTools/Classes/SGPickerView/SGDatePickerView/SGDatePickerView.h; sourceTree = "<group>"; };
-		53C80DB482061CD5701AB49DC7FD34FF /* SGVoiceAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVoiceAnimationView.h; path = SGTools/Classes/SGVoiceAnimationView/SGVoiceAnimationView.h; sourceTree = "<group>"; };
-		5A632BE9153A8363A6FAAF90B905F899 /* SGSearchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGSearchController.m; path = SGTools/Classes/SGSearchController/SGSearchController.m; sourceTree = "<group>"; };
+		54962B35B7B44E956532F92DF0385091 /* SGTools.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SGTools.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5FADB5EBFADA2A419371CF5E6C927F1E /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		61553ED6EF712BC7FAEA9AACC6B9DEDE /* SGVocabularyTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyTools.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyTools.m; sourceTree = "<group>"; };
-		6192BB86BC504B024C7437DC8F678DD7 /* SGPathManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGPathManager.m; path = SGTools/Classes/SGCheckBox/SGPathManager.m; sourceTree = "<group>"; };
+		615CBB3E3A9EAB132A7A9B25E7A1E8E7 /* SGSearchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGSearchController.m; path = SGTools/Classes/SGSearchController/SGSearchController.m; sourceTree = "<group>"; };
 		62890C896C598E9650B511A4A9BA249A /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		633E9D99BE5D86A0960CC9B25BCA0492 /* Pods-SGTools_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SGTools_Example-Info.plist"; sourceTree = "<group>"; };
-		686C501B6DD46E2D4AEDF4B969831F8E /* SGTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SGTools.xcconfig; sourceTree = "<group>"; };
+		67EE4F67C2EFF423EE2CD5104AEDA348 /* SGSingleAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGSingleAudioPlayer.m; path = SGTools/Classes/SGSingleAudioPlayer/SGSingleAudioPlayer.m; sourceTree = "<group>"; };
 		6B28864E3F11E1DDE7AEF55AFFD8B0FE /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D7B3B256428C1B0C6BF142287045CD4 /* SGAlert.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGAlert.bundle; path = SGTools/Classes/SGAlertView/SGAlert.bundle; sourceTree = "<group>"; };
-		6DACEC1D5046121F9B99A135DCC41283 /* SGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGCollectionViewFlowLayout.m; path = SGTools/Classes/SGCollectionViewFlowLayout/SGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		6FDEFFF8B9048DC7B66AA9AA5E307E8A /* NSDate+SGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+SGPickerView.h"; path = "SGTools/Classes/SGPickerView/SGDatePickerView/NSDate+SGPickerView.h"; sourceTree = "<group>"; };
-		718117970C9EAA819230CA779A691721 /* SGTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGTools-umbrella.h"; sourceTree = "<group>"; };
-		736EA85BDD4585E6D3E03B7E44FA885E /* SGTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGTools-prefix.pch"; sourceTree = "<group>"; };
-		747C3B581146A750669F4940D4F8FAFA /* SGTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SGTools-Info.plist"; sourceTree = "<group>"; };
+		6B6CBAA88FA4B5A72789655AB678B89B /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGCollectionViewFlowLayout.h; path = SGTools/Classes/SGCollectionViewFlowLayout/SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		6FACD6FA1E6C8EE3A5516F3ECEA57321 /* SGBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGBaseView.h; path = SGTools/Classes/SGPickerView/SGBase/SGBaseView.h; sourceTree = "<group>"; };
+		71BA0FAB66D786F76D8CFA1AEA4F2AA1 /* SGSpeechSynthesizerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGSpeechSynthesizerManager.m; path = SGTools/Classes/SGSpeechSynthesizer/SGSpeechSynthesizerManager.m; sourceTree = "<group>"; };
+		749754A3D7D46B8C7CA282334D66A38E /* SGVocabularyDictation.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGVocabularyDictation.bundle; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyDictation.bundle; sourceTree = "<group>"; };
+		75C41A7B2E3FE921298E795D21A992FA /* NSDate+SGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+SGPickerView.h"; path = "SGTools/Classes/SGPickerView/SGDatePickerView/NSDate+SGPickerView.h"; sourceTree = "<group>"; };
+		76E43A73D3D029239C61EEA6832B8B09 /* SGTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SGTools-dummy.m"; sourceTree = "<group>"; };
+		7926FDEBC5C0EC3384836E71C3CC86E8 /* SGSearchController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGSearchController.bundle; path = SGTools/Classes/SGSearchController/SGSearchController.bundle; sourceTree = "<group>"; };
+		7A54139EF03DF6E5ED823E4C88BCAEBF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		7A7B447697BD72728BA3D4BF7CBD25D7 /* Pods-SGTools_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SGTools_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7B37825A11B297F92381873AB57C9479 /* SGShadowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGShadowView.m; path = SGTools/Classes/SGShadowView/SGShadowView.m; sourceTree = "<group>"; };
-		7E0F33993FC68C893FC0B6707CBF6F0A /* SGGradientProgress.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGGradientProgress.bundle; path = SGTools/Classes/SGGradientProgress/SGGradientProgress.bundle; sourceTree = "<group>"; };
-		8307D1761069F568E059311D50A47E1B /* SGBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGBaseView.m; path = SGTools/Classes/SGPickerView/SGBase/SGBaseView.m; sourceTree = "<group>"; };
-		83ABD8CD4A53D2FDCD8A26CDC03C3D27 /* SGBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGBaseView.h; path = SGTools/Classes/SGPickerView/SGBase/SGBaseView.h; sourceTree = "<group>"; };
-		84A67A2B2BE6374005C1D4B8609BDDED /* SGTriangleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGTriangleView.h; path = SGTools/Classes/SGTriangleView/SGTriangleView.h; sourceTree = "<group>"; };
-		86C3D9B4B00D2D94F93CBFCD745185D0 /* SGPickerView.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGPickerView.bundle; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGPickerView.bundle; sourceTree = "<group>"; };
+		7CA29818F7BEA1B880A93E1C7A0CBF49 /* SGVocabularyVoiceView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyVoiceView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyVoiceView.m; sourceTree = "<group>"; };
+		85D1A36B37571FDE9067E1C344FE4478 /* SGTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SGTools.xcconfig; sourceTree = "<group>"; };
+		86A09A196FA546673B6550796CA9984D /* SGAudioPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAudioPlayer.m; path = SGTools/Classes/SGAudioPlayer/SGAudioPlayer.m; sourceTree = "<group>"; };
 		86DFFE3C8ABE515058DCF105EB608F37 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		870570EFE09B8657023DC7C42C33BE4B /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
+		879D7A6B48CA72869709838A37B8F4C4 /* SGVocabularyTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyTools.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyTools.h; sourceTree = "<group>"; };
 		896A4BCB5B3DBC78E1CF6EBF5AC2862F /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		89CA36D69CA9A4D3ACB481FF966B906B /* SGVoiceAnimationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVoiceAnimationView.m; path = SGTools/Classes/SGVoiceAnimationView/SGVoiceAnimationView.m; sourceTree = "<group>"; };
+		8D26E5E33ADECD61DCB3C656886249B2 /* SGTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGTools-umbrella.h"; sourceTree = "<group>"; };
 		8D4CA7B92265A15B80B1666634FF46C0 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
+		8E1DC98AEDFCFB9D3954F66980E2E9D7 /* SGPickerViewMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGPickerViewMacro.h; path = SGTools/Classes/SGPickerView/SGBase/SGPickerViewMacro.h; sourceTree = "<group>"; };
 		90FABA5DE6016497B5813BD5DD512267 /* Pods-SGTools_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SGTools_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		933D01FFF8965BA1958B1E6889AB5F91 /* SGStringPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGStringPickerView.m; path = SGTools/Classes/SGPickerView/SGStringPickerView/SGStringPickerView.m; sourceTree = "<group>"; };
-		9805473F2EDA4F414956B442CCA4B217 /* SGVideoPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVideoPlayer.h; path = SGTools/Classes/SGVideoPlayer/SGVideoPlayer.h; sourceTree = "<group>"; };
-		98FBA38015F3117C5DBAB52DD90ABFA0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		991F52F1FB83D64AA9AEAFFAC50F961C /* SGCheckBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGCheckBox.m; path = SGTools/Classes/SGCheckBox/SGCheckBox.m; sourceTree = "<group>"; };
-		9B21B648DD107364C18C47333437CDD7 /* SGSpeechSynthesizerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGSpeechSynthesizerManager.m; path = SGTools/Classes/SGSpeechSynthesizer/SGSpeechSynthesizerManager.m; sourceTree = "<group>"; };
-		9BF0AED0BD34CAC6E15FE95861076AAB /* SGAnimationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAnimationManager.h; path = SGTools/Classes/SGCheckBox/SGAnimationManager.h; sourceTree = "<group>"; };
-		9C63F5EDAB52B8DDE4CCEF14D6AE8B32 /* SGCheckBoxGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGCheckBoxGroup.h; path = SGTools/Classes/SGCheckBox/SGCheckBoxGroup.h; sourceTree = "<group>"; };
+		94DE7CF6B604C25CEAEBC8A7650465E1 /* SGVocabularyVoiceView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyVoiceView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyVoiceView.h; sourceTree = "<group>"; };
+		960F9F0B1D48D8896907F028BA3F2EE6 /* SGAddressModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAddressModel.h; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressModel.h; sourceTree = "<group>"; };
+		98F9120ED691BDC044C82F6CA308075A /* SGSearchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGSearchController.h; path = SGTools/Classes/SGSearchController/SGSearchController.h; sourceTree = "<group>"; };
 		9C783239D12541FA278CBEBA15780CE4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		9CD1AD2192C246BE568B6CFBA7EB9C68 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		9D36D3E12294B3BC2C1A27B7E0859DB2 /* SGVocabularySpellingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularySpellingView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularySpellingView.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D95D064E41507FDCE48DA4014ADE172 /* SGAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAudioPlayer.h; path = SGTools/Classes/SGAudioPlayer/SGAudioPlayer.h; sourceTree = "<group>"; };
+		9EA3F711BA4A6E1978B3D68BC2867611 /* SGVideoPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVideoPlayer.h; path = SGTools/Classes/SGVideoPlayer/SGVideoPlayer.h; sourceTree = "<group>"; };
+		A137940007B154F5A3750B9B50A17F41 /* SGVocabularyAnswerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyAnswerView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyAnswerView.h; sourceTree = "<group>"; };
 		A17EAC4713F6B85A6124DB11F111B072 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
-		A19247727FFF77E290094D550909EAA7 /* SGSearchController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGSearchController.bundle; path = SGTools/Classes/SGSearchController/SGSearchController.bundle; sourceTree = "<group>"; };
-		A2AC0FB1023C2280A07291EBB1B3DCD5 /* SGDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGDatePickerView.m; path = SGTools/Classes/SGPickerView/SGDatePickerView/SGDatePickerView.m; sourceTree = "<group>"; };
-		A6DAF17D36759222D00B774F5CEF21F7 /* SGAddressPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAddressPickerView.m; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressPickerView.m; sourceTree = "<group>"; };
-		A76BBD1946FCB7B4992FC6B5D17E238A /* SGAddressModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAddressModel.h; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressModel.h; sourceTree = "<group>"; };
-		A995F052A8E4A18BE7AB1D3B205A665C /* SGShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGShadowView.h; path = SGTools/Classes/SGShadowView/SGShadowView.h; sourceTree = "<group>"; };
+		A8257407452F19C3C0D17AE437D9BCCA /* SGTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SGTools-prefix.pch"; sourceTree = "<group>"; };
 		ACB7B80D58CFA003C25B538A405A341D /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		B22B657A2898AC6D36CD716721D1043B /* SGAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAlertView.h; path = SGTools/Classes/SGAlertView/SGAlertView.h; sourceTree = "<group>"; };
 		B377289AFAE7DF9945B981F14B4AF95C /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		B42CCB153C30B86D4115772A20A568C6 /* SGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGPickerView.h; path = SGTools/Classes/SGPickerView/SGPickerView.h; sourceTree = "<group>"; };
 		B47E0CCE07C313DF7CE5A32C063379DF /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		B5AD257832676E56B3F95C854337AB97 /* SGTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SGTools-dummy.m"; sourceTree = "<group>"; };
-		B789BE408D67A8E2D9E16E05AB0D1C6A /* SGStringPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGStringPickerView.h; path = SGTools/Classes/SGPickerView/SGStringPickerView/SGStringPickerView.h; sourceTree = "<group>"; };
-		BAC3B114F968B73350E842451B4EDFFC /* SGTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SGTools.modulemap; sourceTree = "<group>"; };
-		BAEAD18E1CF3EEA809A1507AEC7C259B /* SGVocabularyTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyTools.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyTools.h; sourceTree = "<group>"; };
-		BBD884E11F80AE5CDEEA8BD8D77680FE /* SGAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAlertView.m; path = SGTools/Classes/SGAlertView/SGAlertView.m; sourceTree = "<group>"; };
-		C3E8CF350B01BD40FE9D1FCD858266DD /* SGVocabularySpellingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularySpellingView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularySpellingView.h; sourceTree = "<group>"; };
+		B8D5029AA9EAEBE0F30794C04A7E3660 /* SGAddressPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAddressPickerView.h; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressPickerView.h; sourceTree = "<group>"; };
+		B961BD0FD463DBD5FEC6288CAD923464 /* SGPathManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGPathManager.m; path = SGTools/Classes/SGCheckBox/SGPathManager.m; sourceTree = "<group>"; };
+		B9672547525A42B4BDCA03C406D9D388 /* NSDate+SGPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SGPickerView.m"; path = "SGTools/Classes/SGPickerView/SGDatePickerView/NSDate+SGPickerView.m"; sourceTree = "<group>"; };
+		BC282A7171C8D871A5B4E23BB21B09AB /* SGVocabularyAnswerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyAnswerView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyAnswerView.m; sourceTree = "<group>"; };
+		C60D8B3C7D4C3CD97107959487DF82A8 /* SGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGCollectionViewFlowLayout.m; path = SGTools/Classes/SGCollectionViewFlowLayout/SGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		C6BB2E40FA7314FFFF244B2FD839A658 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		C6CA6CD4EBBE9C37517959A74B532C5F /* SGVoiceAnimationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVoiceAnimationView.m; path = SGTools/Classes/SGVoiceAnimationView/SGVoiceAnimationView.m; sourceTree = "<group>"; };
-		CAFA1D1B9B8216620038AEDF2986AF11 /* SGGradientProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGGradientProgress.m; path = SGTools/Classes/SGGradientProgress/SGGradientProgress.m; sourceTree = "<group>"; };
+		C9DC1E9EFE1FA25092C768E46BD0AA01 /* SGPathManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGPathManager.h; path = SGTools/Classes/SGCheckBox/SGPathManager.h; sourceTree = "<group>"; };
 		CFBD1B41CAF2FBE7B7D9F388F80021DC /* Pods-SGTools_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SGTools_Example.modulemap"; sourceTree = "<group>"; };
 		D100F47F5FECCA555C616F7D93D7CB4B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
-		D2FAA82805F6F4F6B13369D8818E7144 /* SGSpeechSynthesizerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGSpeechSynthesizerManager.h; path = SGTools/Classes/SGSpeechSynthesizer/SGSpeechSynthesizerManager.h; sourceTree = "<group>"; };
+		D54075D8E9785AD52A4D7CD4D4918BC9 /* SGShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGShadowView.h; path = SGTools/Classes/SGShadowView/SGShadowView.h; sourceTree = "<group>"; };
+		D57467DD2236568784084E0D1A079766 /* SGPickerView.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGPickerView.bundle; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGPickerView.bundle; sourceTree = "<group>"; };
+		D99EC971D2AA6D330F032C4F0B021EA5 /* SGShadowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGShadowView.m; path = SGTools/Classes/SGShadowView/SGShadowView.m; sourceTree = "<group>"; };
+		DB4883E5C040CF3F6B7E3E856C023C3A /* SGAnimationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGAnimationManager.h; path = SGTools/Classes/SGCheckBox/SGAnimationManager.h; sourceTree = "<group>"; };
+		DCD286FD5438F87B04FE9152BCB9FD6F /* SGStringPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGStringPickerView.m; path = SGTools/Classes/SGPickerView/SGStringPickerView/SGStringPickerView.m; sourceTree = "<group>"; };
+		DD0C1CF3A5CFD5E34353C0DA771221C1 /* SGBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGBaseView.m; path = SGTools/Classes/SGPickerView/SGBase/SGBaseView.m; sourceTree = "<group>"; };
 		DF48D82622C6D1FFAC5752C7BB004472 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		E02712E1BCB80972BD75FC5158E0ABFC /* SGAddressModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAddressModel.m; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressModel.m; sourceTree = "<group>"; };
-		E301DE7D62BAFCF1FABBE719BAFC652B /* NSDate+SGPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+SGPickerView.m"; path = "SGTools/Classes/SGPickerView/SGDatePickerView/NSDate+SGPickerView.m"; sourceTree = "<group>"; };
+		DF5B03D53E3A850B10B4D52AA21D0410 /* SGTriangleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGTriangleView.m; path = SGTools/Classes/SGTriangleView/SGTriangleView.m; sourceTree = "<group>"; };
+		E0B9FD269E381578273AAEFFE7B6516E /* SGGradientProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGGradientProgress.m; path = SGTools/Classes/SGGradientProgress/SGGradientProgress.m; sourceTree = "<group>"; };
+		E1BAE84F41B4DFAEB35A4058816D2D11 /* SGAlert.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGAlert.bundle; path = SGTools/Classes/SGAlertView/SGAlert.bundle; sourceTree = "<group>"; };
+		E445207D7D49B80D7E100EE25772542B /* SGAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAlertView.m; path = SGTools/Classes/SGAlertView/SGAlertView.m; sourceTree = "<group>"; };
 		E476E5DC364B11085C84F8770A12FD3B /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		E6225045F2DF7AF603D15E0A59933930 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
-		E9B5348EBB23C9BD9B4EB6CD7D5FDB9F /* SGVocabularyAnswerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyAnswerView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyAnswerView.m; sourceTree = "<group>"; };
-		EC58F421FA759C61EF6A42BBAE0C54F1 /* SGPathManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGPathManager.h; path = SGTools/Classes/SGCheckBox/SGPathManager.h; sourceTree = "<group>"; };
+		E8E3C682E2B6194D86F2BD93672B556B /* SGVideoPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVideoPlayer.m; path = SGTools/Classes/SGVideoPlayer/SGVideoPlayer.m; sourceTree = "<group>"; };
+		EA183E21FE67A5584A81F0E7487DE479 /* SGTriangleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGTriangleView.h; path = SGTools/Classes/SGTriangleView/SGTriangleView.h; sourceTree = "<group>"; };
+		EA5C3D8F04B552E4255E60C4CCFB0728 /* SGVocabularyDictationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyDictationView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyDictationView.h; sourceTree = "<group>"; };
+		EB76561229FC5129385844AE831C9996 /* SGVocabularyDictationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyDictationView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyDictationView.m; sourceTree = "<group>"; };
+		ED5CEF90FC0505C2A9139DD5FB961BFC /* SGVoiceAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVoiceAnimationView.h; path = SGTools/Classes/SGVoiceAnimationView/SGVoiceAnimationView.h; sourceTree = "<group>"; };
 		EFF909907D9794E4C781DAC1693A7018 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F05C6EDBC8E4591F89BD9F1E17FBFC97 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		F09975772BD33761A679280F1E3744D8 /* SGCheckBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGCheckBox.h; path = SGTools/Classes/SGCheckBox/SGCheckBox.h; sourceTree = "<group>"; };
+		F1E65C52A3E9A17B989A11F7893F1F23 /* SGAddressModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGAddressModel.m; path = SGTools/Classes/SGPickerView/SGAddressPickerView/SGAddressModel.m; sourceTree = "<group>"; };
 		F20A7188ABF123273A3C22C4340688AC /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		F48652FBF41643465F12749C862E366C /* SGVocabularyKeyboardView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGVocabularyKeyboardView.h; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyKeyboardView.h; sourceTree = "<group>"; };
-		F89A8CD194601394393AF95F41870333 /* SGVocabularyVoiceView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SGVocabularyVoiceView.m; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyVoiceView.m; sourceTree = "<group>"; };
+		F5AE9A892CBDB6D1C974F41D1AF9B321 /* SGDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGDatePickerView.h; path = SGTools/Classes/SGPickerView/SGDatePickerView/SGDatePickerView.h; sourceTree = "<group>"; };
+		F6968071F949FEC3F05B0C7FCB3AB73F /* SGStringPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGStringPickerView.h; path = SGTools/Classes/SGPickerView/SGStringPickerView/SGStringPickerView.h; sourceTree = "<group>"; };
+		F7BBC49937A69EF6BFB842163B698A5C /* SGCheckBoxGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGCheckBoxGroup.h; path = SGTools/Classes/SGCheckBox/SGCheckBoxGroup.h; sourceTree = "<group>"; };
+		F7FE4123217F5EF55C735DCF6C8A9F50 /* UIView+SGShadow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SGShadow.m"; path = "SGTools/Classes/SGUIKit/SGUIView/UIView+SGShadow.m"; sourceTree = "<group>"; };
 		FDBFF53F4622656E4463688E772EDF7E /* Pods-SGTools_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SGTools_Example-frameworks.sh"; sourceTree = "<group>"; };
-		FE3208E8751D1C748BD74343D2F75A0F /* SGVocabularyDictation.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SGVocabularyDictation.bundle; path = SGTools/Classes/SGVocabularyDictation/SGVocabularyDictation.bundle; sourceTree = "<group>"; };
+		FE3BA4A42E78015CAE97C3577C5115A3 /* SGSpeechSynthesizerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGSpeechSynthesizerManager.h; path = SGTools/Classes/SGSpeechSynthesizer/SGSpeechSynthesizerManager.h; sourceTree = "<group>"; };
 		FE7A0F064F168E6660B03C9639A19329 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		FE7ECEC8D76C3590B1B57CC3C031D265 /* SGGradientProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGGradientProgress.h; path = SGTools/Classes/SGGradientProgress/SGGradientProgress.h; sourceTree = "<group>"; };
-		FEE329318421627F743BA29000FED138 /* SGSingleAudioPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SGSingleAudioPlayer.h; path = SGTools/Classes/SGSingleAudioPlayer/SGSingleAudioPlayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		29EABDFA41AB5DF135D03DF468742E20 /* Frameworks */ = {
+		26CF79B676C121D407F33EC3A43D34D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBAE25A9FE5E40274879A21539575726 /* Foundation.framework in Frameworks */,
-				287374012C942F13C4150877B4A73AA2 /* Masonry.framework in Frameworks */,
+				FCB133D36A21777021153EAFAD31E3EB /* Foundation.framework in Frameworks */,
+				2F14C15F1482DD2934877A33C22897D7 /* Masonry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,35 +290,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0179B52A087E958515C942FC6AC52B4B /* SGVocabularyDictation */ = {
+		17977E3D8D4A009931A4D0982446C05C /* SGCheckBox */ = {
 			isa = PBXGroup;
 			children = (
-				1FBB5015207BB543940E3F2DE4367B32 /* SGVocabularyAnswerView.h */,
-				E9B5348EBB23C9BD9B4EB6CD7D5FDB9F /* SGVocabularyAnswerView.m */,
-				4039F3B0CE3F9BD829142A7128D18444 /* SGVocabularyDictationView.h */,
-				24F9AEADB48DFA0C345636032F0EB569 /* SGVocabularyDictationView.m */,
-				F48652FBF41643465F12749C862E366C /* SGVocabularyKeyboardView.h */,
-				191EEC83AD2490E0BC99A783DF5E6F79 /* SGVocabularyKeyboardView.m */,
-				C3E8CF350B01BD40FE9D1FCD858266DD /* SGVocabularySpellingView.h */,
-				1B8AFB14DA26EFE0796B5981419EF104 /* SGVocabularySpellingView.m */,
-				BAEAD18E1CF3EEA809A1507AEC7C259B /* SGVocabularyTools.h */,
-				61553ED6EF712BC7FAEA9AACC6B9DEDE /* SGVocabularyTools.m */,
-				4914899C40D799285BE7689770D60667 /* SGVocabularyVoiceView.h */,
-				F89A8CD194601394393AF95F41870333 /* SGVocabularyVoiceView.m */,
-				13D9EEC6073B8B6BF415D0249EF61630 /* UIImage+SGVocabularyResource.h */,
-				1D67DB50D79EA696CB5BE13B7E7A9D2C /* UIImage+SGVocabularyResource.m */,
-				750E6EE9C470F6262370DE2BA46A1007 /* Resources */,
+				DB4883E5C040CF3F6B7E3E856C023C3A /* SGAnimationManager.h */,
+				19ADA84970A1D85B9C5511AE3076B6D6 /* SGAnimationManager.m */,
+				F09975772BD33761A679280F1E3744D8 /* SGCheckBox.h */,
+				46F8E417B709483A730083936B438525 /* SGCheckBox.m */,
+				F7BBC49937A69EF6BFB842163B698A5C /* SGCheckBoxGroup.h */,
+				46041A44DBA3DCD56BCC06A5DD6D6FFB /* SGCheckBoxGroup.m */,
+				C9DC1E9EFE1FA25092C768E46BD0AA01 /* SGPathManager.h */,
+				B961BD0FD463DBD5FEC6288CAD923464 /* SGPathManager.m */,
 			);
-			name = SGVocabularyDictation;
-			sourceTree = "<group>";
-		};
-		0E8040AE22B880DC5B7EEF4CD13BC363 /* SGVoiceAnimationView */ = {
-			isa = PBXGroup;
-			children = (
-				53C80DB482061CD5701AB49DC7FD34FF /* SGVoiceAnimationView.h */,
-				C6CA6CD4EBBE9C37517959A74B532C5F /* SGVoiceAnimationView.m */,
-			);
-			name = SGVoiceAnimationView;
+			name = SGCheckBox;
 			sourceTree = "<group>";
 		};
 		1981393EACDF11E3A0B85FFB368A3220 /* Products */ = {
@@ -325,85 +315,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		31CC80C77001E31B06419DD7B0F9D51F /* SGBase */ = {
+		321BDEF6D943EAC8E3CE0A9903138DD6 /* SGTriangleView */ = {
 			isa = PBXGroup;
 			children = (
-				83ABD8CD4A53D2FDCD8A26CDC03C3D27 /* SGBaseView.h */,
-				8307D1761069F568E059311D50A47E1B /* SGBaseView.m */,
-				518DAF8DF3FD848C645B5E8AB4D18228 /* SGPickerViewMacro.h */,
+				EA183E21FE67A5584A81F0E7487DE479 /* SGTriangleView.h */,
+				DF5B03D53E3A850B10B4D52AA21D0410 /* SGTriangleView.m */,
 			);
-			name = SGBase;
+			name = SGTriangleView;
 			sourceTree = "<group>";
 		};
-		32CA75A53765F6F9EDABD3A9DD9008AA /* Support Files */ = {
+		36A371890DAA8B16CC5A8CE1886DFA05 /* SGUIView */ = {
 			isa = PBXGroup;
 			children = (
-				BAC3B114F968B73350E842451B4EDFFC /* SGTools.modulemap */,
-				686C501B6DD46E2D4AEDF4B969831F8E /* SGTools.xcconfig */,
-				B5AD257832676E56B3F95C854337AB97 /* SGTools-dummy.m */,
-				747C3B581146A750669F4940D4F8FAFA /* SGTools-Info.plist */,
-				736EA85BDD4585E6D3E03B7E44FA885E /* SGTools-prefix.pch */,
-				718117970C9EAA819230CA779A691721 /* SGTools-umbrella.h */,
+				45105545A7BEE315C17F22E658702056 /* UIView+SGShadow.h */,
+				F7FE4123217F5EF55C735DCF6C8A9F50 /* UIView+SGShadow.m */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SGTools";
+			name = SGUIView;
 			sourceTree = "<group>";
 		};
-		3F6C7094464644180EF6F4801B82EFFC /* Resources */ = {
+		485E8E6EE0B616A7892DE90532496941 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6D7B3B256428C1B0C6BF142287045CD4 /* SGAlert.bundle */,
+				E1BAE84F41B4DFAEB35A4058816D2D11 /* SGAlert.bundle */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		42F2C9EFD69A86181D3199693706058F /* SGSearchController */ = {
-			isa = PBXGroup;
-			children = (
-				41A3FE27A6ECA2753CB98D063B7FEBEE /* SGSearchController.h */,
-				5A632BE9153A8363A6FAAF90B905F899 /* SGSearchController.m */,
-				7867D5302727511DA78823C389F32281 /* Resources */,
-			);
-			name = SGSearchController;
-			sourceTree = "<group>";
-		};
-		4C56E311643C163B496836EC1B942E35 /* SGCheckBox */ = {
-			isa = PBXGroup;
-			children = (
-				9BF0AED0BD34CAC6E15FE95861076AAB /* SGAnimationManager.h */,
-				04F7676C2E4430D4D34496C77ABDFD8C /* SGAnimationManager.m */,
-				1AB19F8307C17C04E010F8CDBC63C8A8 /* SGCheckBox.h */,
-				991F52F1FB83D64AA9AEAFFAC50F961C /* SGCheckBox.m */,
-				9C63F5EDAB52B8DDE4CCEF14D6AE8B32 /* SGCheckBoxGroup.h */,
-				031A4ECA152F2A32148EBB546B01193C /* SGCheckBoxGroup.m */,
-				EC58F421FA759C61EF6A42BBAE0C54F1 /* SGPathManager.h */,
-				6192BB86BC504B024C7437DC8F678DD7 /* SGPathManager.m */,
-			);
-			name = SGCheckBox;
-			sourceTree = "<group>";
-		};
-		4E0B452797CD0F604BAB48C217169859 /* SGTools */ = {
-			isa = PBXGroup;
-			children = (
-				8E2E170CF547E7FEC2A0CDA2FDDB3987 /* Pod */,
-				AAA35B9E63090715E07879E3E2CB5A8D /* SGAlertView */,
-				6604771CDE1344A19A9020A62908CB31 /* SGAudioPlayer */,
-				4C56E311643C163B496836EC1B942E35 /* SGCheckBox */,
-				7D8FA6861D17AD37061EE9F7A71A17A6 /* SGCollectionViewFlowLayout */,
-				769BC4F5536F218C138A59D224A465B6 /* SGGradientProgress */,
-				991498757DB19B61C353C0010A967006 /* SGPickerView */,
-				42F2C9EFD69A86181D3199693706058F /* SGSearchController */,
-				FA1E0FC257473B297B38BFF42AEAA01F /* SGShadowView */,
-				6D7C1B8F5EFBCD65ED9458B8DFA33F10 /* SGSingleAudioPlayer */,
-				9F7C9080AB191E8B9560DD332A61E246 /* SGSpeechSynthesizer */,
-				B31FB465C12D983757A1953F8E004604 /* SGTriangleView */,
-				6A546C253F242CE892E19B0E8AB91C8C /* SGVideoPlayer */,
-				0179B52A087E958515C942FC6AC52B4B /* SGVocabularyDictation */,
-				0E8040AE22B880DC5B7EEF4CD13BC363 /* SGVoiceAnimationView */,
-				32CA75A53765F6F9EDABD3A9DD9008AA /* Support Files */,
-			);
-			name = SGTools;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		4FCA42A829EF2E671B45A721F3E04A8C /* Pods-SGTools_Example */ = {
@@ -421,6 +356,26 @@
 			);
 			name = "Pods-SGTools_Example";
 			path = "Target Support Files/Pods-SGTools_Example";
+			sourceTree = "<group>";
+		};
+		5DD3A658C630F5FD93139942F2D30661 /* SGAddressPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				960F9F0B1D48D8896907F028BA3F2EE6 /* SGAddressModel.h */,
+				F1E65C52A3E9A17B989A11F7893F1F23 /* SGAddressModel.m */,
+				B8D5029AA9EAEBE0F30794C04A7E3660 /* SGAddressPickerView.h */,
+				2A5C36CE3C2D99D77C6CB6E92538769F /* SGAddressPickerView.m */,
+				5E8E017C622A14C6EDFFF6C68DA01BB7 /* Resources */,
+			);
+			name = SGAddressPickerView;
+			sourceTree = "<group>";
+		};
+		5E8E017C622A14C6EDFFF6C68DA01BB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D57467DD2236568784084E0D1A079766 /* SGPickerView.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		641727D7EBF7D099C436C5885417E360 /* Masonry */ = {
@@ -457,58 +412,22 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		6604771CDE1344A19A9020A62908CB31 /* SGAudioPlayer */ = {
+		66EF8B374EAB0118BC07C29DE34C8F93 /* SGUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				9D95D064E41507FDCE48DA4014ADE172 /* SGAudioPlayer.h */,
-				2DCF694F8BC114C6299F6C77421FC358 /* SGAudioPlayer.m */,
+				36487B5D5EC0663C11D30DB47CE1F0A8 /* SGUIKit.h */,
+				36A371890DAA8B16CC5A8CE1886DFA05 /* SGUIView */,
 			);
-			name = SGAudioPlayer;
+			name = SGUIKit;
 			sourceTree = "<group>";
 		};
-		6795D7431C29E77EC579F3DF83E72540 /* Development Pods */ = {
+		6831669626257575F18A64AD55F75E77 /* SGCollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				4E0B452797CD0F604BAB48C217169859 /* SGTools */,
+				6B6CBAA88FA4B5A72789655AB678B89B /* SGCollectionViewFlowLayout.h */,
+				C60D8B3C7D4C3CD97107959487DF82A8 /* SGCollectionViewFlowLayout.m */,
 			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		6A546C253F242CE892E19B0E8AB91C8C /* SGVideoPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				9805473F2EDA4F414956B442CCA4B217 /* SGVideoPlayer.h */,
-				10AF1670FB09ADF21B8B35AF128C4C39 /* SGVideoPlayer.m */,
-			);
-			name = SGVideoPlayer;
-			sourceTree = "<group>";
-		};
-		6D7C1B8F5EFBCD65ED9458B8DFA33F10 /* SGSingleAudioPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				FEE329318421627F743BA29000FED138 /* SGSingleAudioPlayer.h */,
-				12474DAC1A9DCE178AC5FFB5926A5B7E /* SGSingleAudioPlayer.m */,
-			);
-			name = SGSingleAudioPlayer;
-			sourceTree = "<group>";
-		};
-		710AA3E857156ECD5D5814C77B735DF1 /* SGDatePickerView */ = {
-			isa = PBXGroup;
-			children = (
-				6FDEFFF8B9048DC7B66AA9AA5E307E8A /* NSDate+SGPickerView.h */,
-				E301DE7D62BAFCF1FABBE719BAFC652B /* NSDate+SGPickerView.m */,
-				51E5D7425F1FC9124B4338BCE72442E0 /* SGDatePickerView.h */,
-				A2AC0FB1023C2280A07291EBB1B3DCD5 /* SGDatePickerView.m */,
-			);
-			name = SGDatePickerView;
-			sourceTree = "<group>";
-		};
-		750E6EE9C470F6262370DE2BA46A1007 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FE3208E8751D1C748BD74343D2F75A0F /* SGVocabularyDictation.bundle */,
-			);
-			name = Resources;
+			name = SGCollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
 		7529FD53BCE26816CCD46658378AAF1B /* Pods */ = {
@@ -519,110 +438,95 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		769BC4F5536F218C138A59D224A465B6 /* SGGradientProgress */ = {
+		78F4F6741E7A0BEF6951F2A3472C60C1 /* SGBase */ = {
 			isa = PBXGroup;
 			children = (
-				FE7ECEC8D76C3590B1B57CC3C031D265 /* SGGradientProgress.h */,
-				CAFA1D1B9B8216620038AEDF2986AF11 /* SGGradientProgress.m */,
-				CD967BAC075E6C88D3000E902C4055AD /* Resources */,
+				6FACD6FA1E6C8EE3A5516F3ECEA57321 /* SGBaseView.h */,
+				DD0C1CF3A5CFD5E34353C0DA771221C1 /* SGBaseView.m */,
+				8E1DC98AEDFCFB9D3954F66980E2E9D7 /* SGPickerViewMacro.h */,
 			);
-			name = SGGradientProgress;
+			name = SGBase;
 			sourceTree = "<group>";
 		};
-		7867D5302727511DA78823C389F32281 /* Resources */ = {
+		7D561425A99B697C3D7FA9F019770258 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A19247727FFF77E290094D550909EAA7 /* SGSearchController.bundle */,
+				4162DEB60F00A747190110C75D3DE89C /* SGGradientProgress.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		7D8FA6861D17AD37061EE9F7A71A17A6 /* SGCollectionViewFlowLayout */ = {
+		881664EF7857EF31028899E5DBF8FC7B /* SGStringPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				2D7006B1B0B95C387C497EF081991FBA /* SGCollectionViewFlowLayout.h */,
-				6DACEC1D5046121F9B99A135DCC41283 /* SGCollectionViewFlowLayout.m */,
-			);
-			name = SGCollectionViewFlowLayout;
-			sourceTree = "<group>";
-		};
-		80833335D20DE610AA10805F375123FD /* SGStringPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				B789BE408D67A8E2D9E16E05AB0D1C6A /* SGStringPickerView.h */,
-				933D01FFF8965BA1958B1E6889AB5F91 /* SGStringPickerView.m */,
+				F6968071F949FEC3F05B0C7FCB3AB73F /* SGStringPickerView.h */,
+				DCD286FD5438F87B04FE9152BCB9FD6F /* SGStringPickerView.m */,
 			);
 			name = SGStringPickerView;
 			sourceTree = "<group>";
 		};
-		8E2E170CF547E7FEC2A0CDA2FDDB3987 /* Pod */ = {
+		95D215BCE6A4022D10F920AE78A7A191 /* SGPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				4D02DD08F891F9F3B8436A73108E99B9 /* LICENSE */,
-				98FBA38015F3117C5DBAB52DD90ABFA0 /* README.md */,
-				3A93E33ACFACE9325431C9F682B6331E /* SGTools.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		991498757DB19B61C353C0010A967006 /* SGPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				1816202225CB23B1A41E53796BFA5901 /* SGPickerView.h */,
-				B89B3598D92A13BC9F91C18E58DA5BA2 /* SGAddressPickerView */,
-				31CC80C77001E31B06419DD7B0F9D51F /* SGBase */,
-				710AA3E857156ECD5D5814C77B735DF1 /* SGDatePickerView */,
-				80833335D20DE610AA10805F375123FD /* SGStringPickerView */,
+				B42CCB153C30B86D4115772A20A568C6 /* SGPickerView.h */,
+				5DD3A658C630F5FD93139942F2D30661 /* SGAddressPickerView */,
+				78F4F6741E7A0BEF6951F2A3472C60C1 /* SGBase */,
+				CD604DD8C84CFE31CE9750DA070311E7 /* SGDatePickerView */,
+				881664EF7857EF31028899E5DBF8FC7B /* SGStringPickerView */,
 			);
 			name = SGPickerView;
 			sourceTree = "<group>";
 		};
-		993A79F89804E1A0A1568AABA03B02CE /* Resources */ = {
+		9C5340B90CAEF068F2B25CB431715A19 /* SGVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				86C3D9B4B00D2D94F93CBFCD745185D0 /* SGPickerView.bundle */,
+				9EA3F711BA4A6E1978B3D68BC2867611 /* SGVideoPlayer.h */,
+				E8E3C682E2B6194D86F2BD93672B556B /* SGVideoPlayer.m */,
 			);
-			name = Resources;
+			name = SGVideoPlayer;
 			sourceTree = "<group>";
 		};
-		9F7C9080AB191E8B9560DD332A61E246 /* SGSpeechSynthesizer */ = {
+		9F1E7C0CE6AA057E72BF261A79D76EF5 /* SGAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				D2FAA82805F6F4F6B13369D8818E7144 /* SGSpeechSynthesizerManager.h */,
-				9B21B648DD107364C18C47333437CDD7 /* SGSpeechSynthesizerManager.m */,
-			);
-			name = SGSpeechSynthesizer;
-			sourceTree = "<group>";
-		};
-		AAA35B9E63090715E07879E3E2CB5A8D /* SGAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				B22B657A2898AC6D36CD716721D1043B /* SGAlertView.h */,
-				BBD884E11F80AE5CDEEA8BD8D77680FE /* SGAlertView.m */,
-				3F6C7094464644180EF6F4801B82EFFC /* Resources */,
+				1BDBCF0AD872E3B7761CF46577BF5079 /* SGAlertView.h */,
+				E445207D7D49B80D7E100EE25772542B /* SGAlertView.m */,
+				485E8E6EE0B616A7892DE90532496941 /* Resources */,
 			);
 			name = SGAlertView;
 			sourceTree = "<group>";
 		};
-		B31FB465C12D983757A1953F8E004604 /* SGTriangleView */ = {
+		B134CA5AA3A521637FC36211AE1C604B /* SGGradientProgress */ = {
 			isa = PBXGroup;
 			children = (
-				84A67A2B2BE6374005C1D4B8609BDDED /* SGTriangleView.h */,
-				286CE9CA571822F745D29040F20C637D /* SGTriangleView.m */,
+				2DA4910B57145257D3452B3B071C1C9D /* SGGradientProgress.h */,
+				E0B9FD269E381578273AAEFFE7B6516E /* SGGradientProgress.m */,
+				7D561425A99B697C3D7FA9F019770258 /* Resources */,
 			);
-			name = SGTriangleView;
+			name = SGGradientProgress;
 			sourceTree = "<group>";
 		};
-		B89B3598D92A13BC9F91C18E58DA5BA2 /* SGAddressPickerView */ = {
+		B17D4D0C5CC054B14F3BAC569B97BE16 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A76BBD1946FCB7B4992FC6B5D17E238A /* SGAddressModel.h */,
-				E02712E1BCB80972BD75FC5158E0ABFC /* SGAddressModel.m */,
-				3C9C092D763FDCCD0AC527BFD128F07F /* SGAddressPickerView.h */,
-				A6DAF17D36759222D00B774F5CEF21F7 /* SGAddressPickerView.m */,
-				993A79F89804E1A0A1568AABA03B02CE /* Resources */,
+				04EF846D9C59C3507A02B86519CCA040 /* SGTools.modulemap */,
+				85D1A36B37571FDE9067E1C344FE4478 /* SGTools.xcconfig */,
+				76E43A73D3D029239C61EEA6832B8B09 /* SGTools-dummy.m */,
+				252ECEAE838F209C4D3CBCAE21CA89A7 /* SGTools-Info.plist */,
+				A8257407452F19C3C0D17AE437D9BCCA /* SGTools-prefix.pch */,
+				8D26E5E33ADECD61DCB3C656886249B2 /* SGTools-umbrella.h */,
 			);
-			name = SGAddressPickerView;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SGTools";
+			sourceTree = "<group>";
+		};
+		B715B255BF5F5292859CA69B37D06A7E /* SGShadowView */ = {
+			isa = PBXGroup;
+			children = (
+				D54075D8E9785AD52A4D7CD4D4918BC9 /* SGShadowView.h */,
+				D99EC971D2AA6D330F032C4F0B021EA5 /* SGShadowView.m */,
+			);
+			name = SGShadowView;
 			sourceTree = "<group>";
 		};
 		B8E2C472EF7E7FDC3762375EC6A7F033 /* iOS */ = {
@@ -648,24 +552,110 @@
 			path = "../Target Support Files/Masonry";
 			sourceTree = "<group>";
 		};
-		CD967BAC075E6C88D3000E902C4055AD /* Resources */ = {
+		BE93F383D7211918D3F321A868CCDEE4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				7E0F33993FC68C893FC0B6707CBF6F0A /* SGGradientProgress.bundle */,
+				1B695D29A8B455CD4B78CA69F8ADA2EB /* LICENSE */,
+				7A54139EF03DF6E5ED823E4C88BCAEBF /* README.md */,
+				54962B35B7B44E956532F92DF0385091 /* SGTools.podspec */,
 			);
-			name = Resources;
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C38AB573AEA234C9963098CF3224F4CA /* SGVocabularyDictation */ = {
+			isa = PBXGroup;
+			children = (
+				A137940007B154F5A3750B9B50A17F41 /* SGVocabularyAnswerView.h */,
+				BC282A7171C8D871A5B4E23BB21B09AB /* SGVocabularyAnswerView.m */,
+				EA5C3D8F04B552E4255E60C4CCFB0728 /* SGVocabularyDictationView.h */,
+				EB76561229FC5129385844AE831C9996 /* SGVocabularyDictationView.m */,
+				291B286671E11146B39DD752CB803389 /* SGVocabularyKeyboardView.h */,
+				074611D4062DB5E56A37724486D3256E /* SGVocabularyKeyboardView.m */,
+				9D36D3E12294B3BC2C1A27B7E0859DB2 /* SGVocabularySpellingView.h */,
+				30C881C3910CCEB30A837C5B46EFEF36 /* SGVocabularySpellingView.m */,
+				879D7A6B48CA72869709838A37B8F4C4 /* SGVocabularyTools.h */,
+				03B680A9478E3EEB199FFD12C86986CF /* SGVocabularyTools.m */,
+				94DE7CF6B604C25CEAEBC8A7650465E1 /* SGVocabularyVoiceView.h */,
+				7CA29818F7BEA1B880A93E1C7A0CBF49 /* SGVocabularyVoiceView.m */,
+				0D0811FED07ABBB608621392261506A6 /* UIImage+SGVocabularyResource.h */,
+				2EED9618D1B32426D8B80C9A37F121D5 /* UIImage+SGVocabularyResource.m */,
+				DA80EDD61742C410B017871757580C2D /* Resources */,
+			);
+			name = SGVocabularyDictation;
+			sourceTree = "<group>";
+		};
+		CD604DD8C84CFE31CE9750DA070311E7 /* SGDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				75C41A7B2E3FE921298E795D21A992FA /* NSDate+SGPickerView.h */,
+				B9672547525A42B4BDCA03C406D9D388 /* NSDate+SGPickerView.m */,
+				F5AE9A892CBDB6D1C974F41D1AF9B321 /* SGDatePickerView.h */,
+				01495E4CC308FDE4C0823387966DA529 /* SGDatePickerView.m */,
+			);
+			name = SGDatePickerView;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				6795D7431C29E77EC579F3DF83E72540 /* Development Pods */,
+				FB5382B6F5FC00499EB5F9F62C1BDF4C /* Development Pods */,
 				DF275781DF9628A2D5BF35F5D74F7BC1 /* Frameworks */,
 				7529FD53BCE26816CCD46658378AAF1B /* Pods */,
 				1981393EACDF11E3A0B85FFB368A3220 /* Products */,
 				F545D063D7EE90A91CCFA240009BC661 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D14D097D2E714127C4BEE903A9E24692 /* SGTools */ = {
+			isa = PBXGroup;
+			children = (
+				BE93F383D7211918D3F321A868CCDEE4 /* Pod */,
+				9F1E7C0CE6AA057E72BF261A79D76EF5 /* SGAlertView */,
+				DB4ABAA2B42F2AFAE43C9EC12B28F48F /* SGAudioPlayer */,
+				17977E3D8D4A009931A4D0982446C05C /* SGCheckBox */,
+				6831669626257575F18A64AD55F75E77 /* SGCollectionViewFlowLayout */,
+				B134CA5AA3A521637FC36211AE1C604B /* SGGradientProgress */,
+				95D215BCE6A4022D10F920AE78A7A191 /* SGPickerView */,
+				ED656E6A746AA173D0C23319BA7E39E9 /* SGSearchController */,
+				B715B255BF5F5292859CA69B37D06A7E /* SGShadowView */,
+				F0AF793B88E8B7EB253AF7E580CDE74C /* SGSingleAudioPlayer */,
+				DB950616A606D37AE69DB6D0811415E8 /* SGSpeechSynthesizer */,
+				321BDEF6D943EAC8E3CE0A9903138DD6 /* SGTriangleView */,
+				66EF8B374EAB0118BC07C29DE34C8F93 /* SGUIKit */,
+				9C5340B90CAEF068F2B25CB431715A19 /* SGVideoPlayer */,
+				C38AB573AEA234C9963098CF3224F4CA /* SGVocabularyDictation */,
+				F98843F87675DA4EFFA18EE8108AB217 /* SGVoiceAnimationView */,
+				B17D4D0C5CC054B14F3BAC569B97BE16 /* Support Files */,
+			);
+			name = SGTools;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		DA80EDD61742C410B017871757580C2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				749754A3D7D46B8C7CA282334D66A38E /* SGVocabularyDictation.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DB4ABAA2B42F2AFAE43C9EC12B28F48F /* SGAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				1079B7F76369C555C0EE431D7BCAD591 /* SGAudioPlayer.h */,
+				86A09A196FA546673B6550796CA9984D /* SGAudioPlayer.m */,
+			);
+			name = SGAudioPlayer;
+			sourceTree = "<group>";
+		};
+		DB950616A606D37AE69DB6D0811415E8 /* SGSpeechSynthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				FE3BA4A42E78015CAE97C3577C5115A3 /* SGSpeechSynthesizerManager.h */,
+				71BA0FAB66D786F76D8CFA1AEA4F2AA1 /* SGSpeechSynthesizerManager.m */,
+			);
+			name = SGSpeechSynthesizer;
 			sourceTree = "<group>";
 		};
 		DF275781DF9628A2D5BF35F5D74F7BC1 /* Frameworks */ = {
@@ -677,6 +667,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E9AB13DBB377B0582DC78F7898C17896 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7926FDEBC5C0EC3384836E71C3CC86E8 /* SGSearchController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ED656E6A746AA173D0C23319BA7E39E9 /* SGSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				98F9120ED691BDC044C82F6CA308075A /* SGSearchController.h */,
+				615CBB3E3A9EAB132A7A9B25E7A1E8E7 /* SGSearchController.m */,
+				E9AB13DBB377B0582DC78F7898C17896 /* Resources */,
+			);
+			name = SGSearchController;
+			sourceTree = "<group>";
+		};
+		F0AF793B88E8B7EB253AF7E580CDE74C /* SGSingleAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				43F8358A8D4E8FC9ED96838CC81C5EF3 /* SGSingleAudioPlayer.h */,
+				67EE4F67C2EFF423EE2CD5104AEDA348 /* SGSingleAudioPlayer.m */,
+			);
+			name = SGSingleAudioPlayer;
+			sourceTree = "<group>";
+		};
 		F545D063D7EE90A91CCFA240009BC661 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,18 +702,66 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FA1E0FC257473B297B38BFF42AEAA01F /* SGShadowView */ = {
+		F98843F87675DA4EFFA18EE8108AB217 /* SGVoiceAnimationView */ = {
 			isa = PBXGroup;
 			children = (
-				A995F052A8E4A18BE7AB1D3B205A665C /* SGShadowView.h */,
-				7B37825A11B297F92381873AB57C9479 /* SGShadowView.m */,
+				ED5CEF90FC0505C2A9139DD5FB961BFC /* SGVoiceAnimationView.h */,
+				89CA36D69CA9A4D3ACB481FF966B906B /* SGVoiceAnimationView.m */,
 			);
-			name = SGShadowView;
+			name = SGVoiceAnimationView;
+			sourceTree = "<group>";
+		};
+		FB5382B6F5FC00499EB5F9F62C1BDF4C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D14D097D2E714127C4BEE903A9E24692 /* SGTools */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0DFF2BA76DDEDD513E333F4CD89B3D35 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E012E10A5954D0730221DCE614D7A90 /* NSDate+SGPickerView.h in Headers */,
+				B5C3C9CB85EFA675F133242E9D5B0A4C /* SGAddressModel.h in Headers */,
+				5953078B6E4DCE1AFD2915FB7BAC9CDF /* SGAddressPickerView.h in Headers */,
+				BFEC96A4C346C5363703FE2FCB11015E /* SGAlertView.h in Headers */,
+				ED6ACE4E8637E618BBB6F939108D5F1E /* SGAnimationManager.h in Headers */,
+				D0C89930CEFD0922A8B30B49D24F8929 /* SGAudioPlayer.h in Headers */,
+				5BC0486F39CC25664DD09539776CFEE5 /* SGBaseView.h in Headers */,
+				033486B410D5C66332EB9655698C186B /* SGCheckBox.h in Headers */,
+				74CFBE13E7F71F0DFC11121BAB7E98D7 /* SGCheckBoxGroup.h in Headers */,
+				A1EF341669D242891AEE3A42FB6B1D9D /* SGCollectionViewFlowLayout.h in Headers */,
+				B923FCBFA27A2CC19122CF8362D63952 /* SGDatePickerView.h in Headers */,
+				83A84407EEFDB5BBC22E792430C1748A /* SGGradientProgress.h in Headers */,
+				E8C22FC133CCC15872F64AEF73D1962F /* SGPathManager.h in Headers */,
+				EBF37D40EAED83684405948E9F885CFF /* SGPickerView.h in Headers */,
+				8F4445EEC761BB15750DA6A1405789BC /* SGPickerViewMacro.h in Headers */,
+				2E225E7DDFC766F85A2AE61C7E9D6170 /* SGSearchController.h in Headers */,
+				3A7CB0568653A9BFAF0DC644CDDE67E8 /* SGShadowView.h in Headers */,
+				AE41BA3CB7ADE0B8CBB7AE15F9DA8DFE /* SGSingleAudioPlayer.h in Headers */,
+				E8269D68BB7B85C10DA659CD024E7C0D /* SGSpeechSynthesizerManager.h in Headers */,
+				0FC9250C6D061F936C97FE0A2B40F2C3 /* SGStringPickerView.h in Headers */,
+				F3ACD81E374B984A8AE2A8CC41DFEABE /* SGTools-umbrella.h in Headers */,
+				0B450A6E2801B16BC51160898D1992C3 /* SGTriangleView.h in Headers */,
+				D243566B0FC4CCF43EC00F823551D19C /* SGUIKit.h in Headers */,
+				AEE9CBA56D86652EA87F26FA576E27A6 /* SGVideoPlayer.h in Headers */,
+				C5B63504C7DFE81E7FE9B314E06C40DE /* SGVocabularyAnswerView.h in Headers */,
+				BA826FF3641655A1C9949DA3E4C2DA83 /* SGVocabularyDictationView.h in Headers */,
+				929A15B948B3EBAD8B4DD80343F6D1CE /* SGVocabularyKeyboardView.h in Headers */,
+				5926EFE4A0F906B66E737F4E33A631D2 /* SGVocabularySpellingView.h in Headers */,
+				F739AFCE51465A0F81796EF48DA6B924 /* SGVocabularyTools.h in Headers */,
+				9A09A3945C2D04B422362BB3F3CB8FE9 /* SGVocabularyVoiceView.h in Headers */,
+				29FA353C988639FBB7133B49C9E203F0 /* SGVoiceAnimationView.h in Headers */,
+				FD77D1E90DFF774C36D4EF094D16399B /* UIImage+SGVocabularyResource.h in Headers */,
+				6657860ECC679F589F793E7B593A9974 /* UIView+SGShadow.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7B04ACBA4522760CA66A5D4AFA498F81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -717,44 +782,6 @@
 				4B0981F9AC628CF5100C50FF4A163A4A /* View+MASAdditions.h in Headers */,
 				E7CA20228B3583F41927813EE904CAD3 /* View+MASShorthandAdditions.h in Headers */,
 				8B92011C9373001132C8148BFC8F50B3 /* ViewController+MASAdditions.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE57FB81D5E5D6DC644F2BF2BB138DF4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2790E49796F7E7659E78F640240BAD45 /* NSDate+SGPickerView.h in Headers */,
-				179584126133411CA8923FE848250928 /* SGAddressModel.h in Headers */,
-				32C598263B1C7E5F1A7C428B141945A8 /* SGAddressPickerView.h in Headers */,
-				400A77903563BA681ADA12214E49742E /* SGAlertView.h in Headers */,
-				6CD21EBEBA1F73121A062D864609A63C /* SGAnimationManager.h in Headers */,
-				FC222A74FCB7A95DCE1C6C7099166277 /* SGAudioPlayer.h in Headers */,
-				6340508910DACF8B05E4F364340AA514 /* SGBaseView.h in Headers */,
-				E7CFA5310B896D006853650570DF394D /* SGCheckBox.h in Headers */,
-				72A118944EB30A2DF9CD135C1455F640 /* SGCheckBoxGroup.h in Headers */,
-				3A92E8D82DE30D8AF0E97A9F8A93D989 /* SGCollectionViewFlowLayout.h in Headers */,
-				2763E9628BE719658C0C8FDC41CE648F /* SGDatePickerView.h in Headers */,
-				03300296468C305909BC356A16534161 /* SGGradientProgress.h in Headers */,
-				4DBDA7D1CB65E3E758F1947D5DC28409 /* SGPathManager.h in Headers */,
-				01D6352A4C187E87E532CCB3E516D6D8 /* SGPickerView.h in Headers */,
-				ED68F7C0076E1A96696D37E79A1FD4CB /* SGPickerViewMacro.h in Headers */,
-				1F9450A992B3C55D8849F904A88363FF /* SGSearchController.h in Headers */,
-				66831C50C3DB772DF3211B49DCFFDD04 /* SGShadowView.h in Headers */,
-				167BD5E33F8C00C9FD6337975EB80184 /* SGSingleAudioPlayer.h in Headers */,
-				B2AE3B6CDD7DAEC02BC541DEF7BDAA66 /* SGSpeechSynthesizerManager.h in Headers */,
-				C1A0DE351CC32A44947F7DB8C72E85BD /* SGStringPickerView.h in Headers */,
-				72C65CCFEC4C69DDD84D1DD3BFAD8493 /* SGTools-umbrella.h in Headers */,
-				21D71BB03B98994F05034A3C8C0CB1B3 /* SGTriangleView.h in Headers */,
-				8EF2ACC600762776E53D550BD859F45D /* SGVideoPlayer.h in Headers */,
-				93485DE5836B17CD6EFEEB1E9BFFFB11 /* SGVocabularyAnswerView.h in Headers */,
-				AB269408A816329529402D910B3D4DB1 /* SGVocabularyDictationView.h in Headers */,
-				E17D62C2F0574A4BD16E8475C25773E3 /* SGVocabularyKeyboardView.h in Headers */,
-				C9E43A293D021F7306B3D3ED9E55E655 /* SGVocabularySpellingView.h in Headers */,
-				77F3A78274F0B2636CB335E250028843 /* SGVocabularyTools.h in Headers */,
-				B78B21D5A3ADC0FD52BD7BF26F0A38FB /* SGVocabularyVoiceView.h in Headers */,
-				7CB3F84E870521EDA63786B24708AFD1 /* SGVoiceAnimationView.h in Headers */,
-				066F5C12AC814EDDDE248DD3EA696EDC /* UIImage+SGVocabularyResource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,17 +836,17 @@
 		};
 		C08DB5DE7EDB7A90B707B6628B857504 /* SGTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 68702F11102F3824422E54A622F1E3E3 /* Build configuration list for PBXNativeTarget "SGTools" */;
+			buildConfigurationList = 8FB461AAB6A881400FFF6CC3809D4E55 /* Build configuration list for PBXNativeTarget "SGTools" */;
 			buildPhases = (
-				BE57FB81D5E5D6DC644F2BF2BB138DF4 /* Headers */,
-				783FA95C74D45595A8237908A4CBB391 /* Sources */,
-				29EABDFA41AB5DF135D03DF468742E20 /* Frameworks */,
-				5E58DFF22A7C70B2D7D4289733DD28FC /* Resources */,
+				0DFF2BA76DDEDD513E333F4CD89B3D35 /* Headers */,
+				C91B1C158EC2BC144F3026741705A54D /* Sources */,
+				26CF79B676C121D407F33EC3A43D34D8 /* Frameworks */,
+				4A8D1027C6D67B6E0BA16F1CDCF5AF59 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D3A6C032FE8D97DE753E263FEB045A70 /* PBXTargetDependency */,
+				3D09AFB1CD06C291D4E7DB7753DF7C16 /* PBXTargetDependency */,
 			);
 			name = SGTools;
 			productName = SGTools;
@@ -855,15 +882,15 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5E58DFF22A7C70B2D7D4289733DD28FC /* Resources */ = {
+		4A8D1027C6D67B6E0BA16F1CDCF5AF59 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD5C237E3FFA80438ED0F5312E0BBFB /* SGAlert.bundle in Resources */,
-				E66FAF942877EB3710A5CCA10A5FBD34 /* SGGradientProgress.bundle in Resources */,
-				FCA97E14EA0F11887389237375DDD344 /* SGPickerView.bundle in Resources */,
-				061E692D8442AB204D0303FC8D422FE2 /* SGSearchController.bundle in Resources */,
-				F344E5AAD71B970BA5512482FC828CB7 /* SGVocabularyDictation.bundle in Resources */,
+				07B8C8AA634AD6E9A9B9F6D96FAA8446 /* SGAlert.bundle in Resources */,
+				7795480104C7CDF1E3382FCCB06A0B07 /* SGGradientProgress.bundle in Resources */,
+				939A7FF13251A8B36C90F472F5C427F0 /* SGPickerView.bundle in Resources */,
+				1F78892040A6DEA32DF06F4FE4E704E0 /* SGSearchController.bundle in Resources */,
+				87234B72F85C392D82237D476DE2F8D9 /* SGVocabularyDictation.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,39 +937,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783FA95C74D45595A8237908A4CBB391 /* Sources */ = {
+		C91B1C158EC2BC144F3026741705A54D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF7EE3AA319D24ABF324E8BD94A798B3 /* NSDate+SGPickerView.m in Sources */,
-				7AAB04748932B5DEAC352C16292ECA40 /* SGAddressModel.m in Sources */,
-				3D2B4BA29B994381F5C4041460E1E56D /* SGAddressPickerView.m in Sources */,
-				04482154FE394104C9ADEA40682D462A /* SGAlertView.m in Sources */,
-				E2F5EB05F27B01C70648BD92D480323E /* SGAnimationManager.m in Sources */,
-				812D828A13D3955C389350F3A505441B /* SGAudioPlayer.m in Sources */,
-				524E209F437A22BE9DD2BAF83BEA14E2 /* SGBaseView.m in Sources */,
-				1CBABB29CEE5B75773A06EB15C85C47B /* SGCheckBox.m in Sources */,
-				7D06308A7E0992993613C18414F37E7B /* SGCheckBoxGroup.m in Sources */,
-				81661FBF42C9DA8F3CFFD0EE1894FA87 /* SGCollectionViewFlowLayout.m in Sources */,
-				2B13AE0EB2649E33394EA31D8F29BC08 /* SGDatePickerView.m in Sources */,
-				A9395CE31AF53E7487647C181B635AEB /* SGGradientProgress.m in Sources */,
-				5D460824400E469F0156E7E012ABEDFD /* SGPathManager.m in Sources */,
-				C4F0CD76D28E321584673764E9F8AA11 /* SGSearchController.m in Sources */,
-				54C3385F8B20E1BBD734D341752FB6AB /* SGShadowView.m in Sources */,
-				7A21E5A4AAB36A38BF11ACDDC6ED81D0 /* SGSingleAudioPlayer.m in Sources */,
-				4B017DA02BF3A0015132F726478C9818 /* SGSpeechSynthesizerManager.m in Sources */,
-				B1264B7B41286895A027F3D96BD2955D /* SGStringPickerView.m in Sources */,
-				3F0D41609DE345076C7DC5B9B0E98EAF /* SGTools-dummy.m in Sources */,
-				EF260EFE95A0481BC553184FEBFA376A /* SGTriangleView.m in Sources */,
-				FD56BA9DA78458549CD1B50B2D5ADBAB /* SGVideoPlayer.m in Sources */,
-				CD4B01F672ED08FE68F17D9F275657A2 /* SGVocabularyAnswerView.m in Sources */,
-				BE2E70C81A85E54D196103ADA4D23EA8 /* SGVocabularyDictationView.m in Sources */,
-				2D8F09713C061CE322EC7598B8698EA0 /* SGVocabularyKeyboardView.m in Sources */,
-				DCB84CF473C938BE6ED134477F811B56 /* SGVocabularySpellingView.m in Sources */,
-				74AB8172CAAD50AA832249632C8EBCDB /* SGVocabularyTools.m in Sources */,
-				24E02D4A371EBDE2D91FA32FE14650A0 /* SGVocabularyVoiceView.m in Sources */,
-				E8936CB6101E58EB6C1769A28B42C0BB /* SGVoiceAnimationView.m in Sources */,
-				F125B360572F170BC92FC45253F1DDC7 /* UIImage+SGVocabularyResource.m in Sources */,
+				C8715BD517BDCD09993C753482AF0784 /* NSDate+SGPickerView.m in Sources */,
+				90742C510F217E45C5A30DF3C885E03C /* SGAddressModel.m in Sources */,
+				14AA8B35E2C9BCAFD79C9B8AC87FBDF6 /* SGAddressPickerView.m in Sources */,
+				8B3F4E32DD2A43E3DCC3513F528D4C80 /* SGAlertView.m in Sources */,
+				EAD32254B2724560B90F76338F69F2DD /* SGAnimationManager.m in Sources */,
+				02CC9412C85CE8CE240AFF259703410A /* SGAudioPlayer.m in Sources */,
+				C314BC50EDD9E070EAF900B58CFBF92E /* SGBaseView.m in Sources */,
+				A664F4A6A8AF1DD6653B09007991D70B /* SGCheckBox.m in Sources */,
+				08743F863A9FAA01FD7ECDA2019FE5C1 /* SGCheckBoxGroup.m in Sources */,
+				3238DD1EC965F1F3B7C7C879F67372F9 /* SGCollectionViewFlowLayout.m in Sources */,
+				104410C78C069EB1A4511B43742B563B /* SGDatePickerView.m in Sources */,
+				04DF40435EAC3FBC37E38D39505037C4 /* SGGradientProgress.m in Sources */,
+				DC1E6E18A1D760AFC0AE8889BEF9220F /* SGPathManager.m in Sources */,
+				CA931D687AC3DA142CFC436327806510 /* SGSearchController.m in Sources */,
+				33095BF6730A5A5FC4223A7C613AE5DA /* SGShadowView.m in Sources */,
+				853090A376AD2EC0B9EFE948A8541F05 /* SGSingleAudioPlayer.m in Sources */,
+				C5C965DA016B21E0A7E5E7E1A1E3BEDF /* SGSpeechSynthesizerManager.m in Sources */,
+				C2E9570444F67006F434E1A3BD7BE95C /* SGStringPickerView.m in Sources */,
+				E775014735CF644FF1984EB2D7E54F9B /* SGTools-dummy.m in Sources */,
+				875D8298EC7A3B5C581EE3A831BCB1AF /* SGTriangleView.m in Sources */,
+				972C76FCBEED5DD14FE6E5421287EB43 /* SGVideoPlayer.m in Sources */,
+				8B027D6583116F777FC6932AD17FF9A8 /* SGVocabularyAnswerView.m in Sources */,
+				5CBE38D65DAE8722EF54A89F6F003F1A /* SGVocabularyDictationView.m in Sources */,
+				BC72C2FD9C89C17FEED82956FDF97A42 /* SGVocabularyKeyboardView.m in Sources */,
+				1B205817620EF701BFEA978FBA55CBE0 /* SGVocabularySpellingView.m in Sources */,
+				C7DEE175C9FE92E78366E804C2C4D149 /* SGVocabularyTools.m in Sources */,
+				71558DE54B141481D76F107EB1047112 /* SGVocabularyVoiceView.m in Sources */,
+				86BE9701C4225F6176BE0305C9671A9E /* SGVoiceAnimationView.m in Sources */,
+				42100DCBD77E5899EBFE51FE8E475DCD /* UIImage+SGVocabularyResource.m in Sources */,
+				1DDD1293CE7E7DC8DEE75ECD71EE7523 /* UIView+SGShadow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,24 +983,24 @@
 			target = C08DB5DE7EDB7A90B707B6628B857504 /* SGTools */;
 			targetProxy = A9E536CC0136F5DC0D525E2FC8645F76 /* PBXContainerItemProxy */;
 		};
+		3D09AFB1CD06C291D4E7DB7753DF7C16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = D113EC8AC18AC4E545B3E6E4A745FF8B /* PBXContainerItemProxy */;
+		};
 		90C945BDFFDEA14F32594A75D49D60D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
 			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
 			targetProxy = 9AC3D1724840DBBF36308C469AF949FA /* PBXContainerItemProxy */;
 		};
-		D3A6C032FE8D97DE753E263FEB045A70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = 4E9CFBBB37D894B718570B52FA6934AA /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2F9B221E7FF02EF0C84D227E3E1972FF /* Release */ = {
+		13DC05FD90F2C74A60DA4850D3AC6EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 686C501B6DD46E2D4AEDF4B969831F8E /* SGTools.xcconfig */;
+			baseConfigurationReference = 85D1A36B37571FDE9067E1C344FE4478 /* SGTools.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1033,37 +1061,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		5AEE91207A2B69CAC6CA95C5B2BAD911 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 686C501B6DD46E2D4AEDF4B969831F8E /* SGTools.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SGTools/SGTools-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SGTools/SGTools-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SGTools/SGTools.modulemap";
-				PRODUCT_MODULE_NAME = SGTools;
-				PRODUCT_NAME = SGTools;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		5FFDF85C6C1A4703FC8B67BF41EC57EF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1287,6 +1284,37 @@
 			};
 			name = Debug;
 		};
+		E0B3453772BCE6612C028A8CC8212AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85D1A36B37571FDE9067E1C344FE4478 /* SGTools.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SGTools/SGTools-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SGTools/SGTools-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SGTools/SGTools.modulemap";
+				PRODUCT_MODULE_NAME = SGTools;
+				PRODUCT_NAME = SGTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1299,20 +1327,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		68702F11102F3824422E54A622F1E3E3 /* Build configuration list for PBXNativeTarget "SGTools" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AEE91207A2B69CAC6CA95C5B2BAD911 /* Debug */,
-				2F9B221E7FF02EF0C84D227E3E1972FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		87FD40BD683E3BD044AA4D1B5CA58652 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C65F7CC9708EE0690525E4800598E8E /* Debug */,
 				527D6664223B803E9C7307F58E3CA12A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FB461AAB6A881400FFF6CC3809D4E55 /* Build configuration list for PBXNativeTarget "SGTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0B3453772BCE6612C028A8CC8212AC5 /* Debug */,
+				13DC05FD90F2C74A60DA4850D3AC6EB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

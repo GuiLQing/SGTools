@@ -31,6 +31,8 @@
 #import "SGSingleAudioPlayer.h"
 #import "SGSpeechSynthesizerManager.h"
 #import "SGTriangleView.h"
+#import "SGUIKit.h"
+#import "UIView+SGShadow.h"
 #import "SGVideoPlayer.h"
 #import "SGVocabularyAnswerView.h"
 #import "SGVocabularyDictationView.h"

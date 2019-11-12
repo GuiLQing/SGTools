@@ -9,6 +9,7 @@
 #import "SGAlertView.h"
 #import <Masonry/Masonry.h>
 #import "SGCheckBox.h"
+#import "UIView+SGShadow.h"
 
 static NSInteger const SGAlertEnsureTag = 1573117264;
 static NSInteger const SGAlertCancelTag = 1573117265;
@@ -479,6 +480,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
         NSMutableArray *items = [NSMutableArray array];
         for (SGAlertTitle *itemTitle in itemTitles) {
             UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
+            item.backgroundColor = UIColor.whiteColor;
             [item.titleLabel setFont:SGAlertFontDynamicSize(15.0f)];
             [item setTag:itemTitle.titleTag];
             [item setTitle:itemTitle.title forState:UIControlStateNormal];
@@ -492,6 +494,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
             UIButton *item = items.firstObject;
             SGAlertRounder(item, 20.0f);
             item.backgroundColor = SGAlertHexColor(0x0baffb);
+            item.sg_shadowConfig(SGShadowConfigLancooNormal(SGAlertHexColor(0x0baffb), 20.0f, nil, 0));
             
             [item mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(40.0f);
@@ -507,11 +510,13 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
             UIButton *firstItem = items.firstObject;
             SGAlertRounder(firstItem, 20.0f);
             firstItem.backgroundColor = SGAlertHexColor(0x0baffb);
+            firstItem.sg_shadowConfig(SGShadowConfigLancooNormal(SGAlertHexColor(0x0baffb), 20.0f, nil, 0));
             
             UIButton *lastItem = items.lastObject;
             SGAlertRounder(lastItem, 20.0f);
             SGAlertBorder(lastItem, SGAlertHexColor(0x0baffb), 1.0f);
             [lastItem setTitleColor:SGAlertHexColor(0x0baffb) forState:UIControlStateNormal];
+            lastItem.sg_shadowConfig(SGShadowConfigLancooNormal(SGAlertHexColor(0x0baffb), 20.0f, SGAlertHexColor(0x0baffb), 1.0f));
             
             [items mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(40.0f);
