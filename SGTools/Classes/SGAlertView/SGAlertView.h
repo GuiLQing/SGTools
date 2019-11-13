@@ -82,6 +82,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (SGAlertView * (^)(void (^ _Nullable noLongerShowHandle)(BOOL selected)))sg_noLongerShowHandle;
 
+- (SGAlertView * (^)(UIView * _Nullable alertSuperView))sg_alertSuperView;
+
 - (SGAlertView * (^)(void))sg_show;
 
 - (SGAlertView * (^)(void))sg_hide;
@@ -101,9 +103,10 @@ static inline SGAlertTitleConfig * SGAlertTitleConfigMake(UIFont * _Nullable fon
     return config;
 }
 
-static inline SGAlertView * SGAlertViewMake(NSString * _Nullable title, NSAttributedString * _Nullable attributedTitle, NSString * _Nullable message, NSAttributedString * _Nullable attributedMessage, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, NSArray * _Nullable otherTitles, NSNumber * _Nullable imageType, UIImage * _Nullable tipsImage, NSNumber * _Nullable customContentViewType, void (^ _Nullable sg_customContentView)(UIView *customContentView), NSString * _Nullable noLongerShowKey, void (^ _Nullable sg_ensureTitleConfig)(SGAlertTitleConfig *ensureTitleConfig), void (^ _Nullable sg_cancelTitleConfig)(SGAlertTitleConfig *cancelTitleConfig), NSArray<SGAlertTitleConfig *> * _Nullable otherTitleConfigs, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void), void (^ _Nullable otherHandle)(NSNumber *index), void (^ _Nullable noLongerShowHandle)(BOOL selected)) {
+static inline SGAlertView * SGAlertViewMake(UIView * _Nullable alertSuperView, NSString * _Nullable title, NSAttributedString * _Nullable attributedTitle, NSString * _Nullable message, NSAttributedString * _Nullable attributedMessage, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, NSArray * _Nullable otherTitles, NSNumber * _Nullable imageType, UIImage * _Nullable tipsImage, NSNumber * _Nullable customContentViewType, void (^ _Nullable sg_customContentView)(UIView *customContentView), NSString * _Nullable noLongerShowKey, void (^ _Nullable sg_ensureTitleConfig)(SGAlertTitleConfig *ensureTitleConfig), void (^ _Nullable sg_cancelTitleConfig)(SGAlertTitleConfig *cancelTitleConfig), NSArray<SGAlertTitleConfig *> * _Nullable otherTitleConfigs, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void), void (^ _Nullable otherHandle)(NSNumber *index), void (^ _Nullable noLongerShowHandle)(BOOL selected)) {
     return SGAlertView
     .sg_alertView
+    .sg_alertSuperView(alertSuperView)
     .sg_title(title)
     .sg_attributedTitle(attributedTitle)
     .sg_message(message)
@@ -126,31 +129,43 @@ static inline SGAlertView * SGAlertViewMake(NSString * _Nullable title, NSAttrib
 }
 
 static inline SGAlertView * SGAlertViewShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, NSArray * _Nullable otherTitles, NSNumber * _Nullable imageType, UIImage * _Nullable tipsImage, void (^ _Nullable sg_ensureTitleConfig)(SGAlertTitleConfig *ensureTitleConfig), void (^ _Nullable sg_cancelTitleConfig)(SGAlertTitleConfig *cancelTitleConfig), NSArray<SGAlertTitleConfig *> * _Nullable otherTitleConfigs, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void), void (^ _Nullable otherHandle)(NSNumber *index)) {
-    return SGAlertViewMake(title, nil, message, nil, ensureTitle, cancelTitle, otherTitles, imageType, tipsImage, nil, nil, nil, sg_ensureTitleConfig, sg_cancelTitleConfig, otherTitleConfigs, ensureHandle, cancelHandle, otherHandle, nil).sg_show();
+    return SGAlertViewMake(nil, title, nil, message, nil, ensureTitle, cancelTitle, otherTitles, imageType, tipsImage, nil, nil, nil, sg_ensureTitleConfig, sg_cancelTitleConfig, otherTitleConfigs, ensureHandle, cancelHandle, otherHandle, nil).sg_show();
 }
 
 static inline SGAlertView * SGAlertViewNormalShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
-    return SGAlertViewMake(title, nil, message, nil, ensureTitle, cancelTitle, nil, nil, nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+    return SGAlertViewMake(nil, title, nil, message, nil, ensureTitle, cancelTitle, nil, nil, nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+}
+
+static inline SGAlertView * SGAlertViewNormalShowInView(UIView * _Nullable alertSuperView, NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
+    return SGAlertViewMake(alertSuperView, title, nil, message, nil, ensureTitle, cancelTitle, nil, nil, nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
 }
 
 static inline SGAlertView * SGAlertViewLancooNormalShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
-    return SGAlertViewMake(title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+    return SGAlertViewMake(nil, title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+}
+
+static inline SGAlertView * SGAlertViewLancooNormalShowInView(UIView * _Nullable alertSuperView, NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
+    return SGAlertViewMake(alertSuperView, title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
 }
 
 static inline SGAlertView * SGAlertViewLancooSubmitShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
-    return SGAlertViewMake(title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooSubmit), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+    return SGAlertViewMake(nil, title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooSubmit), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+}
+
+static inline SGAlertView * SGAlertViewLancooSubmitShowInView(UIView * _Nullable alertSuperView, NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
+    return SGAlertViewMake(alertSuperView, title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooSubmit), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
 }
 
 static inline SGAlertView * SGAlertViewLancooNormalAttributedShow(NSString * _Nullable title, NSAttributedString * _Nullable attributedTitle, NSString * _Nullable message, NSAttributedString * _Nullable attributedMessage, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
-    return SGAlertViewMake(title, attributedTitle, message, attributedMessage, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+    return SGAlertViewMake(nil, title, attributedTitle, message, attributedMessage, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
 }
 
 static inline SGAlertView * SGAlertViewLancooSubmitAttributedShow(NSString * _Nullable title, NSAttributedString * _Nullable attributedTitle, NSString * _Nullable message, NSAttributedString * _Nullable attributedMessage, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
-    return SGAlertViewMake(title, attributedTitle, message, attributedMessage, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooSubmit), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+    return SGAlertViewMake(nil, title, attributedTitle, message, attributedMessage, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooSubmit), nil, nil, nil, nil, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
 }
 
 static inline SGAlertView * SGAlertViewLancooNormalNoLongerShow(NSString * _Nullable title, NSString * _Nullable message, NSString * _Nullable ensureTitle, NSString * _Nullable cancelTitle, NSString * _Nullable noLongerShowKey, void (^ _Nullable ensureHandle)(void), void (^ _Nullable cancelHandle)(void)) {
-    return SGAlertViewMake(title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, @(SGAlertViewCustomContentViewTypeNoLongerShow), nil, noLongerShowKey, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
+    return SGAlertViewMake(nil, title, nil, message, nil, ensureTitle, cancelTitle, nil, @(SGAlertViewImageTypeLancooNormal), nil, @(SGAlertViewCustomContentViewTypeNoLongerShow), nil, noLongerShowKey, nil, nil, nil, ensureHandle, cancelHandle, nil, nil).sg_show();
 }
 
 NS_ASSUME_NONNULL_END

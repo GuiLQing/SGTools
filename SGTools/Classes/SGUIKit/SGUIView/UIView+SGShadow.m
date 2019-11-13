@@ -130,11 +130,11 @@ static inline void SGShadowLayerUpdate(CALayer *layer, SGShadowConfig *config) {
 @implementation UIButton (SGShadow)
 
 + (void)load {
-    SGShadowSwizzleSelector(self.class, @selector(layoutSubviews), @selector(sg_shadow_layoutSubviews));
+    SGShadowSwizzleSelector(self.class, @selector(layoutSubviews), @selector(sg_button_shadow_layoutSubviews));
 }
 
-- (void)sg_shadow_layoutSubviews {
-    [self sg_shadow_layoutSubviews];
+- (void)sg_button_shadow_layoutSubviews {
+    [self sg_button_shadow_layoutSubviews];
     
     if (self.shadowConfig.shadowOptions != SGShadowOptionsNone) {
         [self sg_updateShadow];

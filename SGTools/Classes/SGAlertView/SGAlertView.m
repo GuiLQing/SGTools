@@ -35,10 +35,11 @@ static inline UIFont * _Nonnull SGAlertFontDynamicSize(CGFloat size) {
     return [UIFont systemFontOfSize:size];
 }
 
-static inline NSMutableAttributedString * _Nullable SGAlertAttributedString(NSString *text) {
+static inline NSMutableAttributedString * _Nullable SGAlertAttributedString(NSString *text, UIFont *font) {
     if (SGAlertIsEmptyString(text)) return nil;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineSpacing = 5.0f;
+    //    paragraphStyle.firstLineHeadIndent = font.pointSize * 2;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
     return attributedString;
@@ -244,6 +245,8 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 
 @property (nonatomic, strong) NSString *noLongerShowKey;
 
+@property (nonatomic, strong) UIView *alertSuperView;
+
 @end
 
 @implementation SGAlertView
@@ -270,8 +273,8 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     _maskView.backgroundColor = UIColor.blackColor;
     [self addSubview:_maskView];
     
-//    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
-//    [_maskView addGestureRecognizer:tapGR];
+    //    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
+    //    [_maskView addGestureRecognizer:tapGR];
     
     _alertView = [[UIView alloc] init];
     [self addSubview:_alertView];
@@ -343,15 +346,15 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 - (void)setupTitleLabel {
     UILabel *titleLabel = [[UILabel alloc] init];
     self.titleLabel = titleLabel;
+    titleLabel.textColor = SGAlertHexColor(0x252525);
+    titleLabel.numberOfLines = 0;
+    titleLabel.font = SGAlertFontDynamicSize(18.0f);
+    titleLabel.textAlignment = NSTextAlignmentCenter;
     if (!SGAlertIsEmptyString(self.attributedTitle.string)) {
         titleLabel.attributedText = self.attributedTitle;
     } else {
-        titleLabel.attributedText = SGAlertAttributedString(self.title);
+        titleLabel.attributedText = SGAlertAttributedString(self.title, nil);
     }
-    titleLabel.textColor = SGAlertHexColor(0x252525);
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.numberOfLines = 0;
-    titleLabel.font = SGAlertFontDynamicSize(18.0f);
     [_contentView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         if (!SGAlertIsEmptyObject(self.tipsIV)) {
@@ -384,15 +387,15 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 - (void)setupMessageLabel {
     UILabel *messageLabel = [[UILabel alloc] init];
     self.messageLabel = messageLabel;
-    if (!SGAlertIsEmptyString(self.attributedMessage.string)) {
-        messageLabel.attributedText = self.attributedMessage;
-    } else {
-        messageLabel.attributedText = SGAlertAttributedString(self.message);
-    }
     messageLabel.textColor = SGAlertHexColor(0x656565);
     messageLabel.textAlignment = NSTextAlignmentLeft;
     messageLabel.numberOfLines = 0;
     messageLabel.font = SGAlertFontDynamicSize(15.0f);
+    if (!SGAlertIsEmptyString(self.attributedMessage.string)) {
+        messageLabel.attributedText = self.attributedMessage;
+    } else {
+        messageLabel.attributedText = SGAlertAttributedString(self.message, messageLabel.font);
+    }
     [_contentView addSubview:messageLabel];
     [messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -596,7 +599,11 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
     }
     
     [self setupSubviews];
-    [self.window addSubview:self];
+    if (!SGAlertIsEmptyObject(self.alertSuperView)) {
+        [self.alertSuperView addSubview:self];
+    } else {
+        [self.window addSubview:self];
+    }
     self.maskView.alpha = 0.0f;
     self.alertView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.0f, 0.0f);
     
@@ -756,6 +763,13 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
 - (SGAlertView * (^)(void (^ _Nullable noLongerShowHandle)(BOOL selected)))sg_noLongerShowHandle {
     return ^(void (^ _Nullable noLongerShowHandle)(BOOL selected)) {
         if (noLongerShowHandle) self.noLongerShowHander = noLongerShowHandle;
+        return self;
+    };
+}
+
+- (SGAlertView * _Nonnull (^)(UIView * _Nullable))sg_alertSuperView {
+    return ^(UIView *_Nullable alertSuperView) {
+        self.alertSuperView = alertSuperView;
         return self;
     };
 }
