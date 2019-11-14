@@ -61,7 +61,7 @@ static inline SGShadowConfig * SGShadowConfigMake(SGShadowOptions shadowOptions,
 }
 
 static inline SGShadowConfig * SGShadowConfigLancooNormal(UIColor * _Nullable shadowColor, CGFloat cornerRadius, UIColor * _Nullable borderColor, CGFloat borderWidth) {
-    return SGShadowConfigMake(SGShadowOptionsBottom, shadowColor, 0.8f, CGSizeMake(0, 5.0f), 5.0f, cornerRadius, borderColor, borderWidth);
+    return SGShadowConfigMake(SGShadowOptionsBottom, shadowColor, 0.8f, CGSizeMake(0, 3.0f), 5.0f, cornerRadius, borderColor, borderWidth);
 }
 
 NS_ASSUME_NONNULL_END

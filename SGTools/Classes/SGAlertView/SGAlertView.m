@@ -322,9 +322,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
             self.tipsIV = [[UIImageView alloc] initWithImage:tipsImage];
             [_alertView addSubview:self.tipsIV];
             [self.tipsIV mas_makeConstraints:^(MASConstraintMaker *make) {
-                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ||
-                    self.imageType == SGAlertViewImageTypeLancooNormal ||
-                    self.imageType == SGAlertViewImageTypeLancooSubmit) {
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                     make.width.mas_equalTo(150.0f);
                 } else {
                     make.width.mas_equalTo(120.0f);
@@ -332,7 +330,11 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
                 make.height.equalTo(self.tipsIV.mas_width).multipliedBy(tipsImage.size.height / tipsImage.size.width);
                 make.top.mas_greaterThanOrEqualTo(self.alertView.mas_top);
                 if (self.imageType == SGAlertViewImageTypeLancooSubmit) {
-                    make.centerX.equalTo(self.alertView.mas_centerX).offset(20.0f);
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                        make.centerX.equalTo(self.alertView.mas_centerX).offset(25.0f);
+                    } else {
+                        make.centerX.equalTo(self.alertView.mas_centerX).offset(15.0f);
+                    }
                     make.bottom.equalTo(self.contentView.mas_top).offset(35.0f);
                 } else {
                     make.centerX.equalTo(self.alertView.mas_centerX);
@@ -368,7 +370,7 @@ static inline SGAlertTitle * SGAlertTitleMake(NSInteger tag, NSString *title, SG
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                     make.top.equalTo(self.contentView.mas_top).offset(85.0f);
                 } else {
-                    make.top.equalTo(self.contentView.mas_top).offset(65.0f);
+                    make.top.equalTo(self.contentView.mas_top).offset(55.0f);
                 }
             }
         } else {

@@ -61,7 +61,7 @@ static inline BOOL SG_IS_IPAD(void) {
 //    SGSearchController *searchVC = [[SGSearchController alloc] initWithDefaultText:@"" placeholderText:@"hahaha" historySaveKey:@""];
 //    [self.navigationController pushViewController:searchVC animated:YES];
     
-    SGAlertViewLancooNormalShow(@"温馨提示", @"      您可以通过课前预习、课后作业、测试及做习题等其他途径，提高掌握的词汇数量。", @"确定", @"取消", ^(void) {
+    SGAlertViewLancooSubmitShow(@"温馨提示", @"      您可以通过课前预习、课后作业、测试及做习题等其他途径，提高掌握的词汇数量。", @"确定", @"取消", ^(void) {
         NSLog(@"确定");
     }, nil);
 }
