@@ -33,6 +33,10 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
 
 @implementation SGAudioPlayer
 
+- (void)dealloc {
+    [self invalidate];
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -239,11 +243,6 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
         CGFloat bufferProgress = currentBufferSeconds / CMTimeGetSeconds(playerItem.duration);
         
         if (bufferProgress == 1.0f && !_isDownload) { /** 缓冲完成 */
-            
-            _isDownload = YES;
-            if (self.delegate && [self.delegate respondsToSelector:@selector(audioPlayerDownloadSuccessed)]) {
-                [self.delegate audioPlayerDownloadSuccessed];
-            }
             __weak typeof(self) weakSelf = self;
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 [weakSelf saveAudioAtPath:weakSelf.downloadAudioPath success:^{
