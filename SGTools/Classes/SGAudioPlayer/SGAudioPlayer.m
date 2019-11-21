@@ -58,6 +58,7 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
             _isDownload = YES;
         }
     } else {
+        _isDownload = YES;
         url = [NSURL fileURLWithPath:self.audioUrl];
     }
     
