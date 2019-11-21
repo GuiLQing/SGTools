@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)audioPlayerPlaybackBufferEmpty;
 /** 缓存充足 音频播放开始播放 */
 - (void)audioPlayerPlaybackLikelyToKeepUp;
+/** 音频总时长监听 */
+- (void)audioPlayerDurationDidChanged:(NSTimeInterval)duration;
 
 @end
 

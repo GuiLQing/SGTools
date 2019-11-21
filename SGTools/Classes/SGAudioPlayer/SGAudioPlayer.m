@@ -12,6 +12,7 @@
 #define SG_IsStrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
 #define SG_PathCaches [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
+static NSString * const kDuration                 = @"duration";
 static NSString * const kStatus                   = @"status";
 static NSString * const kLoadedTimeRanges         = @"loadedTimeRanges";
 static NSString * const kPlaybackBufferEmpty      = @"playbackBufferEmpty";
@@ -134,11 +135,11 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
 }
 
 - (NSTimeInterval)currentPlayTime {
-    return CMTimeGetSeconds(self.audioPlayer.currentTime);
+    return CMTimeGetSeconds(self.playerItem.currentTime);
 }
 
 - (NSTimeInterval)totalDuration {
-    return CMTimeGetSeconds(self.audioPlayer.currentItem.duration);
+    return CMTimeGetSeconds(self.playerItem.duration);
 }
 
 #pragma mark - NSKVOObserver
@@ -152,6 +153,7 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
     [playerItem addObserver:self forKeyPath:kPlaybackBufferEmpty options:NSKeyValueObservingOptionNew context:nil];
     /** playbackLikelyToKeepUp状态 */
     [playerItem addObserver:self forKeyPath:kPlaybackLikelyToKeepUp options:NSKeyValueObservingOptionNew context:nil];
+    [playerItem addObserver:self forKeyPath:kDuration options:NSKeyValueObservingOptionNew context:nil];
     
     [_audioPlayer addObserver:self forKeyPath:kTimeControlStatus options:NSKeyValueObservingOptionNew context:nil];
     
@@ -176,6 +178,7 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
     [playerItem removeObserver:self forKeyPath:kLoadedTimeRanges];
     [playerItem removeObserver:self forKeyPath:kPlaybackBufferEmpty];
     [playerItem removeObserver:self forKeyPath:kPlaybackLikelyToKeepUp];
+    [playerItem removeObserver:self forKeyPath:kDuration];
     [playerItem cancelPendingSeeks];
     [playerItem.asset cancelLoading];
     
@@ -207,6 +210,10 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
             NSLog(@"timeControlStatus: %@, reason: %@, rate: %@", @(_audioPlayer.timeControlStatus), _audioPlayer.reasonForWaitingToPlay, @(_audioPlayer.rate));
         } else {
             // Fallback on earlier versions
+        }
+    } else if ([keyPath isEqualToString:kDuration]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(audioPlayerDurationDidChanged:)]) {
+            [self.delegate audioPlayerDurationDidChanged:CMTimeGetSeconds(self.playerItem.duration)];
         }
     }
 }
