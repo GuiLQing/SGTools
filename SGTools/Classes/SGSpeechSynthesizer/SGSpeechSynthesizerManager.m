@@ -58,7 +58,7 @@ typedef NS_ENUM(NSUInteger, SGSpeechLanguageType) {
     _utterance.rate = [@{
                          @(SGSpeechSynthesizerRateDefault) : @(AVSpeechUtteranceDefaultSpeechRate),
                          @(SGSpeechSynthesizerRateMinimum) : @(AVSpeechUtteranceMinimumSpeechRate),
-                         @(SGSpeechSynthesizerRateMaximum) : @(AVSpeechUtteranceMaximumSpeechRate),
+                         @(SGSpeechSynthesizerRateMaximum) : @(AVSpeechUtteranceDefaultSpeechRate),
                          }[@(_speechRate)] doubleValue];
     /** 改变音调 */
     _utterance.pitchMultiplier = 1.0f;
