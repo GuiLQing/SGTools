@@ -13,9 +13,14 @@
 @interface SGVocabularyKeyboardCell : UICollectionViewCell
 
 @property (nonatomic, strong) UILabel *keyboardLabel;
+
 @property (nonatomic, strong) UIImageView *backImageView;
 
+@property (nonatomic, strong) UIImageView *shadowImageView;
+
 @property (nonatomic, assign) BOOL keyboardSelected;
+
+@property (nonatomic, assign) BOOL isReturnKeyboard;
 
 @end
 
@@ -26,8 +31,27 @@
     self = [super initWithFrame:frame];
     if (self) {
         _backImageView = UIImageView.alloc.init;
-        _backImageView.frame = self.bounds;
         [self addSubview:_backImageView];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.left.right.equalTo(self.contentView);
+                make.height.equalTo(self.backImageView.mas_width).multipliedBy(80.0f / 228);
+            }];
+        } else {
+            [_backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.contentView);
+            }];
+        }
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            _shadowImageView = UIImageView.alloc.init;
+            [self.contentView addSubview:_shadowImageView];
+            [_shadowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.right.equalTo(self.contentView);
+                make.top.equalTo(self.backImageView.mas_bottom);
+                make.height.equalTo(self.shadowImageView.mas_width).multipliedBy(20.0f / 234);
+            }];
+        }
         
         _keyboardLabel = UILabel.alloc.init;
         _keyboardLabel.textColor = UIColor.whiteColor;
@@ -38,21 +62,42 @@
             _keyboardLabel.font = [UIFont systemFontOfSize:15.0f];
         }
         [self addSubview:_keyboardLabel];
-        [_keyboardLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.right.equalTo(self.contentView);
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                make.bottom.equalTo(self.contentView.mas_bottom).offset(-15.0f);
-            } else {
-                make.bottom.equalTo(self.contentView.mas_bottom).offset(-10.0f);
-            }
-        }];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [_keyboardLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.backImageView);
+            }];
+        } else {
+            [_keyboardLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.left.right.equalTo(self.contentView);
+                if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                    make.bottom.equalTo(self.contentView.mas_bottom).offset(-15.0f);
+                } else {
+                    make.bottom.equalTo(self.contentView.mas_bottom).offset(-10.0f);
+                }
+            }];
+        }
     }
     return self;
 }
 
 - (void)setKeyboardSelected:(BOOL)keyboardSelected {
     _keyboardSelected = keyboardSelected;
-    self.backImageView.image = [UIImage sg_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected" : @"sg_dictation_icon_keyboard_default"];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.backImageView.image = [UIImage sg_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected_ipad" : @"sg_dictation_icon_keyboard_default_ipad"];
+        self.shadowImageView.image = [UIImage sg_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected_shadow_ipad" : @"sg_dictation_icon_keyboard_default_shadow_ipad"];
+    } else {
+        self.backImageView.image = [UIImage sg_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected" : @"sg_dictation_icon_keyboard_default"];
+    }
+}
+
+- (void)setIsReturnKeyboard:(BOOL)isReturnKeyboard {
+    _isReturnKeyboard = isReturnKeyboard;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.backImageView.image = [UIImage sg_imageNamed:@"sg_dictation_icon_keyboard_ensure_ipad"];
+        self.shadowImageView.image = [UIImage sg_imageNamed:@"sg_dictation_icon_keyboard_ensure_shadow_ipad"];
+    } else {
+        self.backImageView.image = [UIImage sg_imageNamed:@"sg_dictation_icon_keyboard_ensure"];
+    }
 }
 
 @end
@@ -103,7 +148,7 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
     if (indexPath.row == self.randomVocabularys.count) {
         /** 回车按钮 */
         cell.keyboardLabel.text = @"";
-        cell.backImageView.image = [UIImage sg_imageNamed:@"sg_dictation_icon_keyboard_ensure"];
+        cell.isReturnKeyboard = YES;
     } else {
         cell.keyboardLabel.text = self.randomVocabularys[indexPath.row];
         cell.keyboardSelected = [self.selectedWordsDics.allKeys containsObject:indexPath];
@@ -142,9 +187,9 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
     if (!_collectionView) {
         UICollectionViewFlowLayout *flowLayout = UICollectionViewFlowLayout.alloc.init;
         CGFloat itemWidth = (CGRectGetWidth(self.bounds) - 3 * 10) / 4;
-        CGFloat itemHeight = itemWidth * 0.65;
+        CGFloat itemHeight = itemWidth * (84.0 / 136);
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            itemHeight = itemWidth * 0.5;
+            itemHeight = itemWidth * (80.0 / 228 + 20.0 / 234);
         }
         flowLayout.itemSize = CGSizeMake(itemWidth, itemHeight);
         flowLayout.minimumLineSpacing = 10.0f;
