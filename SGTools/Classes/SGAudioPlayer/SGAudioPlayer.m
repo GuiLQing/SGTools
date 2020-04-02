@@ -65,6 +65,7 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
     
     _urlAsset = [AVURLAsset assetWithURL:url];
     _playerItem = [AVPlayerItem playerItemWithAsset:_urlAsset];
+    _playerItem.audioTimePitchAlgorithm = AVAudioTimePitchAlgorithmTimeDomain;
     _audioPlayer = [AVQueuePlayer playerWithPlayerItem:_playerItem];
     
     if (@available(iOS 10.0, *)) {

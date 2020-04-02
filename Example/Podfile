@@ -1,6 +1,8 @@
 use_frameworks!
 
 platform :ios, '9.0'
+#屏蔽所有来自于cocoapods依赖库的警告
+inhibit_all_warnings!
 
 target 'SGTools_Example' do
   pod 'SGTools', :path => '../'

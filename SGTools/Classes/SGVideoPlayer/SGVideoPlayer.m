@@ -49,6 +49,7 @@ static NSString * const SG_TimeControlStatus        = @"timeControlStatus";
     }
     _urlAsset = [AVURLAsset assetWithURL:url];
     _playerItem = [AVPlayerItem playerItemWithAsset:_urlAsset];
+    _playerItem.audioTimePitchAlgorithm = AVAudioTimePitchAlgorithmTimeDomain;
     _videoPlayer = [AVQueuePlayer playerWithPlayerItem:_playerItem];
     _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_videoPlayer];
     
@@ -66,7 +67,12 @@ static NSString * const SG_TimeControlStatus        = @"timeControlStatus";
     [session setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
     [session setActive:YES error:nil];
     
-    [self.videoPlayer playImmediatelyAtRate:self.videoRate];
+    if (@available(iOS 10.0, *)) {
+        [self.videoPlayer playImmediatelyAtRate:self.videoRate];
+    } else {
+        [self.videoPlayer play];
+        self.videoPlayer.rate = self.videoRate;
+    }
     _isPlaying = YES;
 }
 
@@ -172,7 +178,11 @@ static NSString * const SG_TimeControlStatus        = @"timeControlStatus";
         //由于 AVPlayer 缓存不足就会自动暂停,所以缓存充足了需要手动播放,才能继续播放
         if (_isPlaying) [self play];
     } else if ([keyPath isEqualToString:SG_TimeControlStatus]) {
-        NSLog(@"timeControlStatus: %@, reason: %@, rate: %@", @(_videoPlayer.timeControlStatus), _videoPlayer.reasonForWaitingToPlay, @(_videoPlayer.rate));
+        if (@available(iOS 10.0, *)) {
+            NSLog(@"timeControlStatus: %@, reason: %@, rate: %@", @(_videoPlayer.timeControlStatus), _videoPlayer.reasonForWaitingToPlay, @(_videoPlayer.rate));
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
 
