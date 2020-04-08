@@ -1,6 +1,6 @@
 {
   "name": "SGTools",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "summary": "A short description of SGTools.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/GuiLQing/SGTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/GuiLQing/SGTools.git",
-    "tag": "1.3.7"
+    "tag": "1.3.8"
   },
   "platforms": {
     "ios": "9.0"
@@ -135,6 +135,20 @@
 
         ],
         "SGTools/SGUIKit/SGUIView": [
+
+        ]
+      }
+    },
+    {
+      "name": "SGCircularProgress",
+      "source_files": "SGTools/Classes/SGCircularProgress/**/*.{h,m}"
+    },
+    {
+      "name": "SGCountDownView",
+      "source_files": "SGTools/Classes/SGCountDownView/**/*.{h,m}",
+      "resources": "SGTools/Classes/SGCountDownView/SGCountDownView.bundle",
+      "dependencies": {
+        "SGTools/SGCircularProgress": [
 
         ]
       }

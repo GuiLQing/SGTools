@@ -1,53 +1,58 @@
 PODS:
   - Masonry (1.1.0)
-  - SGTools (1.3.7):
-    - SGTools/SGAlertView (= 1.3.7)
-    - SGTools/SGAudioPlayer (= 1.3.7)
-    - SGTools/SGCheckBox (= 1.3.7)
-    - SGTools/SGCollectionViewFlowLayout (= 1.3.7)
-    - SGTools/SGGradientProgress (= 1.3.7)
-    - SGTools/SGPickerView (= 1.3.7)
-    - SGTools/SGSearchController (= 1.3.7)
-    - SGTools/SGShadowView (= 1.3.7)
-    - SGTools/SGSingleAudioPlayer (= 1.3.7)
-    - SGTools/SGSpeechSynthesizer (= 1.3.7)
-    - SGTools/SGTriangleView (= 1.3.7)
-    - SGTools/SGUIKit (= 1.3.7)
-    - SGTools/SGVideoPlayer (= 1.3.7)
-    - SGTools/SGVocabularyDictation (= 1.3.7)
-    - SGTools/SGVoiceAnimationView (= 1.3.7)
-  - SGTools/SGAlertView (1.3.7):
+  - SGTools (1.3.8):
+    - SGTools/SGAlertView (= 1.3.8)
+    - SGTools/SGAudioPlayer (= 1.3.8)
+    - SGTools/SGCheckBox (= 1.3.8)
+    - SGTools/SGCircularProgress (= 1.3.8)
+    - SGTools/SGCollectionViewFlowLayout (= 1.3.8)
+    - SGTools/SGCountDownView (= 1.3.8)
+    - SGTools/SGGradientProgress (= 1.3.8)
+    - SGTools/SGPickerView (= 1.3.8)
+    - SGTools/SGSearchController (= 1.3.8)
+    - SGTools/SGShadowView (= 1.3.8)
+    - SGTools/SGSingleAudioPlayer (= 1.3.8)
+    - SGTools/SGSpeechSynthesizer (= 1.3.8)
+    - SGTools/SGTriangleView (= 1.3.8)
+    - SGTools/SGUIKit (= 1.3.8)
+    - SGTools/SGVideoPlayer (= 1.3.8)
+    - SGTools/SGVocabularyDictation (= 1.3.8)
+    - SGTools/SGVoiceAnimationView (= 1.3.8)
+  - SGTools/SGAlertView (1.3.8):
     - Masonry
     - SGTools/SGCheckBox
     - SGTools/SGUIKit/SGUIView
-  - SGTools/SGAudioPlayer (1.3.7)
-  - SGTools/SGCheckBox (1.3.7)
-  - SGTools/SGCollectionViewFlowLayout (1.3.7)
-  - SGTools/SGGradientProgress (1.3.7)
-  - SGTools/SGPickerView (1.3.7):
-    - SGTools/SGPickerView/SGAddressPickerView (= 1.3.7)
-    - SGTools/SGPickerView/SGBase (= 1.3.7)
-    - SGTools/SGPickerView/SGDatePickerView (= 1.3.7)
-    - SGTools/SGPickerView/SGStringPickerView (= 1.3.7)
-  - SGTools/SGPickerView/SGAddressPickerView (1.3.7):
+  - SGTools/SGAudioPlayer (1.3.8)
+  - SGTools/SGCheckBox (1.3.8)
+  - SGTools/SGCircularProgress (1.3.8)
+  - SGTools/SGCollectionViewFlowLayout (1.3.8)
+  - SGTools/SGCountDownView (1.3.8):
+    - SGTools/SGCircularProgress
+  - SGTools/SGGradientProgress (1.3.8)
+  - SGTools/SGPickerView (1.3.8):
+    - SGTools/SGPickerView/SGAddressPickerView (= 1.3.8)
+    - SGTools/SGPickerView/SGBase (= 1.3.8)
+    - SGTools/SGPickerView/SGDatePickerView (= 1.3.8)
+    - SGTools/SGPickerView/SGStringPickerView (= 1.3.8)
+  - SGTools/SGPickerView/SGAddressPickerView (1.3.8):
     - SGTools/SGPickerView/SGBase
-  - SGTools/SGPickerView/SGBase (1.3.7)
-  - SGTools/SGPickerView/SGDatePickerView (1.3.7):
+  - SGTools/SGPickerView/SGBase (1.3.8)
+  - SGTools/SGPickerView/SGDatePickerView (1.3.8):
     - SGTools/SGPickerView/SGBase
-  - SGTools/SGPickerView/SGStringPickerView (1.3.7):
+  - SGTools/SGPickerView/SGStringPickerView (1.3.8):
     - SGTools/SGPickerView/SGBase
-  - SGTools/SGSearchController (1.3.7)
-  - SGTools/SGShadowView (1.3.7)
-  - SGTools/SGSingleAudioPlayer (1.3.7)
-  - SGTools/SGSpeechSynthesizer (1.3.7)
-  - SGTools/SGTriangleView (1.3.7)
-  - SGTools/SGUIKit (1.3.7):
-    - SGTools/SGUIKit/SGUIView (= 1.3.7)
-  - SGTools/SGUIKit/SGUIView (1.3.7)
-  - SGTools/SGVideoPlayer (1.3.7)
-  - SGTools/SGVocabularyDictation (1.3.7):
+  - SGTools/SGSearchController (1.3.8)
+  - SGTools/SGShadowView (1.3.8)
+  - SGTools/SGSingleAudioPlayer (1.3.8)
+  - SGTools/SGSpeechSynthesizer (1.3.8)
+  - SGTools/SGTriangleView (1.3.8)
+  - SGTools/SGUIKit (1.3.8):
+    - SGTools/SGUIKit/SGUIView (= 1.3.8)
+  - SGTools/SGUIKit/SGUIView (1.3.8)
+  - SGTools/SGVideoPlayer (1.3.8)
+  - SGTools/SGVocabularyDictation (1.3.8):
     - Masonry
-  - SGTools/SGVoiceAnimationView (1.3.7)
+  - SGTools/SGVoiceAnimationView (1.3.8)
 
 DEPENDENCIES:
   - SGTools (from `../`)
@@ -62,7 +67,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SGTools: 1de0b7c3c6d96715c16d40fc786f6d9b1bb2c944
+  SGTools: abdc105e95bd7f0fb2fb592fa1a945308500b948
 
 PODFILE CHECKSUM: 8fdc7d3c6f6cabd29aa8d4ede3017b570504b2f7
 

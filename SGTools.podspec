@@ -120,4 +120,14 @@ TODO: Add long description of the pod here.
       alertView.dependency 'SGTools/SGUIKit/SGUIView'
   end
   
+  s.subspec 'SGCircularProgress' do |circularProgress|
+      circularProgress.source_files = 'SGTools/Classes/SGCircularProgress/**/*.{h,m}'
+  end
+  
+  s.subspec 'SGCountDownView' do |countDownView|
+      countDownView.source_files = 'SGTools/Classes/SGCountDownView/**/*.{h,m}'
+      countDownView.resources = 'SGTools/Classes/SGCountDownView/SGCountDownView.bundle'
+      countDownView.dependency 'SGTools/SGCircularProgress'
+  end
+  
 end
