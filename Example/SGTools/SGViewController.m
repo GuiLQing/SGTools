@@ -43,7 +43,7 @@ static inline BOOL SG_IS_IPAD(void) {
         make.right.equalTo(self.view).offset(-20.0f);
     }];
 
-    dicView.viewType = SGDictationViewTypeAnswer;
+    dicView.viewType = SGDictationViewTypeNone;
 //    dicView.sg_dictationVoiceDidClicked = ^(void (^ _Nonnull handleVoiceAnimation)(BOOL)) {
 //        handleVoiceAnimation(YES);
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

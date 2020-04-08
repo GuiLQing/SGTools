@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, SGDictationViewType) {
     SGDictationViewTypeAnswer, //默认，答案视图
     SGDictationViewTypeVoice,  //音频视图
+    SGDictationViewTypeNone,   //无中间视图
 };
 
 @interface SGVocabularyDictationView : UIView

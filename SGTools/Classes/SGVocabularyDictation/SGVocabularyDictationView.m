@@ -103,11 +103,36 @@
     
     [self.answerView resetLookAnswerButton];
     
-    self.answerView.hidden = viewType != SGDictationViewTypeAnswer;
-    self.voiceView.hidden = viewType == SGDictationViewTypeAnswer;
+    self.answerView.hidden = YES;
+    self.voiceView.hidden = YES;
+    
+    switch (viewType) {
+        case SGDictationViewTypeAnswer: {
+            self.answerView.hidden = NO;
+            [self.keyboardView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.answerView.mas_bottom).offset(10.0f);
+            }];
+        }
+            break;
+        case SGDictationViewTypeVoice: {
+            self.voiceView.hidden = NO;
+            [self.keyboardView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.answerView.mas_bottom).offset(10.0f);
+            }];
+        }
+            break;
+        case SGDictationViewTypeNone: {
+            [self.keyboardView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.spellingView.mas_bottom).offset(20.0f);
+            }];
+        }
+            break;
+    }
 }
 
 - (void)updateAnswerView:(BOOL)isHidden {
+    if (self.viewType != SGDictationViewTypeAnswer) return;
+    
     if (isHidden) {
         [self.answerView hideAnswerView];
     } else {
