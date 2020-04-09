@@ -13,6 +13,7 @@
 #import "SGMacorsConfig.h"
 #import "SGVideoPlayer.h"
 #import "SGAlertView.h"
+#import "SGCountDownView.h"
 
 static inline BOOL SG_IS_IPAD(void) {
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
@@ -33,12 +34,20 @@ static inline BOOL SG_IS_IPAD(void) {
     self.view.backgroundColor = UIColor.whiteColor;
 	// Do any additional setup after loading the view, typically from a nib.
     
+    SGCountDownView *countDownView = [[SGCountDownView alloc] init];
+    [self.view addSubview:countDownView];
+    [countDownView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.top.equalTo(self.view.mas_top).offset(150.0f);
+        make.size.mas_equalTo(countDownView.frame.size);
+    }];
+    
     CGFloat dictationViewWidth = SG_IS_IPAD() ? (SG_SCREEN_WIDTH * 0.7) : (SG_SCREEN_WIDTH - 40.0f);
     SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(20.0f, 0, dictationViewWidth, 0)];
     dicView.vocabulary = @"wordswordswordswordswords";
     [self.view addSubview:dicView];
     [dicView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(100.0f);
+        make.top.equalTo(countDownView.mas_bottom).offset(30.0f);
         make.left.equalTo(self.view).offset(20.0f);
         make.right.equalTo(self.view).offset(-20.0f);
     }];

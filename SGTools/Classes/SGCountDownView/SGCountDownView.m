@@ -30,6 +30,23 @@ static inline UIColor * _Nullable SGCountDownHexColor(NSInteger c) {
 
 @implementation SGCountDownView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.frame = (CGRect){CGPointZero, CGSizeMake(108.0f, 108.0f)};
+        } else {
+            self.frame = (CGRect){CGPointZero, CGSizeMake(70.0f, 70.0f)};
+        }
+        
+        [self layoutUI];
+        
+        self.sg_countDownMode = SGCountDownModeDefault;
+    }
+    return self;
+}
+
 - (UIImage * (^)(NSString *imageName))sg_countDownImage {
     return ^(NSString *imageName) {
         if (!self.boundle) {
