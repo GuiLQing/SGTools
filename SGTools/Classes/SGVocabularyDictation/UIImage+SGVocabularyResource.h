@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (SGVocabularyResource)
 
-+ (UIImage *)sg_imageNamed:(NSString *)name;
++ (UIImage *)sg_vr_imageNamed:(NSString *)name;
 
 @end
 

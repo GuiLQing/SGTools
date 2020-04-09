@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.3.8'
+  s.version          = '1.3.9'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.

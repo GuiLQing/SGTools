@@ -69,8 +69,8 @@
     self.lookAnswerBtn = UIButton.alloc.init;
     [self.lookAnswerBtn setTitle:@"查看答案" forState:UIControlStateNormal];
     [self.lookAnswerBtn setTitle:@"查看答案" forState:UIControlStateSelected];
-    [self.lookAnswerBtn setImage:[UIImage sg_imageNamed:@"sg_dictation_icon_lookAnswer_down"] forState:UIControlStateNormal];
-    [self.lookAnswerBtn setImage:[UIImage sg_imageNamed:@"sg_dictation_icon_lookAnswer_up"] forState:UIControlStateSelected];
+    [self.lookAnswerBtn setImage:[UIImage sg_vr_imageNamed:@"sg_dictation_icon_lookAnswer_down"] forState:UIControlStateNormal];
+    [self.lookAnswerBtn setImage:[UIImage sg_vr_imageNamed:@"sg_dictation_icon_lookAnswer_up"] forState:UIControlStateSelected];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.lookAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:17.0f];
     } else {

@@ -44,11 +44,15 @@ static inline UIColor * _Nullable SGCountDownHexColor(NSInteger c) {
     self.audioProgressIV.frame = (CGRect){self.audioProgressIV.frame.origin, CGSizeMake(CGRectGetWidth(self.bounds) + 20.0f, CGRectGetHeight(self.bounds) + 20.0f)};
     self.audioProgressIV.center = self.center;
     self.audioProgressIV.image = self.sg_countDownImage(@"sg_countDown_icon_play_default");
-    self.audioProgressIV.animationImages = @[
-                                         self.sg_countDownImage(@"sg_countDown_icon_playGif_1"),
-                                         self.sg_countDownImage(@"sg_countDown_icon_playGif_2"),
-                                         self.sg_countDownImage(@"sg_countDown_icon_playGif_3"),
-                                         ];
+    
+    NSMutableArray *images = [NSMutableArray array];
+    for (NSInteger i = 1; i <= 3; i ++) {
+        UIImage *image = self.sg_countDownImage([NSString stringWithFormat:@"sg_countDown_icon_playGif_%zd", i]);
+        if (!image) {
+            [images addObject:image];
+        }
+    }
+    self.audioProgressIV.animationImages = images;
     self.audioProgressIV.animationDuration = 0.5;
     
     [self addSubview:self.audioProgressIV];

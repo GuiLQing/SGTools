@@ -37,12 +37,16 @@
         }];
         
         self.voiceIV = UIImageView.alloc.init;
-        self.voiceIV.image = [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_3"];
-        self.voiceIV.animationImages = @[
-                                         [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_1"],
-                                         [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_2"],
-                                         [UIImage sg_imageNamed:@"sg_dictation_icon_voice_animation_3"],
-                                         ];
+        self.voiceIV.image = [UIImage sg_vr_imageNamed:@"sg_dictation_icon_voice_animation_3"];
+        
+        NSMutableArray *images = [NSMutableArray array];
+        for (NSInteger i = 1; i <= 3; i ++) {
+            UIImage *image = [UIImage sg_vr_imageNamed:[NSString stringWithFormat:@"sg_dictation_icon_voice_animation_%zd", i]];
+            if (!image) {
+                [images addObject:image];
+            }
+        }
+        self.voiceIV.animationImages = images;
         self.voiceIV.animationDuration = 0.5;
         [self addSubview:self.voiceIV];
         [self.voiceIV mas_makeConstraints:^(MASConstraintMaker *make) {
