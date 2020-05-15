@@ -89,11 +89,22 @@
     
     self.answerView.rightAnswer = vocabulary;
     
-    NSMutableArray *results = [NSMutableArray array];
-    for (NSArray *array in rightVocabularys) {
-        [results addObjectsFromArray:array];
+    if (!self.defaultKeyBoards || self.defaultKeyBoards.count == 0) {
+        NSMutableArray *results = [NSMutableArray array];
+        for (NSArray *array in rightVocabularys) {
+            [results addObjectsFromArray:array];
+        }
+        self.keyboardView.randomVocabularys = [SGVocabularyTools addRandomSortResults:results length:[SGVocabularyTools cutLengthByVocabulary:vocabulary]];
+        if (self.sg_updateDefaultKeyBoards) {
+            self.sg_updateDefaultKeyBoards(self.keyboardView.randomVocabularys);
+        }
+    } else {
+        self.keyboardView.randomVocabularys = self.defaultKeyBoards;
+        self.keyboardView.selectedKeyBoards = self.selectedKeyBoards;
+        for (NSString *text in self.selectedKeyBoards) {
+            [self.spellingView addSpellingAnswer:text];
+        }
     }
-    self.keyboardView.randomVocabularys = [SGVocabularyTools addRandomSortResults:results length:[SGVocabularyTools cutLengthByVocabulary:vocabulary]];
     
     [self.answerView resetLookAnswerButton];
 }
@@ -144,6 +155,13 @@
 
 - (void)sg_spellingViewDeleteDidClickedWithWords:(NSString *)words {
     [self.keyboardView removeWords:words];
+    
+    if (self.sg_updateSelectedKeyBoards) {
+        NSMutableArray *keyboards = [self.selectedKeyBoards mutableCopy];
+        [keyboards removeLastObject];
+        self.selectedKeyBoards = keyboards;
+        self.sg_updateSelectedKeyBoards(self.selectedKeyBoards);
+    }
 }
 
 - (void)sg_spellingViewCallbackSpellingAnswer:(NSString *)answer {
@@ -163,7 +181,27 @@
 - (void)sg_keyboardDidSelectedWithWords:(NSString *)words atIndex:(NSInteger)index complete:(void (^)(void))complete {
     if ([self.spellingView addSpellingAnswer:words]) {
         complete();
+        if (self.sg_updateSelectedKeyBoards) {
+            NSMutableArray *keyboards = [self.selectedKeyBoards mutableCopy];
+            [keyboards addObject:words];
+            self.selectedKeyBoards = keyboards;
+            self.sg_updateSelectedKeyBoards(self.selectedKeyBoards);
+        }
     }
+}
+
+- (NSArray *)defaultKeyBoards {
+    if (!_defaultKeyBoards) {
+        _defaultKeyBoards = @[];
+    }
+    return _defaultKeyBoards;
+}
+
+- (NSArray *)selectedKeyBoards {
+    if (!_selectedKeyBoards) {
+        _selectedKeyBoards = @[];
+    }
+    return _selectedKeyBoards;
 }
 
 @end

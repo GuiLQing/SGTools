@@ -28,6 +28,12 @@ typedef NS_ENUM(NSUInteger, SGDictationViewType) {
 /** 音频播放点击回调  handleVoiceAnimation处理音频播放动画回传 */
 @property (nonatomic, copy) void (^sg_dictationVoiceDidClicked)(void (^handleVoiceAnimation)(BOOL isToStart));
 
+/// 键盘回显数据
+@property (nonatomic, strong) NSArray *defaultKeyBoards;
+@property (nonatomic, strong) NSArray *selectedKeyBoards;
+@property (nonatomic, copy) void (^ _Nullable sg_updateDefaultKeyBoards)(NSArray * _Nonnull defaultKeyBoards);
+@property (nonatomic, copy) void (^ _Nullable sg_updateSelectedKeyBoards)(NSArray * _Nullable selectedKeyBoards);
+
 /** 通过传入词汇显示键盘内容 */
 @property (nonatomic, copy) NSString *vocabulary;
 

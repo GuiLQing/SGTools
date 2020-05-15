@@ -96,6 +96,9 @@ static inline UIColor * _Nullable SGCountDownHexColor(NSInteger c) {
     switch (sg_countDownMode) {
         case SGCountDownModeDefault: {
             self.audioProgressIV.hidden = NO;
+            self.audioProgressView.progress = 0;
+            self.answerProgressView.progress = 0;
+            self.secondsLabel.text = @"";
         }
             break;
         case SGCountDownModeVoice: {

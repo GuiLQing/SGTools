@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray<NSString *> *randomVocabularys;
 
+@property (nonatomic, strong) NSArray<NSString *> *selectedKeyBoards;
+
 @property (nonatomic, weak) id<SGVocabularyKeyboardViewDelegate> delegate;
 
 - (void)removeWords:(NSString *)words;

@@ -130,6 +130,21 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
     [self.collectionView reloadData];
 }
 
+- (void)setSelectedKeyBoards:(NSArray<NSString *> *)selectedKeyBoards {
+    _selectedKeyBoards = selectedKeyBoards;
+    
+    for (NSString *text in selectedKeyBoards) {
+        if ([self.randomVocabularys containsObject:text]) {
+            [self.selectedWordsDics setObject:text forKey:[NSIndexPath indexPathForRow:[self.randomVocabularys indexOfObject:text] inSection:0]];
+        }
+    }
+    for (NSInteger i = 0; i < selectedKeyBoards.count; i ++) {
+        NSString *selectedText = selectedKeyBoards[i];
+        
+    }
+    [self.collectionView reloadData];
+}
+
 - (void)removeWords:(NSString *)words {
     if ([self.selectedWordsDics.allValues containsObject:words]) {
         [self.selectedWordsDics removeObjectForKey:[self.selectedWordsDics allKeysForObject:words].firstObject];
