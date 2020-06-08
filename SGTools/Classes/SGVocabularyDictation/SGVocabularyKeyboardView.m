@@ -135,12 +135,17 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
     
     for (NSString *text in selectedKeyBoards) {
         if ([self.randomVocabularys containsObject:text]) {
-            [self.selectedWordsDics setObject:text forKey:[NSIndexPath indexPathForRow:[self.randomVocabularys indexOfObject:text] inSection:0]];
+            for (NSInteger index = 0; index < self.randomVocabularys.count; index ++) {
+                NSString *word = self.randomVocabularys[index];
+                if ([word isEqualToString:text]) {
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+                    if (![self.selectedWordsDics.allKeys containsObject:indexPath]) {
+                        [self.selectedWordsDics setObject:text forKey:indexPath];
+                        break;
+                    }
+                }
+            }
         }
-    }
-    for (NSInteger i = 0; i < selectedKeyBoards.count; i ++) {
-        NSString *selectedText = selectedKeyBoards[i];
-        
     }
     [self.collectionView reloadData];
 }
