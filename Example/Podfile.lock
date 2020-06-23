@@ -1,58 +1,69 @@
 PODS:
   - Masonry (1.1.0)
-  - SGTools (1.3.8):
-    - SGTools/SGAlertView (= 1.3.8)
-    - SGTools/SGAudioPlayer (= 1.3.8)
-    - SGTools/SGCheckBox (= 1.3.8)
-    - SGTools/SGCircularProgress (= 1.3.8)
-    - SGTools/SGCollectionViewFlowLayout (= 1.3.8)
-    - SGTools/SGCountDownView (= 1.3.8)
-    - SGTools/SGGradientProgress (= 1.3.8)
-    - SGTools/SGPickerView (= 1.3.8)
-    - SGTools/SGSearchController (= 1.3.8)
-    - SGTools/SGShadowView (= 1.3.8)
-    - SGTools/SGSingleAudioPlayer (= 1.3.8)
-    - SGTools/SGSpeechSynthesizer (= 1.3.8)
-    - SGTools/SGTriangleView (= 1.3.8)
-    - SGTools/SGUIKit (= 1.3.8)
-    - SGTools/SGVideoPlayer (= 1.3.8)
-    - SGTools/SGVocabularyDictation (= 1.3.8)
-    - SGTools/SGVoiceAnimationView (= 1.3.8)
-  - SGTools/SGAlertView (1.3.8):
+  - SGTools (1.4.4):
+    - SGTools/SGAlertView (= 1.4.4)
+    - SGTools/SGAudioPlayer (= 1.4.4)
+    - SGTools/SGCheckBox (= 1.4.4)
+    - SGTools/SGCircularProgress (= 1.4.4)
+    - SGTools/SGCollectionViewFlowLayout (= 1.4.4)
+    - SGTools/SGCountDownView (= 1.4.4)
+    - SGTools/SGGradientProgress (= 1.4.4)
+    - SGTools/SGMoveView (= 1.4.4)
+    - SGTools/SGPageFlowView (= 1.4.4)
+    - SGTools/SGPickerView (= 1.4.4)
+    - SGTools/SGResource (= 1.4.4)
+    - SGTools/SGSearchController (= 1.4.4)
+    - SGTools/SGShadowView (= 1.4.4)
+    - SGTools/SGSingleAudioPlayer (= 1.4.4)
+    - SGTools/SGSpeechSynthesizer (= 1.4.4)
+    - SGTools/SGTriangleView (= 1.4.4)
+    - SGTools/SGUIKit (= 1.4.4)
+    - SGTools/SGVideoPlayer (= 1.4.4)
+    - SGTools/SGVocabularyDictation (= 1.4.4)
+    - SGTools/SGVoiceAnimationView (= 1.4.4)
+  - SGTools/SGAlertView (1.4.4):
     - Masonry
     - SGTools/SGCheckBox
     - SGTools/SGUIKit/SGUIView
-  - SGTools/SGAudioPlayer (1.3.8)
-  - SGTools/SGCheckBox (1.3.8)
-  - SGTools/SGCircularProgress (1.3.8)
-  - SGTools/SGCollectionViewFlowLayout (1.3.8)
-  - SGTools/SGCountDownView (1.3.8):
+  - SGTools/SGAudioPlayer (1.4.4)
+  - SGTools/SGCheckBox (1.4.4)
+  - SGTools/SGCircularProgress (1.4.4)
+  - SGTools/SGCollectionViewFlowLayout (1.4.4)
+  - SGTools/SGCountDownView (1.4.4):
     - SGTools/SGCircularProgress
-  - SGTools/SGGradientProgress (1.3.8)
-  - SGTools/SGPickerView (1.3.8):
-    - SGTools/SGPickerView/SGAddressPickerView (= 1.3.8)
-    - SGTools/SGPickerView/SGBase (= 1.3.8)
-    - SGTools/SGPickerView/SGDatePickerView (= 1.3.8)
-    - SGTools/SGPickerView/SGStringPickerView (= 1.3.8)
-  - SGTools/SGPickerView/SGAddressPickerView (1.3.8):
-    - SGTools/SGPickerView/SGBase
-  - SGTools/SGPickerView/SGBase (1.3.8)
-  - SGTools/SGPickerView/SGDatePickerView (1.3.8):
-    - SGTools/SGPickerView/SGBase
-  - SGTools/SGPickerView/SGStringPickerView (1.3.8):
-    - SGTools/SGPickerView/SGBase
-  - SGTools/SGSearchController (1.3.8)
-  - SGTools/SGShadowView (1.3.8)
-  - SGTools/SGSingleAudioPlayer (1.3.8)
-  - SGTools/SGSpeechSynthesizer (1.3.8)
-  - SGTools/SGTriangleView (1.3.8)
-  - SGTools/SGUIKit (1.3.8):
-    - SGTools/SGUIKit/SGUIView (= 1.3.8)
-  - SGTools/SGUIKit/SGUIView (1.3.8)
-  - SGTools/SGVideoPlayer (1.3.8)
-  - SGTools/SGVocabularyDictation (1.3.8):
+  - SGTools/SGGradientProgress (1.4.4)
+  - SGTools/SGMoveView (1.4.4):
     - Masonry
-  - SGTools/SGVoiceAnimationView (1.3.8)
+  - SGTools/SGPageFlowView (1.4.4)
+  - SGTools/SGPickerView (1.4.4):
+    - SGTools/SGPickerView/SGAddressPickerView (= 1.4.4)
+    - SGTools/SGPickerView/SGBase (= 1.4.4)
+    - SGTools/SGPickerView/SGDatePickerView (= 1.4.4)
+    - SGTools/SGPickerView/SGStringPickerView (= 1.4.4)
+  - SGTools/SGPickerView/SGAddressPickerView (1.4.4):
+    - SGTools/SGPickerView/SGBase
+  - SGTools/SGPickerView/SGBase (1.4.4)
+  - SGTools/SGPickerView/SGDatePickerView (1.4.4):
+    - SGTools/SGPickerView/SGBase
+  - SGTools/SGPickerView/SGStringPickerView (1.4.4):
+    - SGTools/SGPickerView/SGBase
+  - SGTools/SGResource (1.4.4)
+  - SGTools/SGSearchController (1.4.4)
+  - SGTools/SGShadowView (1.4.4)
+  - SGTools/SGSingleAudioPlayer (1.4.4)
+  - SGTools/SGSpeechSynthesizer (1.4.4)
+  - SGTools/SGTriangleView (1.4.4)
+  - SGTools/SGUIKit (1.4.4):
+    - SGTools/SGUIKit/SGUIView (= 1.4.4)
+    - SGTools/SGUIKit/SGUIViewController (= 1.4.4)
+  - SGTools/SGUIKit/SGUIView (1.4.4)
+  - SGTools/SGUIKit/SGUIViewController (1.4.4):
+    - Masonry
+    - SGTools/SGResource
+  - SGTools/SGVideoPlayer (1.4.4)
+  - SGTools/SGVocabularyDictation (1.4.4):
+    - Masonry
+  - SGTools/SGVoiceAnimationView (1.4.4)
 
 DEPENDENCIES:
   - SGTools (from `../`)
@@ -67,7 +78,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SGTools: abdc105e95bd7f0fb2fb592fa1a945308500b948
+  SGTools: 96f4a8e9afde3f2239c93fb0ed482d086cc8635a
 
 PODFILE CHECKSUM: 8fdc7d3c6f6cabd29aa8d4ede3017b570504b2f7
 

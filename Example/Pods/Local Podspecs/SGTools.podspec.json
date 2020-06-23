@@ -1,6 +1,6 @@
 {
   "name": "SGTools",
-  "version": "1.3.8",
+  "version": "1.4.4",
   "summary": "A short description of SGTools.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/GuiLQing/SGTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/GuiLQing/SGTools.git",
-    "tag": "1.3.8"
+    "tag": "1.4.4"
   },
   "platforms": {
     "ios": "9.0"
@@ -114,12 +114,29 @@
       "source_files": "SGTools/Classes/SGCheckBox/**/*.{h,m}"
     },
     {
+      "name": "SGResource",
+      "source_files": "SGTools/Classes/SGResource/**/*.{h,m}",
+      "resources": "SGTools/Classes/SGResource/SGResource.bundle"
+    },
+    {
       "name": "SGUIKit",
       "source_files": "SGTools/Classes/SGUIKit/SGUIKit.h",
       "subspecs": [
         {
           "name": "SGUIView",
           "source_files": "SGTools/Classes/SGUIKit/SGUIView/**/*.{h,m}"
+        },
+        {
+          "name": "SGUIViewController",
+          "source_files": "SGTools/Classes/SGUIKit/SGUIViewController/**/*.{h,m}",
+          "dependencies": {
+            "SGTools/SGResource": [
+
+            ],
+            "Masonry": [
+
+            ]
+          }
         }
       ]
     },
@@ -149,6 +166,19 @@
       "resources": "SGTools/Classes/SGCountDownView/SGCountDownView.bundle",
       "dependencies": {
         "SGTools/SGCircularProgress": [
+
+        ]
+      }
+    },
+    {
+      "name": "SGPageFlowView",
+      "source_files": "SGTools/Classes/SGPageFlowView/**/*.{h,m}"
+    },
+    {
+      "name": "SGMoveView",
+      "source_files": "SGTools/Classes/SGMoveView/**/*.{h,m}",
+      "dependencies": {
+        "Masonry": [
 
         ]
       }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.4.3'
+  s.version          = '1.4.4'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -105,10 +105,21 @@ TODO: Add long description of the pod here.
       checkBox.source_files = 'SGTools/Classes/SGCheckBox/**/*.{h,m}'
   end
   
+  s.subspec 'SGResource' do |resource|
+      resource.source_files = 'SGTools/Classes/SGResource/**/*.{h,m}'
+      resource.resources = 'SGTools/Classes/SGResource/SGResource.bundle'
+  end
+  
   s.subspec 'SGUIKit' do |kit|
       kit.source_files = 'SGTools/Classes/SGUIKit/SGUIKit.h'
       kit.subspec 'SGUIView' do |view|
           view.source_files = 'SGTools/Classes/SGUIKit/SGUIView/**/*.{h,m}'
+      end
+      
+      kit.subspec 'SGUIViewController' do |viewController|
+          viewController.source_files = 'SGTools/Classes/SGUIKit/SGUIViewController/**/*.{h,m}'
+          viewController.dependency 'SGTools/SGResource'
+          viewController.dependency 'Masonry'
       end
   end
   
@@ -128,6 +139,15 @@ TODO: Add long description of the pod here.
       countDownView.source_files = 'SGTools/Classes/SGCountDownView/**/*.{h,m}'
       countDownView.resources = 'SGTools/Classes/SGCountDownView/SGCountDownView.bundle'
       countDownView.dependency 'SGTools/SGCircularProgress'
+  end
+  
+  s.subspec 'SGPageFlowView' do |pageFlowView|
+      pageFlowView.source_files = 'SGTools/Classes/SGPageFlowView/**/*.{h,m}'
+  end
+  
+  s.subspec 'SGMoveView' do |moveView|
+      moveView.source_files = 'SGTools/Classes/SGMoveView/**/*.{h,m}'
+      moveView.dependency 'Masonry'
   end
   
 end
