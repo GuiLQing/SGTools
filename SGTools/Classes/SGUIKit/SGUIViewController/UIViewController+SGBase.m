@@ -8,7 +8,7 @@
 #import "UIViewController+SGBase.h"
 #include <objc/runtime.h>
 #import <Masonry/Masonry.h>
-#import "SGResource.h"
+#import <LGBundle/LGBundleManager.h>
 
 void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
@@ -219,8 +219,8 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
         loadingView.backgroundColor = UIColor.whiteColor;
         
         UIImageView *loadingIV = [[UIImageView alloc] init];
-        UIImage *defaultImage = SGResource.sg_defaultResource.sg_loadingImages.firstObject;
-        loadingIV.animationImages = SGResource.sg_defaultResource.sg_loadingImages;
+        UIImage *defaultImage = LGBundleManager.defaultManager.loadingImgs.firstObject;
+        loadingIV.animationImages = LGBundleManager.defaultManager.loadingImgs;
         [loadingIV startAnimating];
         [loadingView addSubview:loadingIV];
         [loadingIV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -253,7 +253,7 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
         emptyView.backgroundColor = UIColor.whiteColor;
         
         UIImageView *emptyIV = [[UIImageView alloc] init];
-        UIImage *emptyImage = SGResource.sg_defaultResource.sg_loadEmptyImage;
+        UIImage *emptyImage = [UIImage imageNamed:[LGBundleManager.defaultManager pathInBundleWithName:@"empty/empty_1"]];
         emptyIV.image = emptyImage;
         [emptyView addSubview:emptyIV];
         [emptyIV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -288,7 +288,7 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
         errorView.backgroundColor = UIColor.whiteColor;
         
         UIImageView *errorIV = [[UIImageView alloc] init];
-        UIImage *errorImage = SGResource.sg_defaultResource.sg_loadErrorImage;
+        UIImage *errorImage = [UIImage imageNamed:[LGBundleManager.defaultManager pathInBundleWithName:@"error/error_1"]];
         errorIV.image = errorImage;
         [errorView addSubview:errorIV];
         [errorIV mas_makeConstraints:^(MASConstraintMaker *make) {

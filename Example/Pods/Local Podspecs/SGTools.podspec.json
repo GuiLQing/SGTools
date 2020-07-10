@@ -1,6 +1,6 @@
 {
   "name": "SGTools",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "summary": "A short description of SGTools.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/GuiLQing/SGTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/GuiLQing/SGTools.git",
-    "tag": "1.4.4"
+    "tag": "1.4.5"
   },
   "platforms": {
     "ios": "9.0"
@@ -114,11 +114,6 @@
       "source_files": "SGTools/Classes/SGCheckBox/**/*.{h,m}"
     },
     {
-      "name": "SGResource",
-      "source_files": "SGTools/Classes/SGResource/**/*.{h,m}",
-      "resources": "SGTools/Classes/SGResource/SGResource.bundle"
-    },
-    {
       "name": "SGUIKit",
       "source_files": "SGTools/Classes/SGUIKit/SGUIKit.h",
       "subspecs": [
@@ -130,7 +125,10 @@
           "name": "SGUIViewController",
           "source_files": "SGTools/Classes/SGUIKit/SGUIViewController/**/*.{h,m}",
           "dependencies": {
-            "SGTools/SGResource": [
+            "LGBundle/Manager": [
+
+            ],
+            "LGBundle/Bundle": [
 
             ],
             "Masonry": [

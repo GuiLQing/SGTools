@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGTools'
-  s.version          = '1.4.4'
+  s.version          = '1.4.5'
   s.summary          = 'A short description of SGTools.'
 
 # This description is used to generate tags and improve search results.
@@ -105,11 +105,6 @@ TODO: Add long description of the pod here.
       checkBox.source_files = 'SGTools/Classes/SGCheckBox/**/*.{h,m}'
   end
   
-  s.subspec 'SGResource' do |resource|
-      resource.source_files = 'SGTools/Classes/SGResource/**/*.{h,m}'
-      resource.resources = 'SGTools/Classes/SGResource/SGResource.bundle'
-  end
-  
   s.subspec 'SGUIKit' do |kit|
       kit.source_files = 'SGTools/Classes/SGUIKit/SGUIKit.h'
       kit.subspec 'SGUIView' do |view|
@@ -118,7 +113,8 @@ TODO: Add long description of the pod here.
       
       kit.subspec 'SGUIViewController' do |viewController|
           viewController.source_files = 'SGTools/Classes/SGUIKit/SGUIViewController/**/*.{h,m}'
-          viewController.dependency 'SGTools/SGResource'
+          viewController.dependency 'LGBundle/Manager'
+          viewController.dependency 'LGBundle/Bundle'
           viewController.dependency 'Masonry'
       end
   end

@@ -32,7 +32,6 @@
 #import "NSDate+SGPickerView.h"
 #import "SGDatePickerView.h"
 #import "SGStringPickerView.h"
-#import "SGResource.h"
 #import "SGSearchController.h"
 #import "SGShadowView.h"
 #import "SGSingleAudioPlayer.h"
