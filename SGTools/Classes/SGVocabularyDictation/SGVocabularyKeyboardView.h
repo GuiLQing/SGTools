@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SGVocabularyKeyboardView : UIView
 
+@property (nonatomic, assign) BOOL keyboardDisabled;
+
 @property (nonatomic, strong) NSArray<NSString *> *randomVocabularys;
 
 @property (nonatomic, strong) NSArray<NSString *> *selectedKeyBoards;

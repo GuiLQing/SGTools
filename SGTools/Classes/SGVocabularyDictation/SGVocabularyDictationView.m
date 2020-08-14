@@ -83,6 +83,12 @@
     };
 }
 
+- (void)setKeyboardDisabled:(BOOL)keyboardDisabled {
+    _keyboardDisabled = keyboardDisabled;
+    
+    self.keyboardView.keyboardDisabled = keyboardDisabled;
+}
+
 - (void)setVocabulary:(NSString *)vocabulary {
     NSArray<NSArray *> *rightVocabularys = [SGVocabularyTools cutArrayByVocabulary:vocabulary];
     self.spellingView.rightVocabularys = rightVocabularys;

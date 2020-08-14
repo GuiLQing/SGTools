@@ -47,6 +47,14 @@ static inline UIColor * _Nullable SGCountDownHexColor(NSInteger c) {
     return self;
 }
 
+- (void)setDisabled:(BOOL)disabled {
+    _disabled = disabled;
+    
+    self.userInteractionEnabled = !disabled;
+    
+    self.audioProgressIV.image = disabled ? self.sg_countDownImage(@"sg_countDown_icon_play_disabled") : self.sg_countDownImage(@"sg_countDown_icon_play_default");
+}
+
 - (UIImage * (^)(NSString *imageName))sg_countDownImage {
     return ^(NSString *imageName) {
         if (!self.boundle) {
@@ -64,10 +72,9 @@ static inline UIColor * _Nullable SGCountDownHexColor(NSInteger c) {
     
     NSMutableArray *images = [NSMutableArray array];
     for (NSInteger i = 1; i <= 3; i ++) {
-        UIImage *image = self.sg_countDownImage([NSString stringWithFormat:@"sg_countDown_icon_playGif_%zd", i]);
-        if (!image) {
-            [images addObject:image];
-        }
+        NSString *imageName = [NSString stringWithFormat:@"sg_countDown_icon_playGif_%zd", i];
+        UIImage *image = self.sg_countDownImage(imageName);
+        if (image != nil) [images addObject:image];
     }
     self.audioProgressIV.animationImages = images;
     self.audioProgressIV.animationDuration = 0.5;

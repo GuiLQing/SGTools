@@ -44,7 +44,7 @@ static inline BOOL SG_IS_IPAD(void) {
     
     CGFloat dictationViewWidth = SG_IS_IPAD() ? (SG_SCREEN_WIDTH * 0.7) : (SG_SCREEN_WIDTH - 40.0f);
     SGVocabularyDictationView *dicView = [[SGVocabularyDictationView alloc] initWithFrame:CGRectMake(20.0f, 0, dictationViewWidth, 0)];
-    dicView.vocabulary = @"wordswordswordswordswords";
+    dicView.vocabulary = @"take a tour";
     [self.view addSubview:dicView];
     [dicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(countDownView.mas_bottom).offset(30.0f);

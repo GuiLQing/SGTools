@@ -17,6 +17,8 @@ typedef NS_ENUM(NSUInteger, SGCountDownMode) {
 
 @interface SGCountDownView : UIView
 
+@property (nonatomic, assign) BOOL disabled;
+
 @property (nonatomic, assign) SGCountDownMode sg_countDownMode;
 
 - (void)sg_updateAudioProgress:(CGFloat)progress;

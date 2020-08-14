@@ -41,8 +41,9 @@
         [self.contentView addSubview:self.lineView];
         
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self.contentView.mas_right);
-            make.top.left.bottom.equalTo(self.contentView);
+            make.right.equalTo(self.contentView.mas_right).offset(-0.2f);
+            make.left.equalTo(self.contentView.mas_left).offset(0.2f);
+            make.top.bottom.equalTo(self.contentView);
             make.width.mas_greaterThanOrEqualTo(15.0f);
             make.height.mas_greaterThanOrEqualTo(30.0f);
         }];

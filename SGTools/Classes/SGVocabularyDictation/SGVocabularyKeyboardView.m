@@ -22,6 +22,8 @@
 
 @property (nonatomic, assign) BOOL isReturnKeyboard;
 
+@property (nonatomic, assign) BOOL keyboardDisabled;
+
 @end
 
 @implementation SGVocabularyKeyboardCell
@@ -82,6 +84,9 @@
 
 - (void)setKeyboardSelected:(BOOL)keyboardSelected {
     _keyboardSelected = keyboardSelected;
+    
+    if (self.keyboardDisabled) keyboardSelected = YES;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.backImageView.image = [UIImage sg_vr_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected_ipad" : @"sg_dictation_icon_keyboard_default_ipad"];
         self.shadowImageView.image = [UIImage sg_vr_imageNamed:keyboardSelected ? @"sg_dictation_icon_keyboard_selected_shadow_ipad" : @"sg_dictation_icon_keyboard_default_shadow_ipad"];
@@ -92,11 +97,14 @@
 
 - (void)setIsReturnKeyboard:(BOOL)isReturnKeyboard {
     _isReturnKeyboard = isReturnKeyboard;
+    
+    BOOL isDisabled = self.keyboardDisabled;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.backImageView.image = [UIImage sg_vr_imageNamed:@"sg_dictation_icon_keyboard_ensure_ipad"];
-        self.shadowImageView.image = [UIImage sg_vr_imageNamed:@"sg_dictation_icon_keyboard_ensure_shadow_ipad"];
+        self.backImageView.image = [UIImage sg_vr_imageNamed:isDisabled ? @"sg_dictation_icon_keyboard_disabled_ipad" : @"sg_dictation_icon_keyboard_ensure_ipad"];
+        self.shadowImageView.image = [UIImage sg_vr_imageNamed:isDisabled ? @"sg_dictation_icon_keyboard_selected_shadow_ipad" : @"sg_dictation_icon_keyboard_ensure_shadow_ipad"];
     } else {
-        self.backImageView.image = [UIImage sg_vr_imageNamed:@"sg_dictation_icon_keyboard_ensure"];
+        self.backImageView.image = [UIImage sg_vr_imageNamed:isDisabled ? @"sg_dictation_icon_keyboard_disabled" : @"sg_dictation_icon_keyboard_ensure"];
     }
 }
 
@@ -121,6 +129,13 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
         [self addSubview:self.collectionView];
     }
     return self;
+}
+
+- (void)setKeyboardDisabled:(BOOL)keyboardDisabled {
+    _keyboardDisabled = keyboardDisabled;
+    
+    self.userInteractionEnabled = !keyboardDisabled;
+    [self.collectionView reloadData];
 }
 
 - (void)setRandomVocabularys:(NSArray<NSString *> *)randomVocabularys {
@@ -165,6 +180,7 @@ static NSString * const SGVocabularyKeyboardCellIdentifier = @"SGVocabularyKeybo
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SGVocabularyKeyboardCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SGVocabularyKeyboardCellIdentifier forIndexPath:indexPath];
+    cell.keyboardDisabled = self.keyboardDisabled;
     if (indexPath.row == self.randomVocabularys.count) {
         /** 回车按钮 */
         cell.keyboardLabel.text = @"";
