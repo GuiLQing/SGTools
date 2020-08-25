@@ -227,7 +227,7 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
             make.centerX.equalTo(loadingView.mas_centerX);
             make.centerY.equalTo(loadingView.mas_centerY).offset(-15.0f);
             make.height.equalTo(loadingIV.mas_width).multipliedBy(defaultImage.size.height / defaultImage.size.width);
-            make.width.mas_equalTo(100.0f);
+            make.width.mas_equalTo(250.0f);
         }];
         
         UILabel *loadingLabel = [[UILabel alloc] init];
@@ -260,7 +260,7 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
             make.centerX.equalTo(emptyView.mas_centerX);
             make.centerY.equalTo(emptyView.mas_centerY).offset(-15.0f);
             make.height.equalTo(emptyIV.mas_width).multipliedBy(emptyImage.size.height / emptyImage.size.width);
-            make.width.mas_equalTo(100.0f);
+            make.width.mas_equalTo(250.0f);
         }];
         
         UILabel *emptyLabel = [[UILabel alloc] init];
@@ -295,7 +295,7 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
             make.centerX.equalTo(errorView.mas_centerX);
             make.centerY.equalTo(errorView.mas_centerY).offset(-15.0f);
             make.height.equalTo(errorIV.mas_width).multipliedBy(errorImage.size.height / errorImage.size.width);
-            make.width.mas_equalTo(100.0f);
+            make.width.mas_equalTo(250.0f);
         }];
         
         UILabel *errorLabel = [[UILabel alloc] init];
