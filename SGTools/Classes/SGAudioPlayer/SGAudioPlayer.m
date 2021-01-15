@@ -117,12 +117,55 @@ static NSString * const kTimeControlStatus        = @"timeControlStatus";
     _urlAsset = nil;
 }
 
+- (void)resetPlayerItemForAudioSeek {
+    [self stop];
+    [self removeObserver:_playerItem];
+    _playerItem = nil;
+    _urlAsset = nil;
+    
+    NSURL *url = nil;
+    if ([self.audioUrl hasPrefix:@"http"]) {
+        url = [NSURL URLWithString:[self.audioUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+        /** 判断本地有没有保存当前音频文件，如果有，将url换成本地的文件路径 */
+        if ([NSFileManager.defaultManager fileExistsAtPath:self.downloadAudioPath]) {
+            url = [NSURL fileURLWithPath:self.downloadAudioPath];
+            _isDownload = YES;
+        }
+    } else {
+        _isDownload = YES;
+        url = [NSURL fileURLWithPath:self.audioUrl];
+    }
+    
+    _urlAsset = [AVURLAsset assetWithURL:url];
+    _playerItem = [AVPlayerItem playerItemWithAsset:_urlAsset];
+    _playerItem.audioTimePitchAlgorithm = AVAudioTimePitchAlgorithmTimeDomain;
+    if (!_audioPlayer) {
+        _audioPlayer = [AVQueuePlayer playerWithPlayerItem:_playerItem];
+    } else {
+        [_audioPlayer replaceCurrentItemWithPlayerItem:_playerItem];
+    }
+    
+    if (@available(iOS 10.0, *)) {
+        _audioPlayer.automaticallyWaitsToMinimizeStalling = NO;
+    }
+    
+    [self addObserverWithPlayerItem:_playerItem];
+}
+
 - (void)audioSeekToMilliSeconds:(NSInteger)seconds {
-    [self.audioPlayer seekToTime:CMTimeMake(seconds, 1000) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000)];
+    [self resetPlayerItemForAudioSeek];
+    
+    int32_t timeScale = self.audioPlayer.currentItem.asset.duration.timescale;
+    CMTime time = CMTimeMakeWithSeconds(seconds / 1000.0, timeScale);
+    [self.audioPlayer seekToTime:time toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
 }
 
 - (void)audioSeekToMilliSeconds:(NSInteger)seconds completionHandler:(void (^)(BOOL finished))completionHandler {
-    [self.audioPlayer seekToTime:CMTimeMake(seconds, 1000) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
+    [self resetPlayerItemForAudioSeek];
+    
+    int32_t timeScale = self.audioPlayer.currentItem.asset.duration.timescale;
+    CMTime time = CMTimeMakeWithSeconds(seconds / 1000.0, timeScale);
+    [self.audioPlayer seekToTime:time toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
         if (completionHandler) completionHandler(finished);
     }];
 }
