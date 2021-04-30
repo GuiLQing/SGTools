@@ -147,7 +147,7 @@ typedef NS_ENUM(NSUInteger, SGDragCellCollectionViewScrollDirection) {
     //开启边缘滚动定时器
     [self sg_setEdgeTimer];
     //开启抖动
-    if (!_editing) {
+    if (!_sg_editing) {
         [self sg_shakeAllCell];
     }
     _lastPoint = [longPressGesture locationOfTouch:0 inView:longPressGesture.view];
@@ -370,7 +370,7 @@ typedef NS_ENUM(NSUInteger, SGDragCellCollectionViewScrollDirection) {
 }
 
 - (void)sg_stopShakeAllCell{
-    if (!_shakeWhenMoveing || _editing) {
+    if (!_shakeWhenMoveing || _sg_editing) {
         return;
     }
     NSArray *cells = [self visibleCells];
@@ -427,7 +427,7 @@ typedef NS_ENUM(NSUInteger, SGDragCellCollectionViewScrollDirection) {
 #pragma mark - public methods
 
 - (void)sg_enterEditingModel{
-    _editing = YES;
+    _sg_editing = YES;
     _oldMinimumPressDuration =  _longPressGesture.minimumPressDuration;
     _longPressGesture.minimumPressDuration = 0;
     if (_shakeWhenMoveing) {
@@ -438,7 +438,7 @@ typedef NS_ENUM(NSUInteger, SGDragCellCollectionViewScrollDirection) {
 }
 
 - (void)sg_stopEditingModel{
-    _editing = NO;
+    _sg_editing = NO;
     _longPressGesture.minimumPressDuration = _oldMinimumPressDuration;
     [self sg_stopShakeAllCell];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -460,9 +460,9 @@ typedef NS_ENUM(NSUInteger, SGDragCellCollectionViewScrollDirection) {
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     if (![keyPath isEqualToString:@"contentOffset"]) return;
-    if (_editing || _isPanning) {
+    if (_sg_editing || _isPanning) {
         [self sg_shakeAllCell];
-    }else if (!_editing && !_isPanning){
+    }else if (!_sg_editing && !_isPanning){
         [self sg_stopShakeAllCell];
     }
 }
@@ -470,7 +470,7 @@ typedef NS_ENUM(NSUInteger, SGDragCellCollectionViewScrollDirection) {
 #pragma mark - notification
 
 - (void)sg_foreground{
-    if (_editing) {
+    if (_sg_editing) {
         [self sg_shakeAllCell];
     }
 }

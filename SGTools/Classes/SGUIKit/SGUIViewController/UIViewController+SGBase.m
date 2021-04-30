@@ -225,15 +225,15 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
         [loadingView addSubview:loadingIV];
         [loadingIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(loadingView.mas_centerX);
-            make.centerY.equalTo(loadingView.mas_centerY).offset(-15.0f);
+            make.centerY.equalTo(loadingView.mas_centerY);
+            make.width.mas_equalTo(140.0f);
             make.height.equalTo(loadingIV.mas_width).multipliedBy(defaultImage.size.height / defaultImage.size.width);
-            make.width.mas_equalTo(250.0f);
         }];
         
         UILabel *loadingLabel = [[UILabel alloc] init];
         loadingLabel.font = [UIFont systemFontOfSize:14.0f];
         loadingLabel.text = @"努力加载中...";
-        loadingLabel.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
+        loadingLabel.textColor = [UIColor colorWithRed:152/255.0 green:152/255.0 blue:152/255.0 alpha:1.0];
         loadingLabel.textAlignment = NSTextAlignmentCenter;
         [loadingView addSubview:loadingLabel];
         [loadingLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -258,15 +258,13 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
         [emptyView addSubview:emptyIV];
         [emptyIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(emptyView.mas_centerX);
-            make.centerY.equalTo(emptyView.mas_centerY).offset(-15.0f);
-            make.height.equalTo(emptyIV.mas_width).multipliedBy(emptyImage.size.height / emptyImage.size.width);
-            make.width.mas_equalTo(250.0f);
+            make.centerY.equalTo(emptyView.mas_centerY);
         }];
         
         UILabel *emptyLabel = [[UILabel alloc] init];
         emptyLabel.font = [UIFont systemFontOfSize:14.0f];
         emptyLabel.text = @"暂无数据";
-        emptyLabel.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
+        emptyLabel.textColor = [UIColor colorWithRed:152/255.0 green:152/255.0 blue:152/255.0 alpha:1.0];
         emptyLabel.textAlignment = NSTextAlignmentCenter;
         [emptyView addSubview:emptyLabel];
         [emptyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -293,15 +291,13 @@ void SGBaseSwizzleSelector(Class class, SEL originalSelector, SEL swizzledSelect
         [errorView addSubview:errorIV];
         [errorIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(errorView.mas_centerX);
-            make.centerY.equalTo(errorView.mas_centerY).offset(-15.0f);
-            make.height.equalTo(errorIV.mas_width).multipliedBy(errorImage.size.height / errorImage.size.width);
-            make.width.mas_equalTo(250.0f);
+            make.centerY.equalTo(errorView.mas_centerY);
         }];
         
         UILabel *errorLabel = [[UILabel alloc] init];
         errorLabel.font = [UIFont systemFontOfSize:14.0f];
         errorLabel.text = @"数据加载异常，请稍后再试！";
-        errorLabel.textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
+        errorLabel.textColor = [UIColor colorWithRed:152/255.0 green:152/255.0 blue:152/255.0 alpha:1.0];
         errorLabel.textAlignment = NSTextAlignmentCenter;
         [errorView addSubview:errorLabel];
         [errorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
